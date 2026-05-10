@@ -3,9 +3,9 @@
 // Strategy: Cache-first for assets, Network-first for pages
 // ============================================================
 
-const CACHE_NAME   = 'thunderstudy-v1';
-const STATIC_CACHE = 'thunderstudy-static-v1';
-const PAGES_CACHE  = 'thunderstudy-pages-v1';
+const CACHE_NAME   = 'thunderstudy-v2';
+const STATIC_CACHE = 'thunderstudy-static-v2';
+const PAGES_CACHE  = 'thunderstudy-pages-v2';
 
 // Assets to pre-cache on install (shell)
 const PRECACHE_URLS = [
