@@ -1,0 +1,71 @@
+{
+  "name": "ThunderStudy — Free CBSE Class 12 Notes & CUET Mock Tests",
+  "short_name": "ThunderStudy",
+  "description": "100% free CBSE Class 12 notes, CUET 2026 mock tests, SSC and Banking CBT mocks for Indian students. No registration. No cost.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0f172a",
+  "theme_color": "#0077f5",
+  "lang": "en-IN",
+  "dir": "ltr",
+  "categories": ["education"],
+  "icons": [
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "CUET Mock Tests",
+      "short_name": "CUET Mock",
+      "description": "Free CUET 2026 mock tests with auto-scoring",
+      "url": "https://commercesehoga.github.io/cuet",
+      "icons": [{ "src": "/favicon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Commerce Notes",
+      "short_name": "Commerce",
+      "description": "Free Class 12 Commerce — Accountancy, BST, Economics",
+      "url": "https://commercesehoga.github.io/commerce",
+      "icons": [{ "src": "/favicon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "SSC Mock Tests",
+      "short_name": "SSC Mock",
+      "description": "Free SSC CGL CBT mock tests",
+      "url": "https://commercesehoga.github.io/ssc",
+      "icons": [{ "src": "/favicon-192x192.png", "sizes": "192x192" }]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/og-cover.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "label": "ThunderStudy homepage"
+    }
+  ]
+}
