@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="180" height="180">
+  <defs>
+    <linearGradient id="bgA" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="50%" stop-color="#0EA5E9"/>
+      <stop offset="100%" stop-color="#1D4ED8"/>
+    </linearGradient>
+    <linearGradient id="goldA" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFF5B8"/>
+      <stop offset="45%" stop-color="#FFD54A"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7DD3FC" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#7DD3FC" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shA">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#1D4ED8" flood-opacity="0.35"/>
+    </filter>
+    <filter id="boltA">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <!-- Solid blue bg (iOS clips to rounded square automatically) -->
+  <rect width="180" height="180" rx="40" fill="url(#bgA)"/>
+  <!-- Subtle inner glow -->
+  <circle cx="90" cy="90" r="70" fill="url(#glowA)"/>
+  <!-- White card inset -->
+  <rect x="25" y="25" width="130" height="130" rx="30" fill="#FFFFFF" fill-opacity="0.18"/>
+  <!-- Inner orbit circle -->
+  <circle cx="90" cy="90" r="52" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.3" stroke-dasharray="5 8"/>
+  <!-- White circle background for bolt -->
+  <circle cx="90" cy="90" r="42" fill="#FFFFFF" fill-opacity="0.2" filter="url(#shA)"/>
+  <!-- Lightning bolt — centred & large -->
+  <path d="M98 18 L64 92 H84 L75 142 L116 72 H96 L98 18Z"
+    fill="url(#goldA)" stroke="#FFFDE7" stroke-width="1.5" stroke-linejoin="round" filter="url(#boltA)"/>
+  <!-- Bolt highlight -->
+  <path d="M95 28 L70 88 H86 L79 128 L110 72 H94 L95 28Z"
+    fill="#FFFFFF" opacity="0.32"/>
+  <!-- Corner tiny dots -->
+  <circle cx="46" cy="46" r="4" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="134" cy="134" r="4" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="134" cy="46" r="3" fill="#FFFFFF" opacity="0.4"/>
+  <circle cx="46" cy="134" r="3" fill="#FFFFFF" opacity="0.4"/>
+</svg>

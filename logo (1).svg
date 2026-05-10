@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="55%" stop-color="#F0F9FF"/>
+      <stop offset="100%" stop-color="#D6F0FF"/>
+    </linearGradient>
+    <linearGradient id="mainBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFF5B8"/>
+      <stop offset="45%" stop-color="#FFD54A"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.75"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7DD3FC" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#7DD3FC" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#2563EB" flood-opacity="0.18"/>
+    </filter>
+    <filter id="boltGlow">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="120" fill="url(#bg)"/>
+  <!-- Ambient glow -->
+  <circle cx="256" cy="256" r="175" fill="url(#glow)"/>
+  <!-- Card -->
+  <rect x="85" y="85" width="342" height="342" rx="85" fill="url(#glass)" filter="url(#shadow)"/>
+  <rect x="85" y="85" width="342" height="342" rx="85" fill="none" stroke="#D7EEFF" stroke-width="2"/>
+  <!-- Corner arcs -->
+  <path d="M125 165 A90 90 0 0 1 215 125" fill="none" stroke="url(#mainBlue)" stroke-width="7" stroke-linecap="round"/>
+  <path d="M387 347 A90 90 0 0 1 297 387" fill="none" stroke="url(#mainBlue)" stroke-width="7" stroke-linecap="round" opacity="0.8"/>
+  <!-- Orbit ring -->
+  <circle cx="256" cy="256" r="110" fill="none" stroke="#C8EBFF" stroke-width="2.5" stroke-dasharray="6 9"/>
+  <!-- Core circle -->
+  <circle cx="256" cy="256" r="88" fill="#FFFFFF" filter="url(#shadow)"/>
+  <circle cx="256" cy="256" r="75" fill="none" stroke="#BAE6FD" stroke-width="2.5"/>
+  <!-- Lightning bolt -->
+  <path d="M280 107 L187 268 H245 L219 404 L324 237 H268 L280 107Z"
+    fill="url(#gold)" stroke="#FFF4B5" stroke-width="2.5" stroke-linejoin="round" filter="url(#boltGlow)"/>
+  <!-- Bolt highlight -->
+  <path d="M272 133 L213 253 H252 L238 338 L298 228 H263 L272 133Z"
+    fill="#FFFFFF" opacity="0.35"/>
+  <!-- Floating dots -->
+  <circle cx="152" cy="152" r="5" fill="#38BDF8"/>
+  <circle cx="360" cy="360" r="5" fill="#38BDF8"/>
+  <circle cx="360" cy="152" r="4" fill="#BAE6FD"/>
+  <circle cx="152" cy="360" r="4" fill="#BAE6FD"/>
+</svg>

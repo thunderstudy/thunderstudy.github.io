@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
+  <defs>
+    <linearGradient id="bg192" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F0F9FF"/>
+      <stop offset="100%" stop-color="#D6F0FF"/>
+    </linearGradient>
+    <linearGradient id="blue192" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+    <linearGradient id="gold192" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFF5B8"/>
+      <stop offset="45%" stop-color="#FFD54A"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+    <radialGradient id="glow192" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7DD3FC" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#7DD3FC" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="sh192">
+      <feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#2563EB" flood-opacity="0.2"/>
+    </filter>
+    <filter id="bg192glow">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <!-- Background -->
+  <rect width="192" height="192" rx="44" fill="url(#bg192)"/>
+  <circle cx="96" cy="96" r="66" fill="url(#glow192)"/>
+  <!-- Card -->
+  <rect x="30" y="30" width="132" height="132" rx="32" fill="#FFFFFF" fill-opacity="0.92" filter="url(#sh192)"/>
+  <rect x="30" y="30" width="132" height="132" rx="32" fill="none" stroke="#D7EEFF" stroke-width="1.5"/>
+  <!-- Corner accents -->
+  <path d="M46 62 A34 34 0 0 1 80 46" fill="none" stroke="url(#blue192)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M146 130 A34 34 0 0 1 112 146" fill="none" stroke="url(#blue192)" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+  <!-- Orbit ring -->
+  <circle cx="96" cy="96" r="42" fill="none" stroke="#C8EBFF" stroke-width="1.5" stroke-dasharray="4 6"/>
+  <!-- Core -->
+  <circle cx="96" cy="96" r="34" fill="#FFFFFF" filter="url(#sh192)"/>
+  <circle cx="96" cy="96" r="28" fill="none" stroke="#BAE6FD" stroke-width="1.5"/>
+  <!-- Bolt -->
+  <path d="M104 39 L69 100 H91 L81 152 L121 88 H99 L104 39Z"
+    fill="url(#gold192)" stroke="#FFF4B5" stroke-width="1.5" stroke-linejoin="round" filter="url(#bg192glow)"/>
+  <path d="M101 50 L79 97 H94 L88 126 L111 82 H97 L101 50Z"
+    fill="#FFFFFF" opacity="0.33"/>
+  <!-- Dots -->
+  <circle cx="57" cy="57" r="3.5" fill="#38BDF8"/>
+  <circle cx="135" cy="135" r="3.5" fill="#38BDF8"/>
+  <circle cx="135" cy="57" r="2.5" fill="#BAE6FD"/>
+  <circle cx="57" cy="135" r="2.5" fill="#BAE6FD"/>
+</svg>
