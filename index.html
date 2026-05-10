@@ -17,6 +17,13 @@
 <meta name="theme-color" content="#0077f5">
 <link rel="canonical" href="https://thunderstudy.github.io/">
 
+<!-- ===== FAVICON & PWA ===== -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+
 <!-- ===== GEO META ===== -->
 <meta name="geo.region" content="IN">
 <meta name="geo.placename" content="India">
@@ -2157,7 +2164,29 @@
     document.getElementById('search-results').classList.remove('active');
   }
 
-  // SEO/AEO: Add title attributes to all external links missing them
+  // ── Service Worker registration (PWA) ──────────────────────
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('/sw.js')
+        .then(function(reg) {
+          console.log('[ThunderStudy] SW registered, scope:', reg.scope);
+          // Prompt user to update if new SW waiting
+          reg.addEventListener('updatefound', function() {
+            var newWorker = reg.installing;
+            newWorker.addEventListener('statechange', function() {
+              if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                // New content available — you can show a toast here
+                console.log('[ThunderStudy] New version available. Refresh to update.');
+              }
+            });
+          });
+        })
+        .catch(function(err) {
+          console.warn('[ThunderStudy] SW registration failed:', err);
+        });
+    });
+  }
+
   document.querySelectorAll('a[target="_blank"]').forEach(function(a) {
     if (!a.title) {
       var text = a.textContent.trim() || a.getAttribute('aria-label') || '';
