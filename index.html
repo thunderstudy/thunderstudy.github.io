@@ -831,6 +831,141 @@
     margin: 0;
   }
 
+  /* ========== EXAM THEME IMAGE CARDS ========== */
+  .exam-theme-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+  .exam-theme-card {
+    border-radius: 18px;
+    overflow: hidden;
+    text-decoration: none;
+    color: white;
+    position: relative;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 18px 16px 14px;
+    transition: transform 0.25s cubic-bezier(.22,.68,0,1.2), box-shadow 0.25s;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.13);
+  }
+  .exam-theme-card:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 16px 40px rgba(0,0,0,0.2); }
+  .exam-theme-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(160deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.55) 100%);
+    z-index: 1;
+  }
+  .exam-theme-card .etc-emoji {
+    position: absolute;
+    top: 14px; right: 14px;
+    font-size: 2rem;
+    z-index: 2;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+  }
+  .exam-theme-card .etc-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 800;
+    line-height: 1.2;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+  }
+  .exam-theme-card .etc-sub {
+    font-size: 0.72rem;
+    opacity: 0.85;
+    font-weight: 500;
+    margin-top: 3px;
+    position: relative;
+    z-index: 2;
+  }
+  .etc-cbse { background: linear-gradient(135deg, #1565c0, #42a5f5); }
+  .etc-jee { background: linear-gradient(135deg, #1b5e20, #43a047); }
+  .etc-neet { background: linear-gradient(135deg, #00695c, #26a69a); }
+  .etc-cuet { background: linear-gradient(135deg, #4a1d96, #7c3aed); }
+  .etc-cat { background: linear-gradient(135deg, #b71c1c, #e53935); }
+  .etc-ssc { background: linear-gradient(135deg, #e65100, #ff7043); }
+  .etc-bank { background: linear-gradient(135deg, #004d40, #00897b); }
+  .etc-nda { background: linear-gradient(135deg, #1a237e, #3949ab); }
+  .etc-clat { background: linear-gradient(135deg, #880e4f, #e91e63); }
+  .etc-ca { background: linear-gradient(135deg, #f57f17, #fbc02d); }
+  .etc-ncert { background: linear-gradient(135deg, #37474f, #78909c); }
+  .etc-diploma { background: linear-gradient(135deg, #4e342e, #8d6e63); }
+  .etc-tet { background: linear-gradient(135deg, #006064, #00acc1); }
+
+  /* ========== SUB-TOPIC GRID (3-per-row cards) ========== */
+  .subtopic-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+  .subtopic-pill {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 11px 14px;
+    border-radius: 12px;
+    border: 1px solid var(--gray-200);
+    background: var(--white);
+    color: var(--gray-700);
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.18s, border-color 0.18s, transform 0.2s cubic-bezier(.22,.68,0,1.2), color 0.18s, box-shadow 0.18s;
+    min-width: 0;
+    line-height: 1.3;
+  }
+  .subtopic-pill svg { flex-shrink: 0; opacity: 0.7; transition: opacity 0.18s; }
+  .subtopic-pill span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .subtopic-pill:hover { background: var(--blue-100); border-color: var(--blue-300); color: var(--blue-500); transform: translateY(-2px); box-shadow: 0 4px 14px rgba(0,119,245,0.12); }
+  .subtopic-pill:hover svg { opacity: 1; }
+  .subtopic-pill.purple:hover { background: var(--purple-100); border-color: var(--purple-300); color: var(--purple-500); box-shadow: 0 4px 14px rgba(109,40,217,0.1); }
+  .subtopic-pill.green:hover { background: #e8f5e9; border-color: #81c784; color: #2e7d32; box-shadow: 0 4px 14px rgba(46,125,50,0.1); }
+  .subtopic-pill.teal:hover { background: #e0f7fa; border-color: #4db6ac; color: #00695c; box-shadow: 0 4px 14px rgba(0,105,92,0.1); }
+  .subtopic-pill.amber:hover { background: #fff8e1; border-color: #ffd54f; color: #e65100; box-shadow: 0 4px 14px rgba(245,127,23,0.1); }
+  .subtopic-pill.rose:hover { background: #fce4ec; border-color: #f48fb1; color: #c62828; box-shadow: 0 4px 14px rgba(198,40,40,0.1); }
+
+  /* ========== EXAM SECTION BAND (clickable header) ========== */
+  .exam-band {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 18px;
+    border-radius: 13px;
+    margin-bottom: 12px;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.05rem;
+    text-decoration: none;
+    transition: filter 0.18s, transform 0.18s;
+    cursor: pointer;
+  }
+  .exam-band:hover { filter: brightness(0.95); transform: translateX(2px); }
+  .exam-band .exam-band-arrow {
+    margin-left: auto;
+    width: 18px; height: 18px;
+    opacity: 0.6;
+    flex-shrink: 0;
+    transition: opacity 0.18s, transform 0.18s;
+  }
+  .exam-band:hover .exam-band-arrow { opacity: 1; transform: translateX(3px); }
+  .exam-band svg:first-child { width: 20px; height: 20px; flex-shrink: 0; }
+  .exam-band.jee { background: linear-gradient(90deg, #e8f5e9, #c8e6c9); color: #1b5e20; }
+  .exam-band.neet { background: linear-gradient(90deg, #e0f7fa, #b2ebf2); color: #006064; }
+  .exam-band.cat { background: linear-gradient(90deg, #fce4ec, #f8bbd0); color: #880e4f; }
+  .exam-band.nda { background: linear-gradient(90deg, #e8eaf6, #c5cae9); color: #1a237e; }
+  .exam-band.clat { background: linear-gradient(90deg, #fce4ec, #f48fb1); color: #880e4f; }
+  .exam-band.ca { background: linear-gradient(90deg, #fff8e1, #ffecb3); color: #f57f17; }
+  .exam-band.ncert { background: linear-gradient(90deg, #eceff1, #cfd8dc); color: #37474f; }
+  .exam-band.diploma { background: linear-gradient(90deg, #efebe9, #d7ccc8); color: #4e342e; }
+  .exam-band.tet { background: linear-gradient(90deg, #e0f7fa, #b2ebf2); color: #006064; }
+
   /* ========== TELEGRAM STRIP ========== */
   .tg-strip {
     background: linear-gradient(90deg, #0088cc, #0055aa);
@@ -1068,15 +1203,34 @@
   @media (max-width: 640px) {
     nav { display: none; }
     .header-made-by { display: none; }
-    .hero { padding: 52px 20px 48px; }
-    .hero h1 { font-size: 1.8rem; }
+    .header-badge { display: none; }
+    .logo-text { font-size: 1.05rem; }
+    .logo-icon { width: 28px; height: 28px; }
+    .hero { padding: 44px 16px 38px; }
+    .hero h1 { font-size: 1.65rem; }
+    .hero p { font-size: 0.9rem; margin-bottom: 24px; }
+    .quick-answer { display: none; }
     .grid-3, .grid-2 { grid-template-columns: 1fr; }
     .grid-4 { grid-template-columns: repeat(2, 1fr); }
-    section { padding: 44px 18px; }
-    .hero-stats { gap: 20px; }
+    section { padding: 36px 16px; }
+    .section-title { font-size: 1.45rem; }
+    .hero-stats { gap: 16px; }
+    .stat-num { font-size: 1.5rem; }
     #mob-nav { display: block; }
     #back-top { bottom: 72px; }
     body { padding-bottom: 60px; }
+    .exam-theme-grid { grid-template-columns: repeat(2, 1fr); }
+    .subtopic-row { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .subtopic-pill { font-size: 0.75rem; padding: 9px 10px; }
+    .social-row { gap: 8px; }
+    .social-btn { padding: 8px 12px; font-size: 0.78rem; }
+    .contact-grid { grid-template-columns: repeat(2, 1fr); }
+    .stream-band { font-size: 0.9rem; padding: 11px 14px; }
+    .tg-strip { font-size: 0.75rem; padding: 7px 12px; gap: 6px; }
+    .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  }
+  @media (min-width: 641px) and (max-width: 900px) {
+    .subtopic-row { grid-template-columns: repeat(2, 1fr); }
   }
 </style>
 </head>
@@ -1134,6 +1288,7 @@
     <nav aria-label="Main navigation">
       <a href="#streams">Streams</a>
       <a href="#exams">Exams</a>
+      <a href="#more-exams">JEE/NEET/CAT</a>
       <a href="#resources">Resources</a>
       <a href="#faq">FAQ</a>
     </nav>
@@ -1258,6 +1413,17 @@
     <div class="stream-band commerce">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2"/></svg>
       Class 12 — Commerce Stream
+    </div>
+    <div style="margin-bottom:12px" class="subtopic-row">
+      <a href="https://commercesehoga.github.io/commerce/topper-notes" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="none" style="flex-shrink:0"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span>Topper Notes</span></a>
+      <a href="https://commercesehoga.github.io/commerce/formula" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg><span>Formula</span></a>
+      <a href="https://commercesehoga.github.io/commerce/kv-sample-paper" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>KV Sample Paper</span></a>
+      <a href="https://commercesehoga.github.io/commerce/topper-answersheet" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Topper Answersheet</span></a>
+      <a href="https://commercesehoga.github.io/commerce/sample-paper" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg><span>Sample Paper</span></a>
+      <a href="https://commercesehoga.github.io/commerce/pyqs" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>PYQs</span></a>
+      <a href="https://commercesehoga.github.io/commerce/imp-question" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span>Imp. Questions</span></a>
+      <a href="https://commercesehoga.github.io/commerce/question-bank" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg><span>Question Bank</span></a>
+      <a href="https://commercesehoga.github.io/commerce/concept-map" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg><span>Concept Map</span></a>
     </div>
     <div class="grid-4" style="margin-bottom:32px">
       <a class="subj-card" href="https://commercesehoga.github.io/commerce/acc" aria-label="Accountancy">
@@ -1520,9 +1686,16 @@
     </div>
 
     <!-- All Exams -->
-    <div style="background:linear-gradient(90deg,#dbeeff,#ede8ff);border-radius:14px;padding:12px 20px;margin-bottom:20px;display:flex;align-items:center;gap:12px;font-family:var(--font-display);font-weight:800;font-size:1rem;color:#1565c0;">
+    <div style="background:linear-gradient(90deg,#dbeeff,#ede8ff);border-radius:14px;padding:12px 20px;margin-bottom:12px;display:flex;align-items:center;gap:12px;font-family:var(--font-display);font-weight:800;font-size:1rem;color:#1565c0;">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg>
       All Exams
+    </div>
+    <div class="faq-item" style="margin-bottom:20px;background:#f8fafc;">
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)" style="font-size:0.85rem;padding:13px 18px;">
+        💡 Which exams does ThunderStudy cover and what types of mocks are available?
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </button>
+      <div class="faq-a" role="region">ThunderStudy covers CUET (all domain subjects + GAT), SSC CGL/CHSL/MTS, Banking (IBPS PO, SBI PO, IBPS Clerk, SBI Clerk), JEE Main/Advanced, NEET UG, CAT, XAT, SNAP, NDA, CLAT, CA Foundation/Inter/Final, CTET, DCA, PGDCA and B.Ed. All mock tests are CBT-style with real exam interface, auto-scoring and detailed analysis. No login needed.</div>
     </div>
     <div class="grid-3" style="margin-bottom:32px">
 
@@ -1627,6 +1800,329 @@
 
 <div class="divider"></div>
 
+<!-- ===== NEW EXAM SECTIONS ===== -->
+<section id="more-exams" aria-labelledby="more-exams-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">All Exams & Resources</span>
+      <h2 class="section-title" id="more-exams-heading">More Exams & Study Material</h2>
+      <p class="section-desc">Comprehensive preparation material for JEE, NEET, CAT, NDA, CLAT, CA, NCERT, Diploma, TET and more — all free.</p>
+    </div>
+
+    <!-- Exam Theme Image Cards (visual navigation) -->
+    <div class="exam-theme-grid">
+      <a href="#cbse-resources" class="exam-theme-card etc-cbse">
+        <span class="etc-emoji">📚</span>
+        <div class="etc-title">CBSE</div>
+        <div class="etc-sub">Topper Notes · Formula · PYQs</div>
+      </a>
+      <a href="#jee-section" class="exam-theme-card etc-jee">
+        <span class="etc-emoji">⚗️</span>
+        <div class="etc-title">JEE</div>
+        <div class="etc-sub">Mains · Advanced · Mock Test</div>
+      </a>
+      <a href="#neet-section" class="exam-theme-card etc-neet">
+        <span class="etc-emoji">🧬</span>
+        <div class="etc-title">NEET</div>
+        <div class="etc-sub">Physics · Chemistry · Biology</div>
+      </a>
+      <a href="#cuet-full" class="exam-theme-card etc-cuet">
+        <span class="etc-emoji">🎓</span>
+        <div class="etc-title">CUET</div>
+        <div class="etc-sub">Mock Test · PYQs · All Subjects</div>
+      </a>
+      <a href="#cat-section" class="exam-theme-card etc-cat">
+        <span class="etc-emoji">💼</span>
+        <div class="etc-title">CAT / MBA</div>
+        <div class="etc-sub">CAT · XAT · SNAP · NMAT</div>
+      </a>
+      <a href="#ssc-bank" class="exam-theme-card etc-ssc">
+        <span class="etc-emoji">📋</span>
+        <div class="etc-title">SSC</div>
+        <div class="etc-sub">CGL · CHSL · MTS</div>
+      </a>
+      <a href="#nda-section" class="exam-theme-card etc-nda">
+        <span class="etc-emoji">🎖️</span>
+        <div class="etc-title">NDA</div>
+        <div class="etc-sub">Notes · Mock Test · PYQs</div>
+      </a>
+      <a href="#clat-section" class="exam-theme-card etc-clat">
+        <span class="etc-emoji">⚖️</span>
+        <div class="etc-title">CLAT</div>
+        <div class="etc-sub">Legal · AILET · Mock Test</div>
+      </a>
+      <a href="#ca-section" class="exam-theme-card etc-ca">
+        <span class="etc-emoji">🧾</span>
+        <div class="etc-title">CA</div>
+        <div class="etc-sub">Foundation · Inter · Final</div>
+      </a>
+      <a href="#ncert-section" class="exam-theme-card etc-ncert">
+        <span class="etc-emoji">📖</span>
+        <div class="etc-title">NCERT</div>
+        <div class="etc-sub">Books · Solutions · Exemplar</div>
+      </a>
+      <a href="#diploma-section" class="exam-theme-card etc-diploma">
+        <span class="etc-emoji">🎓</span>
+        <div class="etc-title">Diploma</div>
+        <div class="etc-sub">DCA · PGDCA · D.Ed · B.Ed</div>
+      </a>
+      <a href="#tet-section" class="exam-theme-card etc-tet">
+        <span class="etc-emoji">🏫</span>
+        <div class="etc-title">TET / CTET</div>
+        <div class="etc-sub">All TET Exams</div>
+      </a>
+    </div>
+
+    <!-- ===== CBSE RESOURCES ===== -->
+    <a id="cbse-resources" class="exam-band" style="background:linear-gradient(90deg,#dbeeff,#e0f0ff);color:#1565c0;" href="https://thunderstudy.github.io/cbse/" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      CBSE — Exam Resources (All Subjects)
+      <svg class="exam-band-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <p style="font-size:0.85rem;color:var(--gray-600);margin-bottom:14px;">Topper notes, formula sheets, KV sample papers, topper answer sheets, PYQs, important questions, question bank, CBSE textbook, concept maps and special questions (design-based, A&R, case-based) for all subjects.</p>
+    <div class="subtopic-row">
+      <a href="https://thunderstudy.github.io/cbse/topper-notes" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="none" style="flex-shrink:0"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span>Topper Notes</span></a>
+      <a href="https://thunderstudy.github.io/cbse/formula" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg><span>Formula</span></a>
+      <a href="https://thunderstudy.github.io/cbse/kv-sample-paper" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>KV Sample Paper</span></a>
+      <a href="https://thunderstudy.github.io/cbse/topper-answersheet" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Topper Answersheet</span></a>
+      <a href="https://thunderstudy.github.io/cbse/sample-paper" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg><span>Sample Paper</span></a>
+      <a href="https://thunderstudy.github.io/cbse/pyqs" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>PYQs</span></a>
+      <a href="https://thunderstudy.github.io/cbse/imp-question" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span>Imp. Questions</span></a>
+      <a href="https://thunderstudy.github.io/cbse/question-bank" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg><span>Question Bank</span></a>
+      <a href="https://thunderstudy.github.io/cbse/textbook" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span>CBSE Textbook</span></a>
+      <a href="https://thunderstudy.github.io/cbse/concept-map" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg><span>Concept Map</span></a>
+      <a href="https://thunderstudy.github.io/cbse/design-based" class="subtopic-pill amber" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><circle cx="13.5" cy="6.5" r="1"/><circle cx="17.5" cy="10.5" r="1"/><circle cx="8.5" cy="7.5" r="1"/><circle cx="6.5" cy="12.5" r="1"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg><span>Design Based Q</span></a>
+      <a href="https://thunderstudy.github.io/cbse/assertion-reason" class="subtopic-pill amber" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span>A&R Questions</span></a>
+      <a href="https://thunderstudy.github.io/cbse/case-based" class="subtopic-pill amber" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg><span>Case Based Q</span></a>
+    </div>
+
+    <!-- ===== JEE ===== -->
+    <a id="jee-section" class="exam-band jee" href="https://thunderstudy.github.io/jee/" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3v11a6 6 0 0 0 6 0V3"/><line x1="6" y1="3" x2="18" y2="3"/></svg>
+      JEE — Engineering Entrance
+      <svg class="exam-band-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <div class="subtopic-row">
+      <a href="https://thunderstudy.github.io/jee/physics" class="subtopic-pill green" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><span>Physics</span></a>
+      <a href="https://thunderstudy.github.io/jee/chemistry" class="subtopic-pill green" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M9 3v11a6 6 0 0 0 6 0V3"/><line x1="6" y1="3" x2="18" y2="3"/></svg><span>Chemistry</span></a>
+      <a href="https://thunderstudy.github.io/jee/maths" class="subtopic-pill green" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg><span>Maths</span></a>
+      <a href="https://thunderstudy.github.io/jee/pyqs" class="subtopic-pill green" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>PYQs</span></a>
+      <a href="https://thunderstudy.github.io/jee/mock-test" class="subtopic-pill green" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M9 3v11a6 6 0 0 0 6 0V3"/><line x1="6" y1="3" x2="18" y2="3"/></svg><span>Mock Test</span></a>
+      <a href="https://thunderstudy.github.io/jee/sample-paper" class="subtopic-pill green" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg><span>Sample Paper</span></a>
+      <a href="https://thunderstudy.github.io/jee/topper-notes" class="subtopic-pill green" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="none" style="flex-shrink:0"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span>Topper Notes</span></a>
+      <a href="https://thunderstudy.github.io/jee/formula" class="subtopic-pill green" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg><span>Formula</span></a>
+      <a href="https://thunderstudy.github.io/jee/imp-question" class="subtopic-pill green" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span>Imp. Questions</span></a>
+      <a href="https://thunderstudy.github.io/jee/mindmap" class="subtopic-pill green" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="2" x2="9" y2="4"/><line x1="15" y1="2" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="22"/><line x1="15" y1="20" x2="15" y2="22"/><line x1="20" y1="9" x2="22" y2="9"/><line x1="20" y1="14" x2="22" y2="14"/><line x1="2" y1="9" x2="4" y2="9"/><line x1="2" y1="14" x2="4" y2="14"/></svg><span>Mind Map</span></a>
+      <a href="https://thunderstudy.github.io/jee/integer-numerical" class="subtopic-pill green" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg><span>Integer / Numerical Type</span></a>
+      <a href="https://thunderstudy.github.io/jee/flashcard" class="subtopic-pill green" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg><span>Flashcard</span></a>
+    </div>
+
+    <!-- ===== NEET ===== -->
+    <a id="neet-section" class="exam-band neet" href="https://thunderstudy.github.io/neet/" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      NEET — Medical Entrance
+      <svg class="exam-band-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <div class="subtopic-row">
+      <a href="https://thunderstudy.github.io/neet/physics" class="subtopic-pill teal" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><span>Physics</span></a>
+      <a href="https://thunderstudy.github.io/neet/chemistry" class="subtopic-pill teal" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M9 3v11a6 6 0 0 0 6 0V3"/><line x1="6" y1="3" x2="18" y2="3"/></svg><span>Chemistry</span></a>
+      <a href="https://thunderstudy.github.io/neet/biology" class="subtopic-pill teal" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>Biology</span></a>
+      <a href="https://thunderstudy.github.io/neet/ncert-book" class="subtopic-pill teal" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span>NCERT Book</span></a>
+      <a href="https://thunderstudy.github.io/neet/pyqs" class="subtopic-pill teal" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>PYQs</span></a>
+      <a href="https://thunderstudy.github.io/neet/mock-test" class="subtopic-pill teal" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M9 3v11a6 6 0 0 0 6 0V3"/><line x1="6" y1="3" x2="18" y2="3"/></svg><span>Mock Test</span></a>
+      <a href="https://thunderstudy.github.io/neet/ncert-short-notes" class="subtopic-pill teal" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg><span>NCERT Short Notes</span></a>
+      <a href="https://thunderstudy.github.io/neet/most-repeated" class="subtopic-pill teal" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg><span>Most Repeated Q</span></a>
+      <a href="https://thunderstudy.github.io/neet/imp-question" class="subtopic-pill teal" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span>Imp. Questions</span></a>
+      <a href="https://thunderstudy.github.io/neet/formula" class="subtopic-pill teal" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg><span>Formula</span></a>
+      <a href="https://thunderstudy.github.io/neet/topper-notes" class="subtopic-pill teal" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="none" style="flex-shrink:0"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span>Topper Notes</span></a>
+      <a href="https://thunderstudy.github.io/neet/matching-based" class="subtopic-pill teal" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><span>Matching Based Q</span></a>
+      <a href="https://thunderstudy.github.io/neet/flashcard" class="subtopic-pill teal" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg><span>Flashcard</span></a>
+      <a href="https://thunderstudy.github.io/neet/diagram-based" class="subtopic-pill teal" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg><span>Diagram Based Q</span></a>
+    </div>
+
+    <!-- ===== CUET FULL ===== -->
+    <a id="cuet-full" class="exam-band" style="background:linear-gradient(90deg,#f3e8ff,#ede8ff);color:#5b21b6;" href="https://commercesehoga.github.io/cuet" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+      CUET — All Subjects & Resources
+      <svg class="exam-band-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <div class="subtopic-row">
+      <a href="https://thunderstudy.github.io/cuet/mock-test" class="subtopic-pill purple" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M9 3v11a6 6 0 0 0 6 0V3"/><line x1="6" y1="3" x2="18" y2="3"/></svg><span>Mock Test</span></a>
+      <a href="https://thunderstudy.github.io/cuet/pyqs" class="subtopic-pill purple" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>PYQs</span></a>
+      <a href="https://thunderstudy.github.io/cuet/mindmap" class="subtopic-pill purple" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="2" x2="9" y2="4"/><line x1="15" y1="2" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="22"/><line x1="15" y1="20" x2="15" y2="22"/><line x1="20" y1="9" x2="22" y2="9"/><line x1="20" y1="14" x2="22" y2="14"/><line x1="2" y1="9" x2="4" y2="9"/><line x1="2" y1="14" x2="4" y2="14"/></svg><span>Mind Map</span></a>
+      <a href="https://thunderstudy.github.io/cuet/gat" class="subtopic-pill purple" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg><span>GAT</span></a>
+      <a href="https://commercesehoga.github.io/english" class="subtopic-pill purple" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg><span>English</span></a>
+      <a href="https://thunderstudy.github.io/cuet/hindi" class="subtopic-pill purple" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg><span>Hindi</span></a>
+      <a href="https://commercesehoga.github.io/boards/maths" class="subtopic-pill purple" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg><span>Maths</span></a>
+      <a href="https://commercesehoga.github.io/science/phy" class="subtopic-pill purple" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><span>Physics</span></a>
+      <a href="https://commercesehoga.github.io/science/che" class="subtopic-pill purple" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M9 3v11a6 6 0 0 0 6 0V3"/><line x1="6" y1="3" x2="18" y2="3"/></svg><span>Chemistry</span></a>
+      <a href="https://commercesehoga.github.io/science/bio" class="subtopic-pill purple" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>Biology</span></a>
+      <a href="https://commercesehoga.github.io/commerce/acc" class="subtopic-pill purple" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span>Accountancy</span></a>
+      <a href="https://commercesehoga.github.io/commerce/bst" class="subtopic-pill purple" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg><span>Business Studies</span></a>
+      <a href="https://commercesehoga.github.io/commerce/eco" class="subtopic-pill purple" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg><span>Economics</span></a>
+      <a href="https://commercesehoga.github.io/humanities/his" class="subtopic-pill purple" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span>History</span></a>
+      <a href="https://commercesehoga.github.io/humanities/geo" class="subtopic-pill purple" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span>Geography</span></a>
+      <a href="https://commercesehoga.github.io/humanities/pol" class="subtopic-pill purple" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><line x1="12" y1="3" x2="12" y2="21"/><path d="M3 6l9 6 9-6"/><path d="M6 21h12"/></svg><span>Political Science</span></a>
+      <a href="https://thunderstudy.github.io/cuet/fine-arts" class="subtopic-pill purple" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><circle cx="13.5" cy="6.5" r="1"/><circle cx="17.5" cy="10.5" r="1"/><circle cx="8.5" cy="7.5" r="1"/><circle cx="6.5" cy="12.5" r="1"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg><span>Fine Arts</span></a>
+      <a href="https://thunderstudy.github.io/cuet/sociology" class="subtopic-pill purple" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Sociology</span></a>
+      <a href="https://thunderstudy.github.io/cuet/legal-studies" class="subtopic-pill purple" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><line x1="12" y1="3" x2="12" y2="21"/><path d="M3 6l9 6 9-6"/><path d="M6 21h12"/></svg><span>Legal Studies</span></a>
+      <a href="https://commercesehoga.github.io/humanities/psy" class="subtopic-pill purple" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="2" x2="9" y2="4"/><line x1="15" y1="2" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="22"/><line x1="15" y1="20" x2="15" y2="22"/><line x1="20" y1="9" x2="22" y2="9"/><line x1="20" y1="14" x2="22" y2="14"/><line x1="2" y1="9" x2="4" y2="9"/><line x1="2" y1="14" x2="4" y2="14"/></svg><span>Psychology</span></a>
+      <a href="https://commercesehoga.github.io/physical" class="subtopic-pill purple" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><circle cx="12" cy="5" r="2"/><path d="M12 7v4l-3 4M12 11l3 3M9 21l3-4"/><path d="M17 17l-2-6"/></svg><span>Physical Education</span></a>
+    </div>
+
+    <!-- ===== CAT / MBA ===== -->
+    <a id="cat-section" class="exam-band cat" href="https://thunderstudy.github.io/cat/" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2"/></svg>
+      CAT / MBA Entrance Exams
+      <svg class="exam-band-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <div class="subtopic-row">
+      <a href="https://thunderstudy.github.io/cat/quantitative-aptitude" class="subtopic-pill rose" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg><span>Quantitative Aptitude</span></a>
+      <a href="https://thunderstudy.github.io/cat/mindmap" class="subtopic-pill rose" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="2" x2="9" y2="4"/><line x1="15" y1="2" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="22"/><line x1="15" y1="20" x2="15" y2="22"/><line x1="20" y1="9" x2="22" y2="9"/><line x1="20" y1="14" x2="22" y2="14"/><line x1="2" y1="9" x2="4" y2="9"/><line x1="2" y1="14" x2="4" y2="14"/></svg><span>CAT Mind Map</span></a>
+      <a href="https://thunderstudy.github.io/cat/lrdi" class="subtopic-pill rose" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg><span>LR & DI</span></a>
+      <a href="https://thunderstudy.github.io/cat/pyqs" class="subtopic-pill rose" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>CAT PYQs</span></a>
+      <a href="https://thunderstudy.github.io/cat/mock-test" class="subtopic-pill rose" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M9 3v11a6 6 0 0 0 6 0V3"/><line x1="6" y1="3" x2="18" y2="3"/></svg><span>CAT Mock Test</span></a>
+      <a href="https://thunderstudy.github.io/cat/imp-question" class="subtopic-pill rose" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span>CAT Imp. Questions</span></a>
+      <a href="https://thunderstudy.github.io/cat/sample-paper" class="subtopic-pill rose" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg><span>CAT Sample Paper</span></a>
+      <a href="https://thunderstudy.github.io/cat/vocabulary" class="subtopic-pill rose" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>CAT Vocabulary</span></a>
+      <a href="https://thunderstudy.github.io/cat/english-grammar" class="subtopic-pill rose" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg><span>English Grammar</span></a>
+      <a href="https://thunderstudy.github.io/cat/gk" class="subtopic-pill rose" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span>MBA General Knowledge</span></a>
+      <a href="https://thunderstudy.github.io/cat/topper-notes" class="subtopic-pill rose" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="none" style="flex-shrink:0"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span>Topper Notes</span></a>
+      <a href="https://thunderstudy.github.io/cat/formula" class="subtopic-pill rose" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg><span>Formula</span></a>
+      <a href="https://thunderstudy.github.io/cat/xat-mock" class="subtopic-pill rose" target="_blank"><span>XAT Mock Test</span></a>
+      <a href="https://thunderstudy.github.io/cat/xat-pyqs" class="subtopic-pill rose" target="_blank"><span>XAT PYQs</span></a>
+      <a href="https://thunderstudy.github.io/cat/snap-mock" class="subtopic-pill rose" target="_blank"><span>SNAP Mock Test</span></a>
+      <a href="https://thunderstudy.github.io/cat/snap-pyqs" class="subtopic-pill rose" target="_blank"><span>SNAP PYQs</span></a>
+      <a href="https://thunderstudy.github.io/cat/iift-mock" class="subtopic-pill rose" target="_blank"><span>IIFT Mock Test</span></a>
+      <a href="https://thunderstudy.github.io/cat/iift-pyqs" class="subtopic-pill rose" target="_blank"><span>IIFT PYQs</span></a>
+      <a href="https://thunderstudy.github.io/cat/mat-mock" class="subtopic-pill rose" target="_blank"><span>MAT Mock Test</span></a>
+      <a href="https://thunderstudy.github.io/cat/mat-pyqs" class="subtopic-pill rose" target="_blank"><span>MAT PYQs</span></a>
+      <a href="https://thunderstudy.github.io/cat/cmat-pyqs" class="subtopic-pill rose" target="_blank"><span>CMAT PYQs</span></a>
+      <a href="https://thunderstudy.github.io/cat/srcc-gbo-mock" class="subtopic-pill rose" target="_blank"><span>SRCC GBO Mock</span></a>
+      <a href="https://thunderstudy.github.io/cat/srcc-gbo-pyqs" class="subtopic-pill rose" target="_blank"><span>SRCC GBO PYQs</span></a>
+      <a href="https://thunderstudy.github.io/cat/cuet-pg-mock" class="subtopic-pill rose" target="_blank"><span>CUET PG Mock Test</span></a>
+      <a href="https://thunderstudy.github.io/cat/cuet-pg-pyqs" class="subtopic-pill rose" target="_blank"><span>CUET PG PYQs</span></a>
+      <a href="https://thunderstudy.github.io/cat/mah-cet-mock" class="subtopic-pill rose" target="_blank"><span>MAH CET Mock</span></a>
+      <a href="https://thunderstudy.github.io/cat/mah-cet-pyqs" class="subtopic-pill rose" target="_blank"><span>MAH CET PYQs</span></a>
+      <a href="https://thunderstudy.github.io/ipmat/mock-test" class="subtopic-pill rose" target="_blank"><span>IPMAT Mock Test</span></a>
+      <a href="https://thunderstudy.github.io/ipmat/pyqs" class="subtopic-pill rose" target="_blank"><span>IPMAT PYQs</span></a>
+      <a href="https://thunderstudy.github.io/ipmat/topper-notes" class="subtopic-pill rose" target="_blank"><span>IPMAT Topper Notes</span></a>
+      <a href="https://thunderstudy.github.io/ipmat/formula" class="subtopic-pill rose" target="_blank"><span>IPMAT Formula</span></a>
+      <a href="https://thunderstudy.github.io/cat/tancet-mock" class="subtopic-pill rose" target="_blank"><span>TANCET Mock</span></a>
+      <a href="https://thunderstudy.github.io/cat/tancet-pyqs" class="subtopic-pill rose" target="_blank"><span>TANCET PYQs</span></a>
+      <a href="https://thunderstudy.github.io/cat/atma-mock" class="subtopic-pill rose" target="_blank"><span>ATMA Mock</span></a>
+      <a href="https://thunderstudy.github.io/cat/atma-pyqs" class="subtopic-pill rose" target="_blank"><span>ATMA PYQs</span></a>
+      <a href="https://thunderstudy.github.io/cat/karnataka-pgcet-mock" class="subtopic-pill rose" target="_blank"><span>Karnataka PGCET Mock</span></a>
+      <a href="https://thunderstudy.github.io/cat/karnataka-pgcet-pyqs" class="subtopic-pill rose" target="_blank"><span>Karnataka PGCET PYQs</span></a>
+      <a href="https://thunderstudy.github.io/cat/nmat-mock" class="subtopic-pill rose" target="_blank"><span>NMAT Mock</span></a>
+      <a href="https://thunderstudy.github.io/cat/ibsat-mock" class="subtopic-pill rose" target="_blank"><span>IBSAT Mock</span></a>
+      <a href="https://thunderstudy.github.io/cat/ts-icet-mock" class="subtopic-pill rose" target="_blank"><span>TS ICET Mock</span></a>
+      <a href="https://thunderstudy.github.io/cat/ts-icet-pyqs" class="subtopic-pill rose" target="_blank"><span>TS ICET PYQs</span></a>
+      <a href="https://thunderstudy.github.io/cat/ap-icet-mock" class="subtopic-pill rose" target="_blank"><span>AP ICET Mock</span></a>
+      <a href="https://thunderstudy.github.io/cat/ap-icet-pyqs" class="subtopic-pill rose" target="_blank"><span>AP ICET PYQs</span></a>
+    </div>
+
+    <!-- ===== NDA ===== -->
+    <a id="nda-section" class="exam-band nda" href="https://thunderstudy.github.io/nda/" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      NDA — National Defence Academy
+      <svg class="exam-band-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <div class="subtopic-row">
+      <a href="https://thunderstudy.github.io/nda/notes" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>Notes</span></a>
+      <a href="https://thunderstudy.github.io/nda/mock-test" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M9 3v11a6 6 0 0 0 6 0V3"/><line x1="6" y1="3" x2="18" y2="3"/></svg><span>Mock Test</span></a>
+      <a href="https://thunderstudy.github.io/nda/pyqs" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>PYQs</span></a>
+      <a href="https://thunderstudy.github.io/nda/chapterwise-mcqs" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg><span>Chapter-wise MCQs</span></a>
+      <a href="https://thunderstudy.github.io/nda/imp-question" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span>Imp. Questions</span></a>
+      <a href="https://thunderstudy.github.io/nda/sample-paper" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg><span>Sample Paper</span></a>
+      <a href="https://thunderstudy.github.io/nda/topper-notes" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="none" style="flex-shrink:0"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span>Topper Notes</span></a>
+      <a href="https://thunderstudy.github.io/nda/formula" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg><span>Formula</span></a>
+    </div>
+
+    <!-- ===== CLAT ===== -->
+    <a id="clat-section" class="exam-band clat" href="https://thunderstudy.github.io/clat/" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg>
+      CLAT / Law Entrance
+      <svg class="exam-band-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <div class="subtopic-row">
+      <a href="https://thunderstudy.github.io/clat/notes" class="subtopic-pill rose" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>Notes</span></a>
+      <a href="https://thunderstudy.github.io/clat/mock-test" class="subtopic-pill rose" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M9 3v11a6 6 0 0 0 6 0V3"/><line x1="6" y1="3" x2="18" y2="3"/></svg><span>Mock Test</span></a>
+      <a href="https://thunderstudy.github.io/clat/pyqs" class="subtopic-pill rose" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>PYQs</span></a>
+      <a href="https://thunderstudy.github.io/clat/chapterwise-practice" class="subtopic-pill rose" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg><span>Chapterwise Practice Test</span></a>
+      <a href="https://thunderstudy.github.io/clat/sample-paper" class="subtopic-pill rose" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg><span>Sample Paper</span></a>
+      <a href="https://thunderstudy.github.io/clat/ailet-mock" class="subtopic-pill rose" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span>AILET Mock Test</span></a>
+      <a href="https://thunderstudy.github.io/clat/ailet-pyqs" class="subtopic-pill rose" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span>AILET PYQs</span></a>
+      <a href="https://thunderstudy.github.io/clat/topper-notes" class="subtopic-pill rose" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="none" style="flex-shrink:0"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span>Topper Notes</span></a>
+      <a href="https://thunderstudy.github.io/clat/formula" class="subtopic-pill rose" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg><span>Formula</span></a>
+    </div>
+
+    <!-- ===== CA ===== -->
+    <a id="ca-section" class="exam-band ca" href="https://thunderstudy.github.io/ca/" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      CA — Chartered Accountancy
+      <svg class="exam-band-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <div class="subtopic-row">
+      <a href="https://thunderstudy.github.io/ca/foundation" class="subtopic-pill amber" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg><span>Foundation</span></a>
+      <a href="https://thunderstudy.github.io/ca/inter" class="subtopic-pill amber" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span>Inter / Intermediate</span></a>
+      <a href="https://thunderstudy.github.io/ca/final" class="subtopic-pill amber" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 22V18"/><path d="M14 22V18"/><path d="M12 18c-4 0-8-3-8-9V4h16v5c0 6-4 9-8 9z"/></svg><span>Final</span></a>
+      <a href="https://thunderstudy.github.io/ca/notes" class="subtopic-pill amber" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>Notes</span></a>
+      <a href="https://thunderstudy.github.io/ca/special" class="subtopic-pill amber" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="none" style="flex-shrink:0"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span>Special Resources</span></a>
+      <a href="https://thunderstudy.github.io/ca/topper-notes" class="subtopic-pill amber" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="none" style="flex-shrink:0"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span>Topper Notes</span></a>
+      <a href="https://thunderstudy.github.io/ca/formula" class="subtopic-pill amber" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg><span>Formula</span></a>
+    </div>
+
+    <!-- ===== NCERT ===== -->
+    <a id="ncert-section" class="exam-band ncert" href="https://thunderstudy.github.io/ncert/" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      NCERT — Books & Solutions (Class 9–12)
+      <svg class="exam-band-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <div class="subtopic-row">
+      <a href="https://thunderstudy.github.io/ncert/book/class-9" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span>Class 9 Books</span></a>
+      <a href="https://thunderstudy.github.io/ncert/book/class-10" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span>Class 10 Books</span></a>
+      <a href="https://thunderstudy.github.io/ncert/book/class-11" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span>Class 11 Books</span></a>
+      <a href="https://thunderstudy.github.io/ncert/book/class-12" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span>Class 12 Books</span></a>
+      <a href="https://thunderstudy.github.io/ncert/solutions" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>NCERT Solutions</span></a>
+      <a href="https://thunderstudy.github.io/ncert/notes" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg><span>NCERT Notes</span></a>
+      <a href="https://thunderstudy.github.io/ncert/exemplar-book" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg><span>Exemplar Book</span></a>
+      <a href="https://thunderstudy.github.io/ncert/exemplar-solutions" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Exemplar Solutions</span></a>
+    </div>
+
+    <!-- ===== DIPLOMA ===== -->
+    <a id="diploma-section" class="exam-band diploma" href="https://thunderstudy.github.io/diploma" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>
+      Diploma Courses
+      <svg class="exam-band-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <div class="subtopic-row">
+      <a href="https://thunderstudy.github.io/diploma/dca" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg><span>DCA</span></a>
+      <a href="https://thunderstudy.github.io/diploma/pgdca" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg><span>PGDCA</span></a>
+      <a href="https://thunderstudy.github.io/diploma/d-ed" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg><span>D.Ed</span></a>
+      <a href="https://thunderstudy.github.io/diploma/d-el-ed" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg><span>D.El.Ed</span></a>
+      <a href="https://thunderstudy.github.io/diploma/b-ed" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span>B.Ed</span></a>
+    </div>
+
+    <!-- ===== TET / CTET ===== -->
+    <a id="tet-section" class="exam-band tet" href="https://thunderstudy.github.io/tet/" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      TET / CTET — Teacher Eligibility
+      <svg class="exam-band-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <div class="subtopic-row">
+      <a href="https://thunderstudy.github.io/tet/ctet" class="subtopic-pill teal" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span>CTET</span></a>
+      <a href="https://thunderstudy.github.io/tet/all" class="subtopic-pill teal" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>All TET Exams</span></a>
+      <a href="https://thunderstudy.github.io/tet/notes" class="subtopic-pill teal" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg><span>Notes</span></a>
+      <a href="https://thunderstudy.github.io/tet/mock-test" class="subtopic-pill teal" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M9 3v11a6 6 0 0 0 6 0V3"/><line x1="6" y1="3" x2="18" y2="3"/></svg><span>Mock Test</span></a>
+      <a href="https://thunderstudy.github.io/tet/pyqs" class="subtopic-pill teal" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>PYQs</span></a>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
 <!-- RESOURCES -->
 <section class="section-alt" id="resources" aria-labelledby="resources-heading">
   <div class="container">
@@ -1635,39 +2131,9 @@
       <h2 class="section-title" id="resources-heading">More Resources</h2>
       <p class="section-desc">Blogs, current affairs, study guides and the full ThunderStudy platform.</p>
     </div>
-    <div class="grid-2">
+    <div class="grid-3">
 
-      <a class="card" href="https://commercesehoga.github.io/guide/" aria-label="Study Guide">
-        <div class="card-icon purple">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        </div>
-        <div class="card-title">Study Guide</div>
-        <div class="card-desc">Complete exam preparation guide — strategies, roadmaps and tips for CBSE, CUET, SSC and Banking examinations by ThunderStudy.</div>
-        <div class="card-tags"><span class="tag purple">Strategy</span><span class="tag purple">Roadmap</span><span class="tag purple">Tips</span></div>
-        <div class="card-arrow"><span>Open Study Guide</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-      </a>
-
-      <a class="card" href="https://commercesehoga.github.io/studyhub" aria-label="Study Hub">
-        <div class="card-icon purple">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-        </div>
-        <div class="card-title">Study Hub</div>
-        <div class="card-desc">Organized notes, PYQs, important questions and study material for all Class 12 subjects in one place.</div>
-        <div class="card-tags"><span class="tag purple">Notes</span><span class="tag purple">PYQs</span><span class="tag purple">IMP Q</span></div>
-        <div class="card-arrow"><span>Open Study Hub</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-      </a>
-
-      <a class="card" href="https://wondermayank.github.io/Current_Affairs/" aria-label="Current Affairs">
-        <div class="card-icon teal">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#00695c" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        </div>
-        <div class="card-title">Current Affairs</div>
-        <div class="card-desc">Regularly updated current affairs for SSC, Banking, CUET and other competitive examinations — by Wondermayank.</div>
-        <div class="card-tags"><span class="tag">Daily</span><span class="tag">Monthly</span><span class="tag">Yearly</span></div>
-        <div class="card-arrow"><span>Read Current Affairs</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-      </a>
-
-      <a class="card" href="https://commercesehoga.github.io/dashboard" aria-label="CBT Mock Test Center">
+      <a class="card" href="https://commercesehoga.github.io/dashboard" aria-label="CBT Mock Test Center" style="border-top:3px solid #0077f5;">
         <div class="card-icon blue">
           <svg viewBox="0 0 24 24" fill="none" stroke="#1e88e5" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
         </div>
@@ -1677,7 +2143,57 @@
         <div class="card-arrow"><span>Open Mock Test Center</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </a>
 
-      <a class="card" href="https://commercesehoga.blogspot.com" aria-label="Commerce Se Hoga Blog" target="_blank" rel="noopener">
+      <a class="card" href="https://wondermayank.github.io/" aria-label="Wondermayank" target="_blank" rel="noopener" style="border-top:3px solid #6d28d9;">
+        <div class="card-icon purple">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        </div>
+        <div class="card-title">Wondermayank</div>
+        <div class="card-desc">Creator's portfolio — projects, tools and resources by Wondermayank, the developer and designer behind ThunderStudy.</div>
+        <div class="card-tags"><span class="tag purple">Portfolio</span><span class="tag purple">Creator</span></div>
+        <div class="card-arrow"><span>Visit Portfolio</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+
+      <a class="card" href="https://wondermayank.github.io/Current_Affairs/" aria-label="Current Affairs" style="border-top:3px solid #00897b;">
+        <div class="card-icon teal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#00695c" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="card-title">Current Affairs</div>
+        <div class="card-desc">Regularly updated current affairs for SSC, Banking, CUET and other competitive examinations — by Wondermayank.</div>
+        <div class="card-tags"><span class="tag">Daily</span><span class="tag">Monthly</span><span class="tag">Yearly</span></div>
+        <div class="card-arrow"><span>Read Current Affairs</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+
+      <a class="card" href="https://commercesehoga.github.io/guide/" aria-label="Study Guide" style="border-top:3px solid #7c3aed;">
+        <div class="card-icon purple">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <div class="card-title">Study Guide</div>
+        <div class="card-desc">Complete exam preparation guide — strategies, roadmaps and tips for CBSE, CUET, SSC and Banking examinations by ThunderStudy.</div>
+        <div class="card-tags"><span class="tag purple">Strategy</span><span class="tag purple">Roadmap</span><span class="tag purple">Tips</span></div>
+        <div class="card-arrow"><span>Open Study Guide</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+
+      <a class="card" href="https://commercesehoga.github.io/studyhub" aria-label="Study Hub" style="border-top:3px solid #7c3aed;">
+        <div class="card-icon purple">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <div class="card-title">Study Hub</div>
+        <div class="card-desc">Organized notes, PYQs, important questions and study material for all Class 12 subjects in one place.</div>
+        <div class="card-tags"><span class="tag purple">Notes</span><span class="tag purple">PYQs</span><span class="tag purple">IMP Q</span></div>
+        <div class="card-arrow"><span>Open Study Hub</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+
+      <a class="card" href="https://commercesehoga.github.io/help" aria-label="Donation / Support" style="border-top:3px solid #ff6b35;">
+        <div class="card-icon" style="background:#fff0ea;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#ff6b35" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <div class="card-title">Support ThunderStudy</div>
+        <div class="card-desc">Love ThunderStudy? Help us keep it free for everyone — donation and support options from the Thunder Team.</div>
+        <div class="card-tags"><span class="tag amber">Donation</span><span class="tag amber">Support</span></div>
+        <div class="card-arrow"><span>Support / Donate</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+
+      <a class="card" href="https://commercesehoga.blogspot.com" aria-label="CommerceSehoga Blog" target="_blank" rel="noopener" style="border-top:3px solid #e65100;">
         <div class="card-icon amber">
           <svg viewBox="0 0 24 24" fill="none" stroke="#e65100" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
         </div>
@@ -1687,7 +2203,7 @@
         <div class="card-arrow"><span>Read Blog</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </a>
 
-      <a class="card" href="https://thunderstudy.blogspot.com" aria-label="ThunderStudy Blog" target="_blank" rel="noopener">
+      <a class="card" href="https://thunderstudy.blogspot.com" aria-label="ThunderStudy Blog" target="_blank" rel="noopener" style="border-top:3px solid #6d28d9;">
         <div class="card-icon purple">
           <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
         </div>
@@ -1975,9 +2491,9 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/></svg>
       Exams
     </a>
-    <a class="mob-nav-item" href="#resources">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-      Resources
+    <a class="mob-nav-item" href="#more-exams">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+      More
     </a>
     <a class="mob-nav-item" href="#faq">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
@@ -1990,9 +2506,14 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-grid">
-      <div class="footer-col">
+      <div class="footer-col" style="grid-column:span 1;">
         <div class="footer-logo">ThunderStudy</div>
-        <div class="footer-tagline">Free Education For All<br>By Thunder Team</div>
+        <div class="footer-tagline">Free Education For All<br>By <a href="https://wondermayank.github.io" style="color:#60a5fa;text-decoration:none;">Wondermayank</a> &amp; Thunder Team</div>
+        <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;">
+          <a href="https://t.me/Thunderstudy_official" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);transition:background 0.2s;" title="Telegram" onmouseover="this.style.background='rgba(255,255,255,0.18)'" onmouseout="this.style.background='rgba(255,255,255,0.08)'"><svg width="16" height="16" viewBox="0 0 24 24" fill="#60a5fa"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg></a>
+          <a href="https://youtube.com/@Thunderstudy_official" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);transition:background 0.2s;" title="YouTube" onmouseover="this.style.background='rgba(255,255,255,0.18)'" onmouseout="this.style.background='rgba(255,255,255,0.08)'"><svg width="16" height="16" viewBox="0 0 24 24" fill="#f87171"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></a>
+          <a href="https://instagram.com/Thunderstudy_official" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);transition:background 0.2s;" title="Instagram" onmouseover="this.style.background='rgba(255,255,255,0.18)'" onmouseout="this.style.background='rgba(255,255,255,0.08)'"><svg width="16" height="16" viewBox="0 0 24 24" fill="#c084fc"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
+        </div>
       </div>
       <div class="footer-col">
         <h4>CBSE Class 12</h4>
@@ -2000,44 +2521,65 @@
         <a href="https://commercesehoga.github.io/science">Science Hub</a>
         <a href="https://commercesehoga.github.io/humanities">Humanities Hub</a>
         <a href="https://commercesehoga.github.io/english/12">English (Class 12)</a>
-        <a href="https://commercesehoga.github.io/physcial/12">Physical Education (Class 12)</a>
+        <a href="https://commercesehoga.github.io/physcial/12">Physical Education</a>
+        <a href="https://commercesehoga.github.io/computer/cs">Computer Science</a>
+        <a href="https://commercesehoga.github.io/computer/ip">Informatics Practices</a>
       </div>
       <div class="footer-col">
         <h4>Subjects</h4>
         <a href="https://commercesehoga.github.io/commerce/acc">Accountancy</a>
         <a href="https://commercesehoga.github.io/commerce/bst">Business Studies</a>
         <a href="https://commercesehoga.github.io/commerce/eco">Economics</a>
-        <a href="https://commercesehoga.github.io/science/che">Chemistry</a>
         <a href="https://commercesehoga.github.io/science/phy">Physics</a>
+        <a href="https://commercesehoga.github.io/science/che">Chemistry</a>
         <a href="https://commercesehoga.github.io/science/bio">Biology</a>
         <a href="https://commercesehoga.github.io/humanities/his">History</a>
         <a href="https://commercesehoga.github.io/humanities/geo">Geography</a>
+        <a href="https://commercesehoga.github.io/gat">GAT General Test</a>
       </div>
       <div class="footer-col">
         <h4>Mock Tests</h4>
         <a href="https://commercesehoga.github.io/cuet">CUET Mock</a>
+        <a href="https://commercesehoga.github.io/dashboard">CBT Mock Platform</a>
         <a href="https://commercesehoga.github.io/ssc">SSC CBT Mock</a>
         <a href="https://commercesehoga.github.io/banking">Banking Mock</a>
-        <a href="https://commercesehoga.github.io/gat">GAT Prep</a>
-        <a href="https://commercesehoga.github.io/jee-neet">JEE / NEET</a>
+        <a href="https://thunderstudy.github.io/jee/mock-test">JEE Mock Test</a>
+        <a href="https://thunderstudy.github.io/neet/mock-test">NEET Mock Test</a>
+        <a href="https://thunderstudy.github.io/cat/mock-test">CAT Mock Test</a>
+        <a href="https://thunderstudy.github.io/nda/mock-test">NDA Mock Test</a>
+        <a href="https://thunderstudy.github.io/clat/mock-test">CLAT Mock Test</a>
+        <a href="https://thunderstudy.github.io/tet/ctet">CTET</a>
       </div>
       <div class="footer-col">
         <h4>Resources</h4>
+        <a href="https://wondermayank.github.io/">Wondermayank</a>
+        <a href="https://wondermayank.github.io/Current_Affairs/">Current Affairs</a>
         <a href="https://commercesehoga.github.io/guide/">Study Guide</a>
         <a href="https://commercesehoga.github.io/studyhub">Study Hub</a>
-        <a href="https://wondermayank.github.io/Current_Affairs/">Current Affairs</a>
         <a href="https://commercesehoga.github.io/fqa" target="_blank" rel="noopener">Ask a Question (FQA)</a>
+        <a href="https://commercesehoga.github.io/help">Support / Donate</a>
         <a href="https://commercesehoga.blogspot.com" target="_blank" rel="noopener">Commerce Blog</a>
         <a href="https://thunderstudy.blogspot.com" target="_blank" rel="noopener">ThunderStudy Blog</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal &amp; Info</h4>
+        <a href="https://wondermayank.github.io/privacy">Privacy Policy</a>
+        <a href="https://wondermayank.github.io/terms">Terms of Use</a>
+        <a href="https://wondermayank.github.io/disclaimer">Disclaimer</a>
+        <a href="https://wondermayank.github.io/contact">Contact Owner</a>
+        <a href="https://commercesehoga.github.io/help">Donation / Support</a>
+        <a href="https://thunderstudy.github.io/cbse/topper-notes">CBSE Topper Notes</a>
+        <a href="https://thunderstudy.github.io/cbse/formula">CBSE Formula</a>
         <a href="https://commercesehoga.github.io" target="_blank" rel="noopener">Main Platform</a>
-        <a href="https://wondermayank.github.io" target="_blank" rel="noopener">Wondermayank</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>ThunderStudy — thunderstudy.github.io — Free Education For All</span>
+      <span>© 2026 ThunderStudy · thunderstudy.github.io · Free Education For All</span>
       <span style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;">
-        <a href="https://wondermayank.github.io/privacy" style="color:#94a3b8;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#60a5fa'" onmouseout="this.style.color='#94a3b8'">Privacy Policy</a>
-        <a href="https://wondermayank.github.io/terms" style="color:#94a3b8;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#60a5fa'" onmouseout="this.style.color='#94a3b8'">Terms of Use</a>
+        <a href="https://wondermayank.github.io/privacy" style="color:#94a3b8;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#60a5fa'" onmouseout="this.style.color='#94a3b8'">Privacy</a>
+        <a href="https://wondermayank.github.io/terms" style="color:#94a3b8;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#60a5fa'" onmouseout="this.style.color='#94a3b8'">Terms</a>
+        <a href="https://wondermayank.github.io/disclaimer" style="color:#94a3b8;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#60a5fa'" onmouseout="this.style.color='#94a3b8'">Disclaimer</a>
+        <a href="https://wondermayank.github.io/contact" style="color:#94a3b8;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#60a5fa'" onmouseout="this.style.color='#94a3b8'">Contact</a>
         <span>Built by <a href="https://wondermayank.github.io" style="color:#60a5fa;text-decoration:none">Wondermayank</a></span>
       </span>
     </div>
@@ -2138,10 +2680,93 @@
     {name:'SSC CGL Mock', stream:'SSC Exam', url:'https://commercesehoga.github.io/ssc', badge:'SSC'},
     {name:'Banking IBPS PO Mock', stream:'Banking Exam', url:'https://commercesehoga.github.io/banking', badge:'Bank'},
     {name:'JEE NEET Prep', stream:'Engineering & Medical', url:'https://commercesehoga.github.io/jee-neet', badge:'JEE/NEET'},
+    {name:'JEE Physics', stream:'JEE Engineering', url:'https://thunderstudy.github.io/jee/physics', badge:'JEE'},
+    {name:'JEE Chemistry', stream:'JEE Engineering', url:'https://thunderstudy.github.io/jee/chemistry', badge:'JEE'},
+    {name:'JEE Maths', stream:'JEE Engineering', url:'https://thunderstudy.github.io/jee/maths', badge:'JEE'},
+    {name:'JEE Mock Test', stream:'JEE Engineering', url:'https://thunderstudy.github.io/jee/mock-test', badge:'JEE'},
+    {name:'JEE PYQs', stream:'JEE Engineering', url:'https://thunderstudy.github.io/jee/pyqs', badge:'JEE'},
+    {name:'JEE Topper Notes', stream:'JEE Engineering', url:'https://thunderstudy.github.io/jee/topper-notes', badge:'JEE'},
+    {name:'JEE Formula', stream:'JEE Engineering', url:'https://thunderstudy.github.io/jee/formula', badge:'JEE'},
+    {name:'JEE Flashcard', stream:'JEE Engineering', url:'https://thunderstudy.github.io/jee/flashcard', badge:'JEE'},
+    {name:'NEET Physics', stream:'NEET Medical', url:'https://thunderstudy.github.io/neet/physics', badge:'NEET'},
+    {name:'NEET Chemistry', stream:'NEET Medical', url:'https://thunderstudy.github.io/neet/chemistry', badge:'NEET'},
+    {name:'NEET Biology', stream:'NEET Medical', url:'https://thunderstudy.github.io/neet/biology', badge:'NEET'},
+    {name:'NEET Mock Test', stream:'NEET Medical', url:'https://thunderstudy.github.io/neet/mock-test', badge:'NEET'},
+    {name:'NEET PYQs', stream:'NEET Medical', url:'https://thunderstudy.github.io/neet/pyqs', badge:'NEET'},
+    {name:'NEET Topper Notes', stream:'NEET Medical', url:'https://thunderstudy.github.io/neet/topper-notes', badge:'NEET'},
+    {name:'NEET Formula', stream:'NEET Medical', url:'https://thunderstudy.github.io/neet/formula', badge:'NEET'},
+    {name:'NEET Flashcard', stream:'NEET Medical', url:'https://thunderstudy.github.io/neet/flashcard', badge:'NEET'},
+    {name:'CAT Mock Test', stream:'MBA Entrance', url:'https://thunderstudy.github.io/cat/mock-test', badge:'CAT'},
+    {name:'CAT PYQs', stream:'MBA Entrance', url:'https://thunderstudy.github.io/cat/pyqs', badge:'CAT'},
+    {name:'CAT Topper Notes', stream:'MBA Entrance', url:'https://thunderstudy.github.io/cat/topper-notes', badge:'CAT'},
+    {name:'XAT Mock Test', stream:'MBA Entrance', url:'https://thunderstudy.github.io/cat/xat-mock', badge:'CAT'},
+    {name:'SNAP Mock Test', stream:'MBA Entrance', url:'https://thunderstudy.github.io/cat/snap-mock', badge:'CAT'},
+    {name:'IPMAT Mock Test', stream:'MBA Entrance', url:'https://thunderstudy.github.io/ipmat/mock-test', badge:'CAT'},
+    {name:'NDA Notes', stream:'Defence Exam', url:'https://thunderstudy.github.io/nda/notes', badge:'NDA'},
+    {name:'NDA Mock Test', stream:'Defence Exam', url:'https://thunderstudy.github.io/nda/mock-test', badge:'NDA'},
+    {name:'NDA PYQs', stream:'Defence Exam', url:'https://thunderstudy.github.io/nda/pyqs', badge:'NDA'},
+    {name:'CLAT Mock Test', stream:'Law Entrance', url:'https://thunderstudy.github.io/clat/mock-test', badge:'CLAT'},
+    {name:'CLAT PYQs', stream:'Law Entrance', url:'https://thunderstudy.github.io/clat/pyqs', badge:'CLAT'},
+    {name:'AILET Mock Test', stream:'Law Entrance', url:'https://thunderstudy.github.io/clat/ailet-mock', badge:'CLAT'},
+    {name:'CA Foundation', stream:'Chartered Accountancy', url:'https://thunderstudy.github.io/ca/foundation', badge:'CA'},
+    {name:'CA Inter', stream:'Chartered Accountancy', url:'https://thunderstudy.github.io/ca/inter', badge:'CA'},
+    {name:'CA Final', stream:'Chartered Accountancy', url:'https://thunderstudy.github.io/ca/final', badge:'CA'},
+    {name:'NCERT Books Class 12', stream:'NCERT', url:'https://thunderstudy.github.io/ncert/book/class-12', badge:'NCERT'},
+    {name:'NCERT Solutions', stream:'NCERT', url:'https://thunderstudy.github.io/ncert/solutions', badge:'NCERT'},
+    {name:'NCERT Exemplar', stream:'NCERT', url:'https://thunderstudy.github.io/ncert/exemplar-book', badge:'NCERT'},
+    {name:'DCA Diploma', stream:'Diploma Course', url:'https://thunderstudy.github.io/diploma/dca', badge:'Diploma'},
+    {name:'PGDCA Diploma', stream:'Diploma Course', url:'https://thunderstudy.github.io/diploma/pgdca', badge:'Diploma'},
+    {name:'B.Ed Diploma', stream:'Diploma Course', url:'https://thunderstudy.github.io/diploma/b-ed', badge:'Diploma'},
+    {name:'CTET Mock Test', stream:'Teacher Exam', url:'https://thunderstudy.github.io/tet/ctet', badge:'TET'},
+    {name:'TET All Exams', stream:'Teacher Exam', url:'https://thunderstudy.github.io/tet/all', badge:'TET'},
+    {name:'CBSE Topper Notes', stream:'CBSE Resources', url:'https://thunderstudy.github.io/cbse/topper-notes', badge:'CBSE'},
+    {name:'CBSE Formula', stream:'CBSE Resources', url:'https://thunderstudy.github.io/cbse/formula', badge:'CBSE'},
+    {name:'CBSE KV Sample Paper', stream:'CBSE Resources', url:'https://thunderstudy.github.io/cbse/kv-sample-paper', badge:'CBSE'},
+    {name:'CBSE Topper Answersheet', stream:'CBSE Resources', url:'https://thunderstudy.github.io/cbse/topper-answersheet', badge:'CBSE'},
     {name:'Current Affairs', stream:'All Exams', url:'https://wondermayank.github.io/Current_Affairs/', badge:'Extra'},
     {name:'Commerce Hub', stream:'CBSE Class 12', url:'https://commercesehoga.github.io/commerce', badge:'Hub'},
     {name:'Science Hub', stream:'CBSE Class 12', url:'https://commercesehoga.github.io/science', badge:'Hub'},
     {name:'Humanities Hub', stream:'CBSE Class 12', url:'https://commercesehoga.github.io/humanities', badge:'Hub'},
+    {name:'Study Guide', stream:'All Exams', url:'https://commercesehoga.github.io/guide/', badge:'Guide'},
+    {name:'Study Hub', stream:'All Subjects', url:'https://commercesehoga.github.io/studyhub', badge:'Hub'},
+    {name:'CBT Mock Test Center', stream:'All Exams', url:'https://commercesehoga.github.io/dashboard', badge:'Mock'},
+    {name:'CommerceSehoga Blog', stream:'Blog', url:'https://commercesehoga.blogspot.com', badge:'Blog'},
+    {name:'ThunderStudy Blog', stream:'Blog', url:'https://thunderstudy.blogspot.com', badge:'Blog'},
+    {name:'GAT General Test CUET', stream:'CUET · All Exams', url:'https://commercesehoga.github.io/gat', badge:'CUET'},
+    {name:'Applied Mathematics', stream:'Commerce · Class 12', url:'https://commercesehoga.github.io/commerce/amath', badge:'Class 12'},
+    {name:'Physical Education CUET', stream:'CUET · All Streams', url:'https://commercesehoga.github.io/physical', badge:'CUET'},
+    {name:'English Language CUET', stream:'CUET · All Streams', url:'https://commercesehoga.github.io/english', badge:'CUET'},
+    {name:'CUET Political Science', stream:'CUET Humanities', url:'https://commercesehoga.github.io/humanities/pol', badge:'CUET'},
+    {name:'CUET Psychology', stream:'CUET Humanities', url:'https://commercesehoga.github.io/humanities/psy', badge:'CUET'},
+    {name:'CUET Maths', stream:'CUET Science', url:'https://commercesehoga.github.io/science/mat', badge:'CUET'},
+    {name:'NCERT Books Class 12', stream:'NCERT', url:'https://thunderstudy.github.io/ncert/book/class-12', badge:'NCERT'},
+    {name:'NCERT Solutions', stream:'NCERT', url:'https://thunderstudy.github.io/ncert/solutions', badge:'NCERT'},
+    {name:'NCERT Exemplar', stream:'NCERT', url:'https://thunderstudy.github.io/ncert/exemplar-book', badge:'NCERT'},
+    {name:'CA Foundation', stream:'Chartered Accountancy', url:'https://thunderstudy.github.io/ca/foundation', badge:'CA'},
+    {name:'CA Inter', stream:'Chartered Accountancy', url:'https://thunderstudy.github.io/ca/inter', badge:'CA'},
+    {name:'CA Final', stream:'Chartered Accountancy', url:'https://thunderstudy.github.io/ca/final', badge:'CA'},
+    {name:'DCA Diploma', stream:'Diploma Course', url:'https://thunderstudy.github.io/diploma/dca', badge:'Diploma'},
+    {name:'PGDCA Diploma', stream:'Diploma Course', url:'https://thunderstudy.github.io/diploma/pgdca', badge:'Diploma'},
+    {name:'B.Ed Diploma', stream:'Diploma Course', url:'https://thunderstudy.github.io/diploma/b-ed', badge:'Diploma'},
+    {name:'CTET Mock Test', stream:'Teacher Exam', url:'https://thunderstudy.github.io/tet/ctet', badge:'TET'},
+    {name:'TET All Exams', stream:'Teacher Exam', url:'https://thunderstudy.github.io/tet/all', badge:'TET'},
+    {name:'CBSE Topper Notes', stream:'CBSE Resources', url:'https://thunderstudy.github.io/cbse/topper-notes', badge:'CBSE'},
+    {name:'CBSE Formula', stream:'CBSE Resources', url:'https://thunderstudy.github.io/cbse/formula', badge:'CBSE'},
+    {name:'CBSE KV Sample Paper', stream:'CBSE Resources', url:'https://thunderstudy.github.io/cbse/kv-sample-paper', badge:'CBSE'},
+    {name:'CBSE Topper Answersheet', stream:'CBSE Resources', url:'https://thunderstudy.github.io/cbse/topper-answersheet', badge:'CBSE'},
+    {name:'Current Affairs', stream:'All Exams', url:'https://wondermayank.github.io/Current_Affairs/', badge:'Extra'},
+    {name:'NDA Notes', stream:'Defence Exam', url:'https://thunderstudy.github.io/nda/notes', badge:'NDA'},
+    {name:'NDA Mock Test', stream:'Defence Exam', url:'https://thunderstudy.github.io/nda/mock-test', badge:'NDA'},
+    {name:'NDA PYQs', stream:'Defence Exam', url:'https://thunderstudy.github.io/nda/pyqs', badge:'NDA'},
+    {name:'CLAT Mock Test', stream:'Law Entrance', url:'https://thunderstudy.github.io/clat/mock-test', badge:'CLAT'},
+    {name:'CLAT PYQs', stream:'Law Entrance', url:'https://thunderstudy.github.io/clat/pyqs', badge:'CLAT'},
+    {name:'AILET Mock Test', stream:'Law Entrance', url:'https://thunderstudy.github.io/clat/ailet-mock', badge:'CLAT'},
+    {name:'IPMAT Mock Test', stream:'MBA Entrance', url:'https://thunderstudy.github.io/ipmat/mock-test', badge:'CAT'},
+    {name:'XAT Mock Test', stream:'MBA Entrance', url:'https://thunderstudy.github.io/cat/xat-mock', badge:'CAT'},
+    {name:'SNAP Mock Test', stream:'MBA Entrance', url:'https://thunderstudy.github.io/cat/snap-mock', badge:'CAT'},
+    {name:'Wondermayank Portfolio', stream:'Creator', url:'https://wondermayank.github.io/', badge:'Extra'},
+    {name:'Ask a Question FQA', stream:'Support', url:'https://commercesehoga.github.io/fqa', badge:'Help'},
+    {name:'Support Donate', stream:'Help', url:'https://commercesehoga.github.io/help', badge:'Help'},
   ];
 
   function doSearch(q) {
