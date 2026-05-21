@@ -1,71 +1,31 @@
 {
-  "name": "ThunderStudy — Free CBSE Class 12 Notes & CUET Mock Tests",
+  "name": "ThunderStudy — Free Study Platform",
   "short_name": "ThunderStudy",
-  "description": "100% free CBSE Class 12 notes, CUET 2026 mock tests, SSC and Banking CBT mocks for Indian students. No registration. No cost.",
+  "description": "India's #1 free study platform — CBSE Class 12, CUET, UPSC, SSC, JEE, NEET. 100,000+ files. No ads. No login.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait-primary",
-  "background_color": "#0f172a",
+  "background_color": "#dbeeff",
   "theme_color": "#0077f5",
   "lang": "en-IN",
   "dir": "ltr",
-  "categories": ["education"],
+  "categories": ["education", "books"],
   "icons": [
-    {
-      "src": "/favicon-32x32.png",
-      "sizes": "32x32",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/apple-touch-icon.png",
-      "sizes": "180x180",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/favicon-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "/favicon-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
-    }
-  ],
-  "shortcuts": [
-    {
-      "name": "CUET Mock Tests",
-      "short_name": "CUET Mock",
-      "description": "Free CUET 2026 mock tests with auto-scoring",
-      "url": "https://commercesehoga.github.io/cuet",
-      "icons": [{ "src": "/favicon-192x192.png", "sizes": "192x192" }]
-    },
-    {
-      "name": "Commerce Notes",
-      "short_name": "Commerce",
-      "description": "Free Class 12 Commerce — Accountancy, BST, Economics",
-      "url": "https://commercesehoga.github.io/commerce",
-      "icons": [{ "src": "/favicon-192x192.png", "sizes": "192x192" }]
-    },
-    {
-      "name": "SSC Mock Tests",
-      "short_name": "SSC Mock",
-      "description": "Free SSC CGL CBT mock tests",
-      "url": "https://commercesehoga.github.io/ssc",
-      "icons": [{ "src": "/favicon-192x192.png", "sizes": "192x192" }]
-    }
+    { "src": "/favicon-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/favicon-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
   ],
   "screenshots": [
-    {
-      "src": "/og-cover.png",
-      "sizes": "1200x630",
-      "type": "image/png",
-      "label": "ThunderStudy homepage"
-    }
-  ]
+    { "src": "/screenshot-mobile.png", "sizes": "390x844", "type": "image/png", "form_factor": "narrow", "label": "ThunderStudy on mobile" },
+    { "src": "/screenshot-desktop.png", "sizes": "1280x800", "type": "image/png", "form_factor": "wide", "label": "ThunderStudy on desktop" }
+  ],
+  "shortcuts": [
+    { "name": "CUET Mock Tests", "short_name": "CUET", "url": "https://commercesehoga.github.io/cuet", "description": "Free CUET 2026 Mock Tests" },
+    { "name": "CBSE Class 12", "short_name": "CBSE", "url": "https://thunderstudy.github.io/#streams", "description": "CBSE Class 12 Notes" },
+    { "name": "SSC Mock Tests", "short_name": "SSC", "url": "https://commercesehoga.github.io/ssc", "description": "Free SSC CGL Mock Tests" },
+    { "name": "UPSC Prep", "short_name": "UPSC", "url": "https://thunderstudy.github.io/upsc/", "description": "Free UPSC Civil Services Prep" }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
 }
