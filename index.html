@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en-IN">
 <head>
@@ -848,6 +850,10 @@
   }
   .subj-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(124,58,237,0.09); border-color: var(--blue-300); }
   .subj-card.col { flex-direction: column; align-items: flex-start; cursor: default; }
+  /* ── all subject cards: white background, black text ── */
+  .subj-card { background: #ffffff !important; }
+  .subj-card .subj-name { color: #0f172a !important; }
+  .subj-card .subj-stream { color: #64748b !important; }
   .subj-icon {
     width: 38px; height: 38px;
     border-radius: 10px;
@@ -1071,38 +1077,65 @@
   .etc-diploma { background: linear-gradient(135deg, #4e342e, #8d6e63); }
   .etc-tet { background: linear-gradient(135deg, #006064, #00acc1); }
 
-  /* ========== SUB-TOPIC GRID (3-per-row cards) ========== */
+  /* ========== SUB-TOPIC GRID (3-per-row cards) — Option 1 chip style ========== */
   .subtopic-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    gap: 8px;
     margin-bottom: 28px;
   }
   .subtopic-pill {
     display: flex;
     align-items: center;
-    gap: 9px;
+    gap: 10px;
     padding: 11px 14px;
     border-radius: 12px;
-    border: 1px solid var(--gray-200);
-    background: var(--white);
-    color: var(--gray-700);
-    font-size: 0.82rem;
-    font-weight: 600;
+    border: 0.5px solid var(--gray-200);
+    background: #ffffff;
+    color: #0f172a;
+    font-size: 13px;
+    font-weight: 500;
     text-decoration: none;
-    transition: background 0.18s, border-color 0.18s, transform 0.2s cubic-bezier(.22,.68,0,1.2), color 0.18s, box-shadow 0.18s;
+    transition: background 0.15s, border-color 0.15s, transform 0.18s cubic-bezier(.22,.68,0,1.2), box-shadow 0.18s;
     min-width: 0;
     line-height: 1.3;
+    cursor: pointer;
   }
-  .subtopic-pill svg { flex-shrink: 0; opacity: 0.7; transition: opacity 0.18s; }
-  .subtopic-pill span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .subtopic-pill:hover { background: var(--blue-100); border-color: var(--blue-300); color: var(--blue-500); transform: translateY(-2px); box-shadow: 0 4px 14px rgba(0,119,245,0.12); }
-  .subtopic-pill:hover svg { opacity: 1; }
-  .subtopic-pill.purple:hover { background: var(--purple-100); border-color: var(--purple-300); color: var(--purple-500); box-shadow: 0 4px 14px rgba(109,40,217,0.1); }
-  .subtopic-pill.green:hover { background: #e8f5e9; border-color: #81c784; color: #2e7d32; box-shadow: 0 4px 14px rgba(46,125,50,0.1); }
-  .subtopic-pill.teal:hover { background: #e0f7fa; border-color: #4db6ac; color: #00695c; box-shadow: 0 4px 14px rgba(0,105,92,0.1); }
-  .subtopic-pill.amber:hover { background: #fff8e1; border-color: #ffd54f; color: #e65100; box-shadow: 0 4px 14px rgba(245,127,23,0.1); }
-  .subtopic-pill.rose:hover { background: #fce4ec; border-color: #f48fb1; color: #c62828; box-shadow: 0 4px 14px rgba(198,40,40,0.1); }
+  .subtopic-pill:hover {
+    background: #f8fafc;
+    border-color: var(--gray-300);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  }
+  /* ── icon chip inside each pill ── */
+  .subtopic-pill .pill-ic {
+    width: 30px; height: 30px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    background: #E6F1FB;
+    color: #185FA5;
+    transition: filter 0.15s;
+  }
+  .subtopic-pill .pill-ic svg { width: 15px; height: 15px; flex-shrink: 0; }
+  /* legacy: bare SVG (no wrapper) still renders cleanly */
+  .subtopic-pill > svg {
+    width: 30px !important; height: 30px !important;
+    padding: 7px;
+    border-radius: 8px;
+    background: #E6F1FB;
+    color: #185FA5;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    opacity: 1;
+  }
+  .subtopic-pill span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #0f172a; }
+  /* colour modifier chips */
+  .subtopic-pill.purple .pill-ic, .subtopic-pill.purple > svg { background: #EEEDFE !important; color: #534AB7 !important; }
+  .subtopic-pill.green  .pill-ic, .subtopic-pill.green  > svg { background: #EAF3DE !important; color: #3B6D11 !important; }
+  .subtopic-pill.teal   .pill-ic, .subtopic-pill.teal   > svg { background: #E1F5EE !important; color: #0F6E56 !important; }
+  .subtopic-pill.amber  .pill-ic, .subtopic-pill.amber  > svg { background: #FAEEDA !important; color: #854F0B !important; }
+  .subtopic-pill.rose   .pill-ic, .subtopic-pill.rose   > svg { background: #fce4ec !important; color: #c62828 !important; }
 
   /* ========== EXAM SECTION BAND (clickable header) ========== */
   .exam-band {
@@ -1441,29 +1474,7 @@
 <!-- MAIN CONTENT -->
 <div id="main">
 
-<!-- TRUST BAR -->
-<div style="background:linear-gradient(90deg,#0f172a,#1e3a5f 40%,#1a1040);color:#fff;font-size:0.78rem;font-weight:600;padding:7px 16px;display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;letter-spacing:0.2px;z-index:200;position:relative;">
-  <span style="display:flex;align-items:center;gap:5px;color:#4ade80;">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-    100% Free — Forever
-  </span>
-  <span style="display:flex;align-items:center;gap:5px;color:#60a5fa;">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-    100,000+ Study Files
-  </span>
-  <span style="display:flex;align-items:center;gap:5px;color:#f472b6;">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
-    Zero Ads
-  </span>
-  <span style="display:flex;align-items:center;gap:5px;color:#fbbf24;">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-    No Login Required
-  </span>
-  <span style="display:flex;align-items:center;gap:5px;color:#c084fc;">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/></svg>
-    <a href="https://instagram.com/wondermayank" target="_blank" rel="noopener" style="color:#c084fc;text-decoration:none;">@wondermayank</a>
-  </span>
-</div>
+
 
 <div class="tg-strip">
   <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg>
@@ -1499,120 +1510,847 @@
   </div>
 </header>
 
-<!-- HERO -->
+<!-- HERO — sky-blue frosted redesign -->
+<style>
+  .hero {
+    background: #eef5ff !important;
+    border-bottom: 1px solid #c7dcf5;
+    padding: 48px 24px 0 !important;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before, .hero::after { display: none !important; }
+  .hero-svg-deco {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .hero-badge-new {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(0,119,245,0.1);
+    border: 1px solid rgba(0,119,245,0.25);
+    color: #1d4ed8;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 5px 14px;
+    border-radius: 99px;
+    margin-bottom: 16px;
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(1.9rem, 4.5vw, 3.2rem) !important;
+    font-weight: 800;
+    line-height: 1.18;
+    letter-spacing: -0.5px;
+    margin-bottom: 14px;
+    background: linear-gradient(135deg, #0f172a 0%, #0077f5 45%, #6d28d9 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+  }
+  .hero p {
+    font-size: 1rem;
+    color: #475569;
+    max-width: 520px;
+    margin: 0 auto 18px;
+    line-height: 1.68;
+  }
+  .hero-trust-pills {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 22px;
+  }
+  .hero-trust-pills span, .hero-trust-pills a {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.76rem;
+    font-weight: 600;
+    padding: 5px 13px;
+    border-radius: 99px;
+    text-decoration: none;
+  }
+  .htp-green { background: #f0fdf4; border: 1px solid #bbf7d0; color: #059669; }
+  .htp-blue  { background: rgba(255,255,255,0.6); border: 1px solid #bdd7f5; color: #1d4ed8; }
+  .htp-amber { background: #fffbeb; border: 1px solid #fde68a; color: #92400e; }
+  .htp-purple{ background: #f5f3ff; border: 1px solid #ddd6fe; color: #5b21b6; }
+  .hero-stats-new {
+    display: flex;
+    gap: 28px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 22px;
+  }
+  .hero-stats-new .stat {
+    background: rgba(255,255,255,0.75);
+    border: 1px solid rgba(0,119,245,0.15);
+    border-radius: 12px;
+    padding: 10px 18px;
+    text-align: center;
+    min-width: 90px;
+  }
+  .hero-stats-new .stat-num {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #0077f5, #6d28d9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  .hero-stats-new .stat-num svg { flex-shrink: 0; }
+  .hero-stats-new .stat-label {
+    font-size: 0.72rem;
+    color: #64748b;
+    font-weight: 500;
+    margin-top: 3px;
+  }
+  .quick-answer-new {
+    max-width: 600px;
+    margin: 0 auto 22px;
+    background: rgba(255,255,255,0.82);
+    border: 1px solid rgba(0,119,245,0.18);
+    border-radius: 14px;
+    padding: 14px 20px;
+    text-align: left;
+  }
+  .quick-answer-new .qa-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #0077f5;
+    margin-bottom: 5px;
+  }
+  .quick-answer-new p {
+    font-size: 0.88rem;
+    color: #334155;
+    line-height: 1.65;
+    margin: 0;
+    max-width: none;
+  }
+.hero-search-wrap {
+  position: relative;
+  max-width: 520px;
+  margin: 0 auto 32px;
+}
+
+/* Specular top-left highlight overlay */
+.hero-search-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.55) 0%,
+    rgba(255,255,255,0.15) 35%,
+    transparent 60%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-search-wrap input {
+  width: 100%;
+  padding: 16px 56px 16px 24px;
+  border-radius: 18px;
+  font-family: var(--font-body);
+  font-size: 0.96rem;
+  color: #3a4a5c;
+  outline: none;
+  transition: all 0.3s ease;
+
+  /* Glass core */
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(18px) saturate(1.4);
+  -webkit-backdrop-filter: blur(18px) saturate(1.4);
+
+  /* Specular top border highlight */
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.85);
+
+  /* Outer soft shadow + inner glow */
+  box-shadow:
+    0 8px 32px rgba(80, 120, 180, 0.18),
+    0 2px 8px rgba(80, 120, 180, 0.10),
+    inset 0 1.5px 3px rgba(255, 255, 255, 0.70),
+    inset 0 -1px 2px rgba(100, 140, 200, 0.12);
+}
+
+.hero-search-wrap input:focus {
+  background: rgba(255, 255, 255, 0.48);
+  border-color: rgba(255, 255, 255, 0.80);
+  border-top-color: rgba(255, 255, 255, 0.95);
+  box-shadow:
+    0 10px 40px rgba(60, 100, 180, 0.22),
+    0 3px 10px rgba(80, 120, 200, 0.14),
+    inset 0 1.5px 3px rgba(255, 255, 255, 0.80),
+    inset 0 -1px 2px rgba(100, 140, 200, 0.15),
+    0 0 0 3px rgba(180, 210, 255, 0.25);
+}
+
+.hero-search-wrap input::placeholder {
+  color: rgba(90, 120, 160, 0.65);
+  font-style: italic;
+}
+
+.hero-search-wrap svg {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px; height: 20px;
+  color: rgba(60, 110, 200, 0.75);
+  pointer-events: none;
+  z-index: 2;
+  filter: drop-shadow(0 1px 2px rgba(255,255,255,0.6));
+}
+  /* Trust cards in body below hero */
+  .hero-body-trust {
+    background: rgba(255,255,255,0.6);
+    border-top: 1px solid rgba(0,119,245,0.12);
+    padding: 18px 24px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0,1fr));
+    gap: 12px;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .hbt-card {
+    background: rgba(255,255,255,0.85);
+    border: 1px solid rgba(0,119,245,0.13);
+    border-radius: 12px;
+    padding: 12px 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .hbt-icon {
+    width: 34px; height: 34px;
+    border-radius: 9px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .hbt-icon.gr { background: #dcfce7; }
+  .hbt-icon.bl { background: #dbeafe; }
+  .hbt-icon.ye { background: #fef3c7; }
+  .hbt-icon.pu { background: #ede9fe; }
+  .hbt-icon svg { width: 17px; height: 17px; }
+  .hbt-title { font-size: 0.8rem; font-weight: 700; color: #0f172a; line-height: 1.2; }
+  .hbt-sub { font-size: 0.68rem; color: #64748b; margin-top: 1px; }
+  @media (max-width: 640px) {
+    .hero-body-trust { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .hero-trust-pills { gap: 6px; }
+    .hero-stats-new { gap: 10px; }
+    .hero-stats-new .stat { min-width: 70px; padding: 8px 10px; }
+  }
+</style>
+
 <section class="hero" aria-labelledby="hero-heading">
-  <div class="hero-tag">🇮🇳 India's #1 Free Study Platform</div>
-  <h1 id="hero-heading">100% Free.<br>100,000+ Files. Zero Ads.</h1>
-  <p>CBSE Class 12 notes, CUET mock tests, UPSC prep, SSC CBT and Banking mocks — everything you need to study smarter. No login, no ads, no cost. Always free.</p>
 
-  <!-- Trust pill badges -->
-  <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:28px;">
-    <span style="display:inline-flex;align-items:center;gap:6px;background:#d1fae5;color:#065f46;border:1px solid #6ee7b7;padding:5px 13px;border-radius:99px;font-size:0.78rem;font-weight:700;">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Free Forever
-    </span>
-    <span style="display:inline-flex;align-items:center;gap:6px;background:#dbeafe;color:#1e40af;border:1px solid #93c5fd;padding:5px 13px;border-radius:99px;font-size:0.78rem;font-weight:700;">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>100,000+ Files
-    </span>
-    <span style="display:inline-flex;align-items:center;gap:6px;background:#fce7f3;color:#9d174d;border:1px solid #f9a8d4;padding:5px 13px;border-radius:99px;font-size:0.78rem;font-weight:700;">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>Zero Ads
-    </span>
-    <span style="display:inline-flex;align-items:center;gap:6px;background:#fef3c7;color:#92400e;border:1px solid #fcd34d;padding:5px 13px;border-radius:99px;font-size:0.78rem;font-weight:700;">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>No Login
-    </span>
-    <a href="https://instagram.com/wondermayank" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:#f3e8ff;color:#6d28d9;border:1px solid #c4b5fd;padding:5px 13px;border-radius:99px;font-size:0.78rem;font-weight:700;text-decoration:none;">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="#6d28d9"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>@wondermayank
-    </a>
-  </div>
+  <!-- SVG decorative background -->
+  <svg class="hero-svg-deco" viewBox="0 0 1200 520" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+    <circle cx="1100" cy="80" r="160" fill="rgba(0,119,245,0.06)"/>
+    <circle cx="1050" cy="130" r="80" fill="rgba(0,119,245,0.05)"/>
+    <circle cx="100" cy="300" r="120" fill="rgba(0,119,245,0.05)"/>
+    <circle cx="50" cy="360" r="60" fill="rgba(0,119,245,0.04)"/>
+    <circle cx="1130" cy="420" r="90" fill="rgba(14,165,233,0.05)"/>
+    <circle cx="200" cy="480" r="50" fill="rgba(109,40,217,0.04)"/>
+    <path d="M 980 20 Q 1070 70 1030 150" stroke="rgba(0,119,245,0.12)" stroke-width="2" fill="none"/>
+    <path d="M 1020 50 Q 1110 100 1090 180" stroke="rgba(0,119,245,0.07)" stroke-width="1.5" fill="none"/>
+    <path d="M 150 220 Q 80 280 120 360" stroke="rgba(0,119,245,0.1)" stroke-width="1.5" fill="none"/>
+    <path d="M 80 200 Q 30 260 60 340" stroke="rgba(0,119,245,0.07)" stroke-width="1" fill="none"/>
+    <rect x="1110" y="220" width="28" height="28" rx="6" fill="rgba(0,119,245,0.08)" transform="rotate(20 1124 234)"/>
+    <rect x="60" y="160" width="20" height="20" rx="4" fill="rgba(14,165,233,0.1)" transform="rotate(-15 70 170)"/>
+    <rect x="80" y="430" width="16" height="16" rx="3" fill="rgba(0,119,245,0.08)" transform="rotate(30 88 438)"/>
+    <rect x="1060" y="350" width="14" height="14" rx="3" fill="rgba(109,40,217,0.07)" transform="rotate(10 1067 357)"/>
+    <polygon points="1150,370 1166,398 1134,398" fill="rgba(0,119,245,0.07)"/>
+    <polygon points="40,440 56,468 24,468" fill="rgba(14,165,233,0.07)"/>
+    <polygon points="180,50 192,72 168,72" fill="rgba(0,119,245,0.06)"/>
+    <line x1="200" y1="510" x2="1000" y2="510" stroke="rgba(0,119,245,0.06)" stroke-width="0.8" stroke-dasharray="5 8"/>
+  </svg>
 
-  <div class="hero-stats">
-    <div class="stat"><span class="stat-num">100K+</span><span class="stat-label">Study Files</span></div>
-    <div class="stat"><span class="stat-num">30+</span><span class="stat-label">Class 12 Subjects</span></div>
-    <div class="stat"><span class="stat-num">50+</span><span class="stat-label">CUET Mocks</span></div>
-    <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Free · No Ads</span></div>
-  </div>
+  <div class="hero-inner">
+    <div class="hero-badge-new">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      India's #1 free study platform
+    </div>
 
-  <!-- Quick Answer box — AEO / speakable target -->
-  <div class="quick-answer" role="note" aria-label="Quick summary" style="max-width:600px;margin:28px auto 0;background:rgba(255,255,255,0.75);border:1px solid #bad8ff;border-radius:14px;padding:16px 22px;text-align:left;backdrop-filter:blur(6px);">
-    <div style="font-size:0.72rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#0077f5;margin-bottom:6px;">Quick Answer</div>
-    <p style="font-size:0.91rem;color:#334155;line-height:1.65;margin:0;">ThunderStudy is a 100% free Indian education platform offering CBSE Class 12 notes for all streams (Commerce, Science, Humanities), free CUET 2026 mock tests, SSC CGL CBT mocks and Banking mock tests — no registration, no paywall, ever. Last updated: <time datetime="2026-05-10">May 2026</time>.</p>
-  </div>
+    <h1 id="hero-heading">100% Free.<br>100,000+ Files. Zero Ads.</h1>
 
-  <div style="margin-top:28px;position:relative;z-index:10;">
-    <div class="search-wrap">
+    <p>CBSE notes, CUET mock tests, UPSC prep, SSC notes and Banking and current affairs — everything you need to study smarter. No login, no ads, no cost. Always free.</p>
+
+        <!-- Search -->
+    <div class="hero-search-wrap" style="position:relative;z-index:10;">
       <input type="text" id="search-input" placeholder="Search any subject, exam or topic..." autocomplete="off" oninput="doSearch(this.value)" onblur="setTimeout(()=>closeSearch(),200)" onfocus="doSearch(this.value)">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
       <div id="search-results"></div>
     </div>
   </div>
+
+    <!-- Trust pills -->
+    <div class="hero-trust-pills">
+      <span class="htp-green">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        Free Forever
+      </span>
+      <span class="htp-blue">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        100,000+ Files
+      </span>
+      <span class="htp-amber">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+        Zero Ads
+      </span>
+      <span class="htp-blue">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        No Login
+      </span>
+      <a href="https://instagram.com/wondermayank" target="_blank" rel="noopener" class="htp-purple">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="#5b21b6"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        @wondermayank
+      </a>
+    </div>
+
+    <!-- Stats -->
+    <div class="hero-stats-new">
+      <div class="stat">
+        <span class="stat-num">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="url(#sg1)" stroke-width="2"><defs><linearGradient id="sg1" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0077f5"/><stop offset="1" stop-color="#6d28d9"/></linearGradient></defs><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2"/></svg>
+          100K+
+        </span>
+        <span class="stat-label">Study Files</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="url(#sg2)" stroke-width="2"><defs><linearGradient id="sg2" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0077f5"/><stop offset="1" stop-color="#6d28d9"/></linearGradient></defs><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>
+          30+
+        </span>
+        <span class="stat-label">exam/subject</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="url(#sg3)" stroke-width="2"><defs><linearGradient id="sg3" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0077f5"/><stop offset="1" stop-color="#6d28d9"/></linearGradient></defs><circle cx="12" cy="12" r="10"/><path d="M12 6v6.5l3 1.8"/></svg>
+          5k+
+        </span>
+        <span class="stat-label">CBT Mocks</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="url(#sg4)" stroke-width="2"><defs><linearGradient id="sg4" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0077f5"/><stop offset="1" stop-color="#6d28d9"/></linearGradient></defs><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          100%
+        </span>
+        <span class="stat-label">Free · No Ads</span>
+      </div>
+    </div>
+
+    <!-- Quick Answer — AEO / speakable target, last updated removed -->
+    <div class="quick-answer quick-answer-new" role="note" aria-label="Quick summary">
+      <div class="qa-label">Quick Answer</div>
+      <p>ThunderStudy is a 100% free Indian education platform offering CBSE Class 12 notes for all streams (Commerce, Science, Humanities), free CUET 2026 mock tests, SSC CGL CBT mocks and Banking mock tests — no registration, no paywall, ever.</p>
+    </div>
+
+  
 </section>
 
 <div class="divider"></div>
 
-<!-- STREAM HUBS -->
-<section id="streams" aria-labelledby="streams-heading">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label">CBSE Class 12</span>
-      <h2 class="section-title" id="streams-heading">Choose Your Stream</h2>
-      <p class="section-desc">Comprehensive study material, notes, important questions and CUET prep for all three streams.</p>
+<!-- STREAM HUBS — redesigned -->
+<style>
+  /* ========== STREAM SECTION ========== */
+  .streams-section {
+    padding: 64px 24px 72px;
+    background: #f5f9ff;
+    position: relative;
+    overflow: hidden;
+  }
+  .streams-section::before {
+    content: '';
+    position: absolute;
+    width: 700px; height: 700px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,119,245,0.05) 0%, transparent 70%);
+    top: -200px; right: -200px;
+    pointer-events: none;
+  }
+  .streams-section::after {
+    content: '';
+    position: absolute;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(109,40,217,0.04) 0%, transparent 70%);
+    bottom: -150px; left: -100px;
+    pointer-events: none;
+  }
+
+  .streams-header {
+    text-align: center;
+    margin-bottom: 48px;
+    position: relative;
+    z-index: 1;
+  }
+  .streams-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: #0077f5;
+    background: rgba(0,119,245,0.08);
+    border: 1px solid rgba(0,119,245,0.18);
+    padding: 5px 16px;
+    border-radius: 99px;
+    margin-bottom: 16px;
+  }
+  .streams-eyebrow svg { flex-shrink: 0; }
+  .streams-heading {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    font-weight: 900;
+    letter-spacing: -1px;
+    color: #0f172a;
+    line-height: 1.15;
+    margin-bottom: 12px;
+  }
+  .streams-heading span {
+    background: linear-gradient(90deg, #0077f5, #6d28d9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .streams-subtext {
+    font-size: 0.95rem;
+    color: #64748b;
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.65;
+  }
+
+  /* ========== STREAM CARDS GRID ========== */
+  .streams-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .stream-card-new {
+    border-radius: 24px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border: 1px solid rgba(0,0,0,0.07);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04);
+    transition: transform 0.3s cubic-bezier(.22,.68,0,1.2), box-shadow 0.3s ease;
+    position: relative;
+  }
+  .stream-card-new:hover {
+    transform: translateY(-8px) scale(1.015);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.13), 0 4px 12px rgba(0,0,0,0.06);
+  }
+
+  /* Gradient banner area */
+  .scn-banner {
+    position: relative;
+    padding: 28px 24px 22px;
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+  .scn-banner::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+    pointer-events: none;
+  }
+  .scn-banner::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    pointer-events: none;
+  }
+
+  /* Commerce: deep blue */
+  .scn-commerce { background: linear-gradient(135deg, #0055cc 0%, #0077f5 50%, #38b2ff 100%); }
+  /* Science: deep emerald */
+  .scn-science  { background: linear-gradient(135deg, #064e3b 0%, #059669 50%, #34d399 100%); }
+  /* Humanities: rich amber-rose */
+  .scn-humanities { background: linear-gradient(135deg, #92400e 0%, #d97706 45%, #f59e0b 100%); }
+
+  .scn-icon-ring {
+    width: 54px; height: 54px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.2);
+    border: 1.5px solid rgba(255,255,255,0.35);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    transition: transform 0.25s ease;
+  }
+  .stream-card-new:hover .scn-icon-ring { transform: rotate(-6deg) scale(1.08); }
+  .scn-icon-ring svg { width: 26px; height: 26px; }
+
+  .scn-banner-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .scn-stream-badge {
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.9);
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.28);
+    padding: 4px 10px;
+    border-radius: 99px;
+    backdrop-filter: blur(4px);
+  }
+
+  .scn-banner-title {
+    font-family: var(--font-display);
+    font-size: 1.45rem;
+    font-weight: 900;
+    color: white;
+    line-height: 1.15;
+    letter-spacing: -0.3px;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.2);
+    margin-top: 14px;
+  }
+  .scn-banner-sub {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.78);
+    margin-top: 4px;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  /* Decorative floating squares */
+  .scn-deco {
+    position: absolute;
+    top: 18px; right: 18px;
+    display: flex; gap: 5px;
+    opacity: 0.22;
+    transition: opacity 0.25s;
+  }
+  .stream-card-new:hover .scn-deco { opacity: 0.4; }
+  .scn-deco span {
+    display: block;
+    width: 8px; height: 8px;
+    border-radius: 2px;
+    background: white;
+  }
+  .scn-deco span:nth-child(2) { opacity: 0.6; width: 6px; height: 6px; margin-top: 2px; }
+  .scn-deco span:nth-child(3) { opacity: 0.35; width: 5px; height: 5px; margin-top: 5px; }
+
+  /* Body */
+  .scn-body {
+    padding: 20px 22px 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .scn-desc {
+    font-size: 0.85rem;
+    color: #475569;
+    line-height: 1.65;
+  }
+
+  /* Subject chips */
+  .scn-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .scn-chip {
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 4px 11px;
+    border-radius: 99px;
+    letter-spacing: 0.1px;
+    border: 1px solid transparent;
+    white-space: nowrap;
+  }
+  .scn-chip.blue   { background: #eff6ff; color: #1d4ed8; border-color: #bfdbfe; }
+  .scn-chip.green  { background: #f0fdf4; color: #15803d; border-color: #bbf7d0; }
+  .scn-chip.amber  { background: #fffbeb; color: #b45309; border-color: #fde68a; }
+
+  /* CTA footer */
+  .scn-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 22px 16px;
+    border-top: 1px solid #f1f5f9;
+    margin-top: auto;
+  }
+  .scn-cta-text {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #0077f5;
+    line-height: 1.3;
+  }
+  .scn-commerce-cta .scn-cta-text { color: #0055cc; }
+  .scn-science-cta  .scn-cta-text { color: #059669; }
+  .scn-humanities-cta .scn-cta-text { color: #d97706; }
+
+  .scn-arrow {
+    width: 34px; height: 34px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+  .scn-arrow svg { width: 16px; height: 16px; }
+  .stream-card-new:hover .scn-arrow { transform: translateX(4px); }
+
+  .scn-commerce-cta .scn-arrow { background: #eff6ff; color: #0055cc; }
+  .scn-science-cta  .scn-arrow { background: #f0fdf4; color: #059669; }
+  .scn-humanities-cta .scn-arrow { background: #fffbeb; color: #d97706; }
+
+  /* Stats row inside card */
+  .scn-stats {
+    display: flex;
+    gap: 16px;
+    padding: 0 22px 14px;
+  }
+  .scn-stat {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.72rem;
+    color: #64748b;
+    font-weight: 600;
+  }
+  .scn-stat svg { width: 13px; height: 13px; flex-shrink: 0; opacity: 0.6; }
+
+  @media (max-width: 900px) {
+    .streams-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 620px) {
+    .streams-grid { grid-template-columns: 1fr; gap: 16px; }
+    .streams-section { padding: 44px 16px 52px; }
+    .scn-banner { min-height: 140px; padding: 22px 20px 18px; }
+    .scn-banner-title { font-size: 1.25rem; }
+    .streams-header { margin-bottom: 32px; }
+  }
+</style>
+
+<section id="streams" class="streams-section" aria-labelledby="streams-heading">
+  <div class="streams-header">
+    <div class="streams-eyebrow">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      CBSE Class 12
     </div>
-    <div class="grid-3">
+    <h2 class="streams-heading" id="streams-heading">Choose Your <span>Stream</span></h2>
+    <p class="streams-subtext">Comprehensive notes, important questions and CUET prep for all three streams — pick yours and start free.</p>
+  </div>
 
-      <!-- Commerce -->
-      <a class="card" href="https://commercesehoga.github.io/commerce" aria-label="Commerce Hub">
-        <div class="card-icon blue">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#1e88e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2"/><path d="M8 7V5a2 2 0 0 0-2-2h0a2 2 0 0 0-2 2v2"/>
-          </svg>
-        </div>
-        <div class="card-title">Commerce Hub</div>
-        <div class="card-desc">Accountancy, Business Studies, Economics and Applied Maths — complete study material with CUET Commerce prep.</div>
-        <div class="card-tags">
-          <span class="tag">Accountancy</span>
-          <span class="tag">BST</span>
-          <span class="tag">Economics</span>
-          <span class="tag purple">Applied Maths</span>
-        </div>
-        <div class="card-arrow"><span>Free CBSE Class 12 Commerce Notes</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-      </a>
+  <div class="streams-grid">
 
-      <!-- Science -->
-      <a class="card" href="https://commercesehoga.github.io/science" aria-label="Science Hub">
-        <div class="card-icon green" style="background:#e8f5e9">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/>
-          </svg>
+    <!-- Commerce -->
+    <a class="stream-card-new" href="https://commercesehoga.github.io/commerce" aria-label="Commerce Hub — Class 12 Notes">
+      <div class="scn-banner scn-commerce">
+        <div class="scn-deco">
+          <span></span><span></span><span></span>
         </div>
-        <div class="card-title">Science Hub</div>
-        <div class="card-desc">Physics, Chemistry, Biology and Maths — complete CBSE Class 12 Science with CUET Science preparation.</div>
-        <div class="card-tags">
-          <span class="tag green">Physics</span>
-          <span class="tag green">Chemistry</span>
-          <span class="tag green">Biology</span>
-          <span class="tag green">Maths</span>
+        <div class="scn-banner-top">
+          <div class="scn-icon-ring">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2"/><path d="M8 7V5a2 2 0 0 0-2-2h0a2 2 0 0 0-2 2v2"/>
+            </svg>
+          </div>
+          <span class="scn-stream-badge">Commerce</span>
         </div>
-        <div class="card-arrow"><span>Free CBSE Class 12 Science Notes</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-      </a>
+        <div>
+          <div class="scn-banner-title">Commerce Hub</div>
+          <div class="scn-banner-sub">4 subjects · CUET prep included</div>
+        </div>
+      </div>
 
-      <!-- Humanities -->
-      <a class="card" href="https://commercesehoga.github.io/humanities" aria-label="Humanities Hub">
-        <div class="card-icon amber" style="background:#fff3e0">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#e65100" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-          </svg>
+      <div class="scn-body">
+        <p class="scn-desc">Accountancy, Business Studies, Economics and Applied Maths — complete study material with mock tests and PYQs.</p>
+        <div class="scn-chips">
+          <span class="scn-chip blue">Accountancy</span>
+          <span class="scn-chip blue">BST</span>
+          <span class="scn-chip blue">Economics</span>
+          <span class="scn-chip blue">Applied Maths</span>
         </div>
-        <div class="card-title">Humanities Hub</div>
-        <div class="card-desc">History, Geography, Political Science, Psychology and Sociology — full CBSE Humanities stream study material.</div>
-        <div class="card-tags">
-          <span class="tag amber">History</span>
-          <span class="tag amber">Geography</span>
-          <span class="tag amber">Pol. Science</span>
-          <span class="tag amber">Psychology</span>
-        </div>
-        <div class="card-arrow"><span>Free CBSE Class 12 Humanities Notes</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-      </a>
+      </div>
 
-    </div>
+      <div class="scn-stats">
+        <div class="scn-stat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Notes + PYQs
+        </div>
+        <div class="scn-stat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6.5l3 1.8"/></svg>
+          CBT Mock Tests
+        </div>
+        <div class="scn-stat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          100% Free
+        </div>
+      </div>
+
+      <div class="scn-footer scn-commerce-cta">
+        <span class="scn-cta-text">Explore Commerce Notes →</span>
+        <div class="scn-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </div>
+    </a>
+
+    <!-- Science -->
+    <a class="stream-card-new" href="https://commercesehoga.github.io/science" aria-label="Science Hub — Class 12 Notes">
+      <div class="scn-banner scn-science">
+        <div class="scn-deco">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="scn-banner-top">
+          <div class="scn-icon-ring">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 3v11a6 6 0 0 0 6 0V3"/><line x1="6" y1="3" x2="18" y2="3"/>
+            </svg>
+          </div>
+          <span class="scn-stream-badge">Science</span>
+        </div>
+        <div>
+          <div class="scn-banner-title">Science Hub</div>
+          <div class="scn-banner-sub">PCM + Biology · JEE & NEET ready</div>
+        </div>
+      </div>
+
+      <div class="scn-body">
+        <p class="scn-desc">Physics, Chemistry, Biology and Maths — complete CBSE Class 12 Science with CUET Science preparation material.</p>
+        <div class="scn-chips">
+          <span class="scn-chip green">Physics</span>
+          <span class="scn-chip green">Chemistry</span>
+          <span class="scn-chip green">Biology</span>
+          <span class="scn-chip green">Maths</span>
+        </div>
+      </div>
+
+      <div class="scn-stats">
+        <div class="scn-stat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Notes + PYQs
+        </div>
+        <div class="scn-stat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6.5l3 1.8"/></svg>
+          CBT Mock Tests
+        </div>
+        <div class="scn-stat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          100% Free
+        </div>
+      </div>
+
+      <div class="scn-footer scn-science-cta">
+        <span class="scn-cta-text">Explore Science Notes →</span>
+        <div class="scn-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </div>
+    </a>
+
+    <!-- Humanities -->
+    <a class="stream-card-new" href="https://commercesehoga.github.io/humanities" aria-label="Humanities Hub — Class 12 Notes">
+      <div class="scn-banner scn-humanities">
+        <div class="scn-deco">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="scn-banner-top">
+          <div class="scn-icon-ring">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+          </div>
+          <span class="scn-stream-badge">Humanities</span>
+        </div>
+        <div>
+          <div class="scn-banner-title">Humanities Hub</div>
+          <div class="scn-banner-sub">5 subjects · History to Psychology</div>
+        </div>
+      </div>
+
+      <div class="scn-body">
+        <p class="scn-desc">History, Geography, Political Science, Psychology and Sociology — full CBSE Humanities stream study material.</p>
+        <div class="scn-chips">
+          <span class="scn-chip amber">History</span>
+          <span class="scn-chip amber">Geography</span>
+          <span class="scn-chip amber">Pol. Science</span>
+          <span class="scn-chip amber">Psychology</span>
+        </div>
+      </div>
+
+      <div class="scn-stats">
+        <div class="scn-stat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Notes + PYQs
+        </div>
+        <div class="scn-stat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6.5l3 1.8"/></svg>
+          CBT Mock Tests
+        </div>
+        <div class="scn-stat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          100% Free
+        </div>
+      </div>
+
+      <div class="scn-footer scn-humanities-cta">
+        <span class="scn-cta-text">Explore Humanities Notes →</span>
+        <div class="scn-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </div>
+    </a>
+
   </div>
 </section>
 
