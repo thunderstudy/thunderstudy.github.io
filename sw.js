@@ -5,9 +5,9 @@
  * @author Wondermayank / ThunderStudy
  */
 
-const CACHE_NAME = 'thunderstudy-v2';
-const STATIC_CACHE = 'thunderstudy-static-v2';
-const DYNAMIC_CACHE = 'thunderstudy-dynamic-v2';
+const CACHE_NAME = 'thunderstudy-v3';
+const STATIC_CACHE = 'thunderstudy-static-v3';
+const DYNAMIC_CACHE = 'thunderstudy-dynamic-v3';
 
 // Core assets to cache on install
 const CORE_ASSETS = [
