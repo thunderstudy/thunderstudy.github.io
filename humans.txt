@@ -1,0 +1,41 @@
+/* TEAM */
+Creator & Developer: Wondermayank
+Role: Founder, Developer, Content Creator
+Twitter / X: @wonder_mayank
+Instagram : @wondermayank
+GitHub: https://github.com/wondermayank
+Location: India
+
+/* THANKS */
+To every student in India who deserves free, high-quality education.
+To the open-source community whose tools made this possible.
+To NCERT for the foundational curriculum that powers our content.
+
+/* SITE */
+Name: ThunderStudy
+Tagline: India's #1 Free Study Platform — No Ads, No Login, Always Free
+URL: https://thunderstudy.github.io
+Sister site: https://commercesehoga.github.io
+Current Affairs: https://wondermayank.github.io/Current_Affairs/
+
+Last update: 2026-05-22
+Language: English (India), Hindi
+Doctype: HTML5
+Technology: Vanilla HTML, CSS, JavaScript, PWA, Service Worker
+Hosting: GitHub Pages
+Analytics: None (we respect your privacy)
+Tracking: None
+Ads: None — ever
+
+/* MISSION */
+ThunderStudy exists to give every Indian student — regardless of
+background, location, or income — access to world-class study material
+for free. We cover CBSE Class 12 (Commerce, Science, Humanities),
+CUET 2026, UPSC, SSC CGL, Banking, JEE, NEET, and more.
+100,000+ files. Zero paywalls. Zero data collection.
+
+/* STANDARDS */
+Built to: W3C HTML5, WCAG 2.1 AA
+SEO: Schema.org, Open Graph, Twitter Card, JSON-LD
+Performance: Core Web Vitals optimised, PWA ready
+Privacy: No cookies, no trackers, no login, local-only storage
