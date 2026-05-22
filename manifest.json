@@ -1,7 +1,7 @@
 {
   "name": "ThunderStudy — Free Study Platform",
   "short_name": "ThunderStudy",
-  "description": "India's #1 free study platform — CBSE Class 12, CUET, UPSC, SSC, JEE, NEET. 100,000+ files. No ads. No login.",
+  "description": "India's #1 free study platform — CBSE Class 12, CUET 2026, UPSC, SSC, JEE, NEET. 100,000+ files. No ads. No login. Always free.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
@@ -10,22 +10,75 @@
   "theme_color": "#0077f5",
   "lang": "en-IN",
   "dir": "ltr",
-  "categories": ["education", "books"],
+  "id": "thunderstudy-pwa-v1",
+  "categories": ["education", "books", "lifestyle"],
+  "iarc_rating_id": "",
+  "keywords": [
+    "free CBSE notes", "CUET mock test 2026", "SSC CGL mock test",
+    "UPSC free material", "JEE NEET prep", "Banking mock test",
+    "free study India", "no ads education", "ThunderStudy"
+  ],
   "icons": [
     { "src": "/favicon-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
     { "src": "/favicon-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" },
-    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+    { "src": "/apple-touch-icon.png",  "sizes": "180x180", "type": "image/png" },
+    { "src": "/favicon-32x32.png",     "sizes": "32x32",   "type": "image/png" }
   ],
   "screenshots": [
-    { "src": "/screenshot-mobile.png", "sizes": "390x844", "type": "image/png", "form_factor": "narrow", "label": "ThunderStudy on mobile" },
-    { "src": "/screenshot-desktop.png", "sizes": "1280x800", "type": "image/png", "form_factor": "wide", "label": "ThunderStudy on desktop" }
+    {
+      "src": "/screenshot-mobile.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "ThunderStudy on mobile — free study material"
+    },
+    {
+      "src": "/screenshot-desktop.png",
+      "sizes": "1280x800",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "ThunderStudy on desktop — CBSE, CUET, SSC, Banking mocks"
+    }
   ],
   "shortcuts": [
-    { "name": "CUET Mock Tests", "short_name": "CUET", "url": "https://commercesehoga.github.io/cuet", "description": "Free CUET 2026 Mock Tests" },
-    { "name": "CBSE Class 12", "short_name": "CBSE", "url": "https://thunderstudy.github.io/#streams", "description": "CBSE Class 12 Notes" },
-    { "name": "SSC Mock Tests", "short_name": "SSC", "url": "https://commercesehoga.github.io/ssc", "description": "Free SSC CGL Mock Tests" },
-    { "name": "UPSC Prep", "short_name": "UPSC", "url": "https://thunderstudy.github.io/upsc/", "description": "Free UPSC Civil Services Prep" }
+    {
+      "name": "CUET Mock Tests 2026",
+      "short_name": "CUET",
+      "url": "https://commercesehoga.github.io/cuet",
+      "description": "Free full-length CUET 2026 mock tests",
+      "icons": [{ "src": "/favicon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "CBSE Class 12",
+      "short_name": "CBSE",
+      "url": "https://thunderstudy.github.io/#streams",
+      "description": "CBSE Class 12 notes — Commerce, Science, Humanities",
+      "icons": [{ "src": "/favicon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "SSC Mock Tests",
+      "short_name": "SSC",
+      "url": "https://commercesehoga.github.io/ssc",
+      "description": "Free SSC CGL CBT-style mock tests",
+      "icons": [{ "src": "/favicon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Banking Mocks",
+      "short_name": "Banking",
+      "url": "https://commercesehoga.github.io/banking",
+      "description": "Free IBPS PO, SBI PO, Clerk mock tests",
+      "icons": [{ "src": "/favicon-192x192.png", "sizes": "192x192" }]
+    }
   ],
   "related_applications": [],
-  "prefer_related_applications": false
+  "prefer_related_applications": false,
+  "share_target": {
+    "action": "/",
+    "method": "GET",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  }
 }
