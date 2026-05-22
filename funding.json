@@ -1,0 +1,21 @@
+{
+  "version": "v1.0.0",
+  "entity": {
+    "type": "individual",
+    "role": "maintainer",
+    "name": "Wondermayank",
+    "github": "wondermayank",
+    "description": "Creator and maintainer of ThunderStudy — India's largest free study platform"
+  },
+  "projects": [
+    {
+      "guid": "thunderstudy",
+      "name": "ThunderStudy",
+      "description": "India's #1 free study platform — CBSE Class 12, CUET 2026, SSC, Banking, JEE, NEET. 100,000+ files. No ads. No login.",
+      "web-url": "https://thunderstudy.github.io",
+      "repository-url": "https://github.com/wondermayank",
+      "licenses": ["MIT"],
+      "tags": ["education", "cbse", "cuet", "ssc", "banking", "upsc", "india", "free"]
+    }
+  ]
+}
