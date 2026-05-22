@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://thunderstudy.github.io/</loc>
+    <image:image>
+      <image:loc>https://thunderstudy.github.io/og-cover.svg</image:loc>
+      <image:title>ThunderStudy — India's #1 Free Study Platform</image:title>
+      <image:caption>ThunderStudy: 100% free CBSE Class 12, CUET 2026, UPSC, SSC, JEE, NEET study material. No ads, no login.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://thunderstudy.github.io/logo.svg</image:loc>
+      <image:title>ThunderStudy Logo</image:title>
+      <image:caption>ThunderStudy — Free Study Platform for Indian Students</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://commercesehoga.github.io/cuet</loc>
+    <image:image>
+      <image:loc>https://commercesehoga.github.io/og-cover.png</image:loc>
+      <image:title>Free CUET 2026 Mock Tests — ThunderStudy</image:title>
+      <image:caption>Full-length CUET 2026 mock tests with real exam pattern, auto-scoring and analysis. Free, no login.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://commercesehoga.github.io/commerce</loc>
+    <image:image>
+      <image:loc>https://commercesehoga.github.io/og-cover.png</image:loc>
+      <image:title>CBSE Class 12 Commerce Notes — ThunderStudy</image:title>
+      <image:caption>Free CBSE Class 12 Commerce notes — Accountancy, BST, Economics, Applied Maths.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://commercesehoga.github.io/science</loc>
+    <image:image>
+      <image:loc>https://commercesehoga.github.io/og-cover.png</image:loc>
+      <image:title>CBSE Class 12 Science Notes — ThunderStudy</image:title>
+      <image:caption>Free CBSE Class 12 Science notes — Physics, Chemistry, Biology, Maths.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://commercesehoga.github.io/ssc</loc>
+    <image:image>
+      <image:loc>https://commercesehoga.github.io/og-cover.png</image:loc>
+      <image:title>Free SSC CGL Mock Tests — ThunderStudy</image:title>
+      <image:caption>CBT-style SSC CGL mock tests with real interface, auto-scoring and detailed analysis. Free.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://commercesehoga.github.io/banking</loc>
+    <image:image>
+      <image:loc>https://commercesehoga.github.io/og-cover.png</image:loc>
+      <image:title>Free Banking Mock Tests IBPS SBI — ThunderStudy</image:title>
+      <image:caption>Free IBPS PO, SBI PO, IBPS Clerk and SBI Clerk mock tests with real CBT interface.</image:caption>
+    </image:image>
+  </url>
+
+</urlset>
