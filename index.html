@@ -367,6 +367,157 @@
 }
 </script>
 
+  <!-- ================================================================
+  EXTRA SCHEMA SNIPPETS — Paste inside <head> of index.html
+  Adds: HowTo, ItemList, Event, SpeakableSpecification, Course list
+  ThunderStudy — 2026-05-22
+================================================================ -->
+
+<!-- ── HowTo Schema: How to prepare for CUET 2026 (AEO / featured snippet) ── -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to prepare for CUET 2026 for free",
+  "description": "Step-by-step guide to prepare for CUET 2026 using free resources on ThunderStudy.",
+  "totalTime": "P60D",
+  "estimatedCost": { "@type": "MonetaryAmount", "currency": "INR", "value": "0" },
+  "tool": [
+    { "@type": "HowToTool", "name": "ThunderStudy (thunderstudy.github.io)" }
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Complete NCERT revision",
+      "text": "Revise all NCERT chapters for your domain subjects (Commerce, Science, or Humanities). Use ThunderStudy's chapter-wise notes at commercesehoga.github.io.",
+      "url": "https://commercesehoga.github.io/commerce"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Practice chapter-wise questions",
+      "text": "Solve important questions and previous year questions (PYQs) chapter-by-chapter on ThunderStudy.",
+      "url": "https://commercesehoga.github.io/cuet"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Take full-length CUET mock tests",
+      "text": "Attempt full-length CUET 2026 mock tests on ThunderStudy (commercesehoga.github.io/cuet) with real exam interface, timer and auto-scoring.",
+      "url": "https://commercesehoga.github.io/cuet"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Prepare for GAT (General Aptitude Test)",
+      "text": "Practice CUET General Test (GAT) questions covering quantitative reasoning, language comprehension and current affairs.",
+      "url": "https://commercesehoga.github.io/gat"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Revise daily current affairs",
+      "text": "Stay updated with daily current affairs at wondermayank.github.io/Current_Affairs/ for CUET general awareness.",
+      "url": "https://wondermayank.github.io/Current_Affairs/"
+    }
+  ]
+}
+</script>
+
+<!-- ── ItemList: Top free study resources (AEO for list-style AI answers) ── -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Free Study Resources on ThunderStudy",
+  "description": "Complete list of free study resources available on ThunderStudy for Indian students.",
+  "numberOfItems": 11,
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1,  "name": "Free CBSE Class 12 Commerce Notes",         "url": "https://commercesehoga.github.io/commerce" },
+    { "@type": "ListItem", "position": 2,  "name": "Free CBSE Class 12 Science Notes",          "url": "https://commercesehoga.github.io/science" },
+    { "@type": "ListItem", "position": 3,  "name": "Free CBSE Class 12 Humanities Notes",       "url": "https://commercesehoga.github.io/humanities" },
+    { "@type": "ListItem", "position": 4,  "name": "Free CUET 2026 Mock Tests",                 "url": "https://commercesehoga.github.io/cuet" },
+    { "@type": "ListItem", "position": 5,  "name": "Free SSC CGL Mock Tests",                   "url": "https://commercesehoga.github.io/ssc" },
+    { "@type": "ListItem", "position": 6,  "name": "Free Banking Mock Tests IBPS PO SBI PO",    "url": "https://commercesehoga.github.io/banking" },
+    { "@type": "ListItem", "position": 7,  "name": "Free UPSC Preparation Material",            "url": "https://thunderstudy.github.io/upsc/" },
+    { "@type": "ListItem", "position": 8,  "name": "Free JEE NEET Preparation",                 "url": "https://commercesehoga.github.io/jee-neet" },
+    { "@type": "ListItem", "position": 9,  "name": "Free Computer Science & IP Notes",          "url": "https://commercesehoga.github.io/computer/cs" },
+    { "@type": "ListItem", "position": 10, "name": "Daily Current Affairs 2026",                "url": "https://wondermayank.github.io/Current_Affairs/" },
+    { "@type": "ListItem", "position": 11, "name": "Free CBSE Class 10 Study Material",         "url": "https://commercesehoga.github.io/boards/sst/his" }
+  ]
+}
+</script>
+
+<!-- ── SoftwareApplication: PWA schema for Google Play-style cards ── -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "@id": "https://thunderstudy.github.io/#app",
+  "name": "ThunderStudy",
+  "url": "https://thunderstudy.github.io",
+  "applicationCategory": "EducationApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Any modern browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "INR"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "bestRating": "5",
+    "worstRating": "1",
+    "ratingCount": "1000"
+  },
+  "featureList": [
+    "100% Free — no subscription or payment",
+    "No login or registration required",
+    "No ads on any page",
+    "100,000+ study files",
+    "CBT-style mock tests with auto-scoring",
+    "Offline capable via PWA",
+    "Privacy-first: zero data collection"
+  ],
+  "screenshot": "https://commercesehoga.github.io/og-cover.png",
+  "inLanguage": ["en-IN", "hi"],
+  "author": { "@id": "https://thunderstudy.github.io/#founder" }
+}
+</script>
+
+<!-- ── Speakable: tells Google/voice assistants which text to read aloud ── -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://thunderstudy.github.io/",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".hero-tagline", "#platform-summary", ".speakable"]
+  },
+  "name": "ThunderStudy — Free Study Platform India",
+  "description": "ThunderStudy is India's largest 100% free study platform with over 100,000 study files — CBSE Class 12, CUET 2026, UPSC, SSC, JEE, NEET, Banking — no ads, no login.",
+  "url": "https://thunderstudy.github.io/"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "How to use ThunderStudy for free CUET 2026 prep",
+  "description": "Tutorial on using ThunderStudy's free CUET mock tests and notes",
+  "thumbnailUrl": "https://img.youtube.com/vi/YOUR_VIDEO_ID/maxresdefault.jpg",
+  "uploadDate": "2026-05-22",
+  "contentUrl": "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
+  "embedUrl": "https://www.youtube.com/embed/YOUR_VIDEO_ID",
+  "publisher": { "@id": "https://thunderstudy.github.io/#org" },
+  "isAccessibleForFree": true
+}
+</script>
+
 <!-- ===== PWA INSTALL BANNER ===== -->
 <style>
   #pwa-banner {
