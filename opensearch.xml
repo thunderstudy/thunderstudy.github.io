@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+  <ShortName>ThunderStudy</ShortName>
+  <Description>Search free study material on ThunderStudy — CBSE, CUET, SSC, Banking, JEE, NEET</Description>
+  <Tags>free study CBSE CUET SSC banking JEE NEET India education</Tags>
+  <Contact>https://twitter.com/wonder_mayank</Contact>
+  <Url type="text/html" template="https://thunderstudy.github.io/?q={searchTerms}"/>
+  <Image height="16" width="16" type="image/x-icon">https://thunderstudy.github.io/favicon.ico</Image>
+  <Image height="64" width="64" type="image/png">https://thunderstudy.github.io/favicon-192x192.png</Image>
+  <InputEncoding>UTF-8</InputEncoding>
+  <OutputEncoding>UTF-8</OutputEncoding>
+  <Language>en-IN</Language>
+  <Developer>Wondermayank</Developer>
+  <Attribution>ThunderStudy — Free Education for India</Attribution>
+</OpenSearchDescription>
