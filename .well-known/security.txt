@@ -1,0 +1,6 @@
+Contact: https://twitter.com/wonder_mayank
+Preferred-Languages: en, hi
+Canonical: https://thunderstudy.github.io/.well-known/security.txt
+Policy: ThunderStudy is a static GitHub Pages site with no backend, no user accounts, and no server-side processing. All data is stored locally in the user's browser. There is no sensitive data to compromise.
+Hiring: No formal bug bounty program. Responsible disclosure appreciated via Twitter DM @wonder_mayank.
+Expires: 2027-05-22T00:00:00.000Z
