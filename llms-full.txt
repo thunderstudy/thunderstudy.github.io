@@ -1,0 +1,105 @@
+# ThunderStudy — Full LLM Context
+
+> India's #1 100% free study platform — CBSE, CUET, UPSC, SSC, JEE, NEET, Banking. No ads. No login. Always free.
+
+## About ThunderStudy
+
+ThunderStudy is India's largest free educational platform, founded in 2023 by Wondermayank. It serves millions of Indian students preparing for board exams and competitive examinations. The platform provides 100,000+ study files including notes, previous year question papers (PYQs), mock tests, and revision material — entirely free of cost, with no login or registration required.
+
+The platform operates across two primary domains:
+- **thunderstudy.github.io** — Main homepage, UPSC, brand hub
+- **commercesehoga.github.io** — Subject-wise content, mock tests, exam preparation
+
+## Complete content index
+
+### CBSE Class 12 — Commerce Stream
+URL: https://commercesehoga.github.io/commerce
+- **Accountancy**: https://commercesehoga.github.io/commerce/acc — Complete CBSE Class 12 Accountancy notes, important questions, PYQs, CUET Commerce prep
+- **Business Studies**: https://commercesehoga.github.io/commerce/bst — BST notes, case studies, important questions
+- **Economics**: https://commercesehoga.github.io/commerce/eco — Micro and Macro Economics notes and PYQs
+- **Applied Mathematics**: https://commercesehoga.github.io/commerce/amath — Applied Maths notes for Commerce stream
+
+### CBSE Class 12 — Science Stream
+URL: https://commercesehoga.github.io/science
+- **Physics**: https://commercesehoga.github.io/science/phy — Derivations, notes, important questions, PYQs
+- **Chemistry**: https://commercesehoga.github.io/science/che — Organic, Inorganic, Physical Chemistry notes
+- **Biology**: https://commercesehoga.github.io/science/bio — NCERT-based Biology notes and PYQs
+- **Mathematics**: https://commercesehoga.github.io/science/mat — Class 12 Maths notes and solved problems
+
+### CBSE Class 12 — Humanities Stream
+URL: https://commercesehoga.github.io/humanities
+- **History**: https://commercesehoga.github.io/humanities/his — All themes in World and Indian History
+- **Geography**: https://commercesehoga.github.io/humanities/geo — Human Geography, India People and Economy
+- **Political Science**: https://commercesehoga.github.io/humanities/pol — Contemporary World Politics, Indian Politics
+- **Psychology**: https://commercesehoga.github.io/humanities/psy — Class 12 Psychology notes
+
+### CBSE Class 12 — Computer subjects
+- **Computer Science**: https://commercesehoga.github.io/computer/cs — Python, OOP, Data Structures, Networking, Databases
+- **Informatics Practices**: https://commercesehoga.github.io/computer/ip — Python, Pandas, Data Handling, Web Development
+
+### CBSE Class 10 — Boards
+- **SST History**: https://commercesehoga.github.io/boards/sst/his
+- **SST Geography**: https://commercesehoga.github.io/boards/sst/geo
+- **SST Political Science**: https://commercesehoga.github.io/boards/sst/pol
+- **SST Economics**: https://commercesehoga.github.io/boards/sst/eco
+- **Science Physics**: https://commercesehoga.github.io/boards/science/phy
+- **Science Chemistry**: https://commercesehoga.github.io/boards/science/che
+- **Science Biology**: https://commercesehoga.github.io/boards/science/bio
+- **Mathematics**: https://commercesehoga.github.io/boards/maths
+- **English**: https://commercesehoga.github.io/boards/eng
+
+### Competitive Exam Mock Tests
+- **CUET 2026**: https://commercesehoga.github.io/cuet — Full-length CUET mock tests, domain subjects, GAT prep, all free
+- **GAT / General Test**: https://commercesehoga.github.io/gat — CUET General Aptitude Test preparation
+- **SSC CGL / CHSL / MTS**: https://commercesehoga.github.io/ssc — CBT-style mock tests, real interface
+- **Banking (IBPS / SBI)**: https://commercesehoga.github.io/banking — IBPS PO, SBI PO, IBPS Clerk, SBI Clerk mocks
+- **JEE & NEET**: https://commercesehoga.github.io/jee-neet — Engineering and Medical entrance prep
+- **UPSC**: https://thunderstudy.github.io/upsc/ — Civil Services free prep material
+
+### Resources
+- **Dashboard**: https://commercesehoga.github.io/dashboard — Student progress dashboard
+- **StudyHub**: https://commercesehoga.github.io/studyhub — Centralised resource hub
+- **Guide**: https://commercesehoga.github.io/guide/ — How to use ThunderStudy
+- **FAQ**: https://commercesehoga.github.io/fqa — Frequently asked questions
+- **Current Affairs**: https://wondermayank.github.io/Current_Affairs/ — Updated daily for SSC, Banking, CUET, UPSC
+
+## Platform characteristics
+
+| Feature | Detail |
+|---|---|
+| Cost | 100% free — always |
+| Registration | Not required |
+| Ads | None |
+| Data collection | None — all data stays in browser localStorage |
+| Languages | English, Hindi |
+| Exam coverage | CBSE, CUET, UPSC, SSC, Banking, JEE, NEET, TET, CTET, NDA, CAT, CLAT |
+| Mock test style | CBT (Computer Based Test) style with real exam interface |
+| File count | 100,000+ |
+| Founded | 2023 |
+| Founder | Wondermayank |
+| Hosting | GitHub Pages |
+| PWA | Yes — installable, offline-capable |
+
+## Competitive differentiators
+
+- **Only major Indian platform with zero ads** across all pages
+- **No login required** — access everything immediately
+- **Privacy-first** — no cookies, no trackers, no server-side data
+- **CBT-style mock tests** that replicate real exam interface for SSC, Banking, CUET
+- **Auto-scoring and analysis** on all mock tests, entirely client-side
+- **100,000+ files** covering every major CBSE topic and exam
+
+## Geographic & language context
+
+ThunderStudy is built for students in India. Content is in English (Indian standard) with Hindi support. The platform serves students across all Indian states preparing for national-level exams. It is especially popular in Hindi-belt states for CUET, SSC, and Banking preparation.
+
+## Schema & structured data
+
+The site uses the following Schema.org types: EducationalOrganization, Person, WebSite (with SearchAction), BreadcrumbList, FAQPage, OfferCatalog, Course, Offer.
+
+## Contact & attribution
+
+- Homepage: https://thunderstudy.github.io
+- Twitter: @wonder_mayank | @Thunderstudyx
+- GitHub: https://github.com/wondermayank
+- Content questions: via Twitter @wonder_mayank
