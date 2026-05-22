@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="en-IN">
 <head>
@@ -27,7 +28,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="manifest" href="/manifest.json">
+<link rel="manifest" href="./manifest.json">
 
 <!-- ===== GEO META (Enhanced) ===== -->
 <meta name="geo.region" content="IN">
@@ -1011,71 +1012,99 @@
   }
 
   /* ========== EXAM THEME IMAGE CARDS ========== */
+  /* ===== EXAM QUICK LINKS — Pill Style (Option 2) ===== */
   .exam-theme-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
     margin-bottom: 40px;
   }
   .exam-theme-card {
-    border-radius: 18px;
-    overflow: hidden;
-    text-decoration: none;
-    color: white;
-    position: relative;
-    min-height: 120px;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 18px 16px 14px;
-    transition: transform 0.25s cubic-bezier(.22,.68,0,1.2), box-shadow 0.25s;
-    box-shadow: 0 4px 18px rgba(0,0,0,0.13);
+    align-items: center;
+    gap: 12px;
+    background: var(--white);
+    border: 1px solid #e2e8f0;
+    border-radius: 50px;
+    padding: 10px 18px 10px 10px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    flex-shrink: 0;
   }
-  .exam-theme-card:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 16px 40px rgba(0,0,0,0.2); }
-  .exam-theme-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(160deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.55) 100%);
-    z-index: 1;
+  .exam-theme-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.09);
+    border-color: #c7d2e8;
   }
-  .exam-theme-card .etc-emoji {
-    position: absolute;
-    top: 14px; right: 14px;
-    font-size: 2rem;
-    z-index: 2;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+  .exam-theme-card .etc-emoji-wrap {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
   }
   .exam-theme-card .etc-title {
-    font-family: var(--font-display);
-    font-size: 1.1rem;
-    font-weight: 800;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 700;
     line-height: 1.2;
-    position: relative;
-    z-index: 2;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+    color: var(--gray-800);
   }
   .exam-theme-card .etc-sub {
-    font-size: 0.72rem;
-    opacity: 0.85;
-    font-weight: 500;
-    margin-top: 3px;
-    position: relative;
-    z-index: 2;
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: var(--gray-400);
+    margin-top: 1px;
+    white-space: nowrap;
   }
-  .etc-cbse { background: linear-gradient(135deg, #1565c0, #42a5f5); }
-  .etc-jee { background: linear-gradient(135deg, #1b5e20, #43a047); }
-  .etc-neet { background: linear-gradient(135deg, #00695c, #26a69a); }
-  .etc-cuet { background: linear-gradient(135deg, #4a1d96, #7c3aed); }
-  .etc-cat { background: linear-gradient(135deg, #b71c1c, #e53935); }
-  .etc-ssc { background: linear-gradient(135deg, #e65100, #ff7043); }
-  .etc-bank { background: linear-gradient(135deg, #004d40, #00897b); }
-  .etc-nda { background: linear-gradient(135deg, #1a237e, #3949ab); }
-  .etc-clat { background: linear-gradient(135deg, #880e4f, #e91e63); }
-  .etc-ca { background: linear-gradient(135deg, #f57f17, #fbc02d); }
-  .etc-ncert { background: linear-gradient(135deg, #37474f, #78909c); }
-  .etc-diploma { background: linear-gradient(135deg, #4e342e, #8d6e63); }
-  .etc-tet { background: linear-gradient(135deg, #006064, #00acc1); }
+  /* Top 3 featured pills */
+  .etc-class12 .etc-emoji-wrap { background: #dbeafe; }
+  .etc-class12 .etc-title { color: #1e3a8a; font-size: 0.95rem; }
+  .etc-class12 { border-color: #bfdbfe; border-width: 1.5px; }
+  .etc-cuet2 .etc-emoji-wrap { background: #ede9fe; }
+  .etc-cuet2 .etc-title { color: #5b21b6; font-size: 0.95rem; }
+  .etc-cuet2 { border-color: #c4b5fd; border-width: 1.5px; }
+  .etc-class10 .etc-emoji-wrap { background: #d1fae5; }
+  .etc-class10 .etc-title { color: #065f46; font-size: 0.95rem; }
+  .etc-class10 { border-color: #6ee7b7; border-width: 1.5px; }
+  /* "All Exams" divider label inside flex row */
+  .etc-divider-label {
+    width: 100%;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray-400);
+    padding: 6px 2px 2px;
+    flex-basis: 100%;
+  }
+  .etc-cbse .etc-emoji-wrap { background: #e8f0fe; }
+  .etc-jee .etc-emoji-wrap { background: #e6f9f3; }
+  .etc-jee .etc-title { color: #065f46; }
+  .etc-neet .etc-emoji-wrap { background: #fde8f0; }
+  .etc-neet .etc-title { color: #9d174d; }
+  .etc-cuet .etc-emoji-wrap { background: #f3ecfe; }
+  .etc-cuet .etc-title { color: #6d28d9; }
+  .etc-ssc .etc-emoji-wrap { background: #dbeafe; }
+  .etc-ssc .etc-title { color: #1e40af; }
+  .etc-cat .etc-emoji-wrap { background: #fde8e8; }
+  .etc-cat .etc-title { color: #991b1b; }
+  .etc-clat .etc-emoji-wrap { background: #fde8f0; }
+  .etc-clat .etc-title { color: #831843; }
+  .etc-nda .etc-emoji-wrap { background: #e8effe; }
+  .etc-nda .etc-title { color: #1e3a8a; }
+  .etc-ncert .etc-emoji-wrap { background: #f1f5f9; }
+  .etc-ncert .etc-title { color: #334155; }
+  .etc-ca .etc-emoji-wrap { background: #fef9e4; }
+  .etc-ca .etc-title { color: #78350f; }
+  .etc-diploma .etc-emoji-wrap { background: #f5f0eb; }
+  .etc-diploma .etc-title { color: #44260e; }
+  .etc-tet .etc-emoji-wrap { background: #e4f7fa; }
+  .etc-tet .etc-title { color: #0e5460; }
+  .etc-bank { background: var(--white); border: 1px solid #e2e8f0; }
+  .etc-bank .etc-emoji-wrap { background: #e4f7ef; }
+  .etc-bank .etc-title { color: #065f46; }
 
   /* ========== SUB-TOPIC GRID (3-per-row cards) — Option 1 chip style ========== */
   .subtopic-row {
@@ -1102,11 +1131,23 @@
     cursor: pointer;
   }
   .subtopic-pill:hover {
-    background: #f8fafc;
-    border-color: var(--gray-300);
+    background: #e8f0fe;
+    border-color: #b6cef7;
+    color: #1a56db;
     transform: translateY(-2px);
-    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 14px rgba(26,86,219,0.10);
   }
+  .subtopic-pill:hover span { color: #1a56db; }
+  .subtopic-pill.purple:hover { background: #EEEDFE; border-color: #AFA9EC; color: #534AB7; }
+  .subtopic-pill.purple:hover span { color: #534AB7; }
+  .subtopic-pill.green:hover  { background: #EAF3DE; border-color: #97C459; color: #3B6D11; }
+  .subtopic-pill.green:hover span  { color: #3B6D11; }
+  .subtopic-pill.teal:hover   { background: #E1F5EE; border-color: #5DCAA5; color: #0F6E56; }
+  .subtopic-pill.teal:hover span   { color: #0F6E56; }
+  .subtopic-pill.amber:hover  { background: #FAEEDA; border-color: #EF9F27; color: #854F0B; }
+  .subtopic-pill.amber:hover span  { color: #854F0B; }
+  .subtopic-pill.rose:hover   { background: #fce4ec; border-color: #f09595; color: #c62828; }
+  .subtopic-pill.rose:hover span   { color: #c62828; }
   /* ── icon chip inside each pill ── */
   .subtopic-pill .pill-ic {
     width: 30px; height: 30px;
@@ -1428,7 +1469,10 @@
     #mob-nav { display: block; }
     #back-top { bottom: 72px; }
     body { padding-bottom: 60px; }
-    .exam-theme-grid { grid-template-columns: repeat(2, 1fr); }
+    .exam-theme-grid { gap: 8px; }
+    .exam-theme-card { padding: 8px 14px 8px 8px; }
+    .exam-theme-card .etc-title { font-size: 0.82rem; }
+    .exam-theme-card .etc-sub { display: none; }
     .subtopic-row { grid-template-columns: repeat(2, 1fr); gap: 8px; }
     .subtopic-pill { font-size: 0.75rem; padding: 9px 10px; }
     .social-row { gap: 8px; }
@@ -2184,288 +2228,6 @@
 
 <div class="divider"></div>
 
-<!-- ALL SUBJECTS -->
-<section class="section-alt" id="subjects" aria-labelledby="subjects-heading">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label">Subject-Wise Access</span>
-      <h2 class="section-title" id="subjects-heading">All Subjects — Direct Links</h2>
-      <p class="section-desc">Jump directly to any subject. Each page has notes, important questions, PYQs and exam prep. Divided into Board (Class 10 &amp; 12) and CUET sections.</p>
-    </div>
-
-    <!-- ===== BOARD SECTION ===== -->
-    <div style="background:linear-gradient(90deg,#e3f2fd,#ede8ff);border-radius:14px;padding:14px 20px;margin-bottom:24px;display:flex;align-items:center;gap:12px;font-family:var(--font-display);font-weight:800;font-size:1.1rem;color:#1565c0;">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>
-      Board Exams — Class 10 &amp; 12
-    </div>
-
-    <!-- Class 12 Commerce Board -->
-    <div class="stream-band commerce">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2"/></svg>
-      Class 12 — Commerce Stream
-    </div>
-    <div style="margin-bottom:12px" class="subtopic-row">
-      <a href="https://commercesehoga.github.io/commerce/topper-notes" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="none" style="flex-shrink:0"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span>Topper Notes</span></a>
-      <a href="https://commercesehoga.github.io/commerce/formula" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg><span>Formula</span></a>
-      <a href="https://commercesehoga.github.io/commerce/kv-sample-paper" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>KV Sample Paper</span></a>
-      <a href="https://commercesehoga.github.io/commerce/topper-answersheet" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Topper Answersheet</span></a>
-      <a href="https://commercesehoga.github.io/commerce/sample-paper" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg><span>Sample Paper</span></a>
-      <a href="https://commercesehoga.github.io/commerce/pyqs" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>PYQs</span></a>
-      <a href="https://commercesehoga.github.io/commerce/imp-question" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span>Imp. Questions</span></a>
-      <a href="https://commercesehoga.github.io/commerce/question-bank" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg><span>Question Bank</span></a>
-      <a href="https://commercesehoga.github.io/commerce/concept-map" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg><span>Concept Map</span></a>
-    </div>
-    <div class="grid-4" style="margin-bottom:32px">
-      <a class="subj-card" href="https://commercesehoga.github.io/commerce/acc" aria-label="Accountancy">
-        <div class="subj-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="#1e88e5" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
-        <div><div class="subj-name">Accountancy</div><div class="subj-stream">Commerce · Class 12</div></div>
-      </a>
-      <a class="subj-card" href="https://commercesehoga.github.io/commerce/bst" aria-label="Business Studies">
-        <div class="subj-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="#1e88e5" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-        <div><div class="subj-name">Business Studies</div><div class="subj-stream">Commerce · Class 12</div></div>
-      </a>
-      <a class="subj-card" href="https://commercesehoga.github.io/commerce/eco" aria-label="Economics">
-        <div class="subj-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="#1e88e5" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-        <div><div class="subj-name">Economics</div><div class="subj-stream">Commerce · Class 12</div></div>
-      </a>
-      <a class="subj-card" href="https://commercesehoga.github.io/commerce/amath" aria-label="Applied Mathematics">
-        <div class="subj-icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></div>
-        <div><div class="subj-name">Applied Maths</div><div class="subj-stream">Commerce · Class 12</div></div>
-      </a>
-    </div>
-
-    <!-- Class 12 Science Board -->
-    <div class="stream-band science">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18"/></svg>
-      Class 12 — Science Stream
-    </div>
-    <div class="grid-4" style="margin-bottom:32px">
-      <a class="subj-card" href="https://commercesehoga.github.io/science/phy" aria-label="Physics">
-        <div class="subj-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
-        <div><div class="subj-name">Physics</div><div class="subj-stream">Science · Class 12</div></div>
-      </a>
-      <a class="subj-card" href="https://commercesehoga.github.io/science/che" aria-label="Chemistry">
-        <div class="subj-icon teal"><svg viewBox="0 0 24 24" fill="none" stroke="#00695c" stroke-width="2"><path d="M9 3v11a6 6 0 0 0 6 0V3"/><line x1="6" y1="3" x2="18" y2="3"/></svg></div>
-        <div><div class="subj-name">Chemistry</div><div class="subj-stream">Science · Class 12</div></div>
-      </a>
-      <a class="subj-card" href="https://commercesehoga.github.io/science/bio" aria-label="Biology">
-        <div class="subj-icon teal"><svg viewBox="0 0 24 24" fill="none" stroke="#00695c" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <div><div class="subj-name">Biology</div><div class="subj-stream">Science · Class 12</div></div>
-      </a>
-      <a class="subj-card" href="https://commercesehoga.github.io/science/mat" aria-label="Mathematics">
-        <div class="subj-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
-        <div><div class="subj-name">Mathematics</div><div class="subj-stream">Science · Class 12</div></div>
-      </a>
-    </div>
-
-    <!-- Class 12 Humanities Board -->
-    <div class="stream-band humanities">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
-      Class 12 — Humanities Stream
-    </div>
-    <div class="grid-4" style="margin-bottom:32px">
-      <a class="subj-card" href="https://commercesehoga.github.io/humanities/his" aria-label="History">
-        <div class="subj-icon amber"><svg viewBox="0 0 24 24" fill="none" stroke="#e65100" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-        <div><div class="subj-name">History</div><div class="subj-stream">Humanities · Class 12</div></div>
-      </a>
-      <a class="subj-card" href="https://commercesehoga.github.io/humanities/geo" aria-label="Geography">
-        <div class="subj-icon amber"><svg viewBox="0 0 24 24" fill="none" stroke="#e65100" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"/></svg></div>
-        <div><div class="subj-name">Geography</div><div class="subj-stream">Humanities · Class 12</div></div>
-      </a>
-      <a class="subj-card" href="https://commercesehoga.github.io/humanities/pol" aria-label="Political Science">
-        <div class="subj-icon rose"><svg viewBox="0 0 24 24" fill="none" stroke="#c62828" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg></div>
-        <div><div class="subj-name">Political Science</div><div class="subj-stream">Humanities · Class 12</div></div>
-      </a>
-      <a class="subj-card" href="https://commercesehoga.github.io/humanities/psy" aria-label="Psychology">
-        <div class="subj-icon rose"><svg viewBox="0 0 24 24" fill="none" stroke="#c62828" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
-        <div><div class="subj-name">Psychology</div><div class="subj-stream">Humanities · Class 12</div></div>
-      </a>
-    </div>
-
-    <!-- Class 12 Common -->
-    <div class="stream-band" style="background:linear-gradient(90deg,#ede8ff,#dbeeff);color:#4a1d96;margin-bottom:16px;">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-      Class 12 — Common Subjects (All Streams)
-    </div>
-    <div class="grid-4" style="margin-bottom:40px">
-      <a class="subj-card" href="https://commercesehoga.github.io/english/12" aria-label="English Class 12">
-        <div class="subj-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="#1e88e5" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
-        <div><div class="subj-name">English</div><div class="subj-stream">All Streams · Class 12</div></div>
-      </a>
-      <a class="subj-card" href="https://commercesehoga.github.io/physcial/12" aria-label="Physical Education Class 12">
-        <div class="subj-icon rose"><svg viewBox="0 0 24 24" fill="none" stroke="#c62828" stroke-width="2"><circle cx="12" cy="8" r="3"/><path d="M12 11v4M8 21h8M5 21c0-3.5 3-6 7-6s7 2.5 7 6"/></svg></div>
-        <div><div class="subj-name">Physical Education</div><div class="subj-stream">All Streams · Class 12</div></div>
-      </a>
-
-      <!-- Computer (pull-down accordion) -->
-      <div class="subj-card" style="flex-direction:column;align-items:flex-start;gap:10px;cursor:default;">
-        <div style="display:flex;align-items:center;gap:14px;width:100%;">
-          <div class="subj-icon teal" style="flex-shrink:0;"><svg viewBox="0 0 24 24" fill="none" stroke="#00695c" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-          <div>
-            <div class="subj-name">Computer</div>
-            <div class="subj-stream">All Streams · Class 12</div>
-          </div>
-        </div>
-        <div style="display:flex;gap:6px;flex-wrap:wrap;padding-left:52px;">
-          <a href="https://commercesehoga.github.io/computer/ip" style="font-size:0.68rem;padding:2px 7px;background:#e0f7fa;color:#00695c;border-radius:99px;font-weight:600;text-decoration:none;">IP</a>
-          <a href="https://commercesehoga.github.io/computer/cs" style="font-size:0.68rem;padding:2px 7px;background:#e0f7fa;color:#00695c;border-radius:99px;font-weight:600;text-decoration:none;">CS</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Class 10 Section -->
-    <div style="background:linear-gradient(90deg,#e8f5e9,#fff8e1);border-radius:14px;padding:14px 20px;margin-bottom:16px;display:flex;align-items:center;gap:12px;font-family:var(--font-display);font-weight:800;font-size:1.05rem;color:#2e7d32;">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-      Class 10 — Board Subjects
-    </div>
-    <div class="grid-4" style="margin-bottom:48px">
-
-      <a class="subj-card" href="https://commercesehoga.github.io/boards/sst/his" aria-label="History Class 10">
-        <div class="subj-icon amber" style="flex-shrink:0;"><svg viewBox="0 0 24 24" fill="none" stroke="#e65100" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
-        <div><div class="subj-name">History</div><div class="subj-stream">SST · Class 10</div></div>
-      </a>
-      <a class="subj-card" href="https://commercesehoga.github.io/boards/sst/geo" aria-label="Geography Class 10">
-        <div class="subj-icon amber" style="flex-shrink:0;"><svg viewBox="0 0 24 24" fill="none" stroke="#e65100" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"/></svg></div>
-        <div><div class="subj-name">Geography</div><div class="subj-stream">SST · Class 10</div></div>
-      </a>
-      <a class="subj-card" href="https://commercesehoga.github.io/boards/sst/pol" aria-label="Political Science Class 10">
-        <div class="subj-icon rose" style="flex-shrink:0;"><svg viewBox="0 0 24 24" fill="none" stroke="#c62828" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg></div>
-        <div><div class="subj-name">Pol. Science</div><div class="subj-stream">SST · Class 10</div></div>
-      </a>
-      <a class="subj-card" href="https://commercesehoga.github.io/boards/sst/eco" aria-label="Economics Class 10">
-        <div class="subj-icon amber" style="flex-shrink:0;"><svg viewBox="0 0 24 24" fill="none" stroke="#e65100" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-        <div><div class="subj-name">Economics</div><div class="subj-stream">SST · Class 10</div></div>
-      </a>
-      <a class="subj-card" href="https://commercesehoga.github.io/boards/science/phy" aria-label="Physics Class 10">
-        <div class="subj-icon green" style="flex-shrink:0;"><svg viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83"/></svg></div>
-        <div><div class="subj-name">Physics</div><div class="subj-stream">Science · Class 10</div></div>
-      </a>
-      <a class="subj-card" href="https://commercesehoga.github.io/boards/science/che" aria-label="Chemistry Class 10">
-        <div class="subj-icon teal" style="flex-shrink:0;"><svg viewBox="0 0 24 24" fill="none" stroke="#00695c" stroke-width="2"><path d="M9 3v11a6 6 0 0 0 6 0V3"/><line x1="6" y1="3" x2="18" y2="3"/></svg></div>
-        <div><div class="subj-name">Chemistry</div><div class="subj-stream">Science · Class 10</div></div>
-      </a>
-      <a class="subj-card" href="https://commercesehoga.github.io/boards/science/bio" aria-label="Biology Class 10">
-        <div class="subj-icon teal" style="flex-shrink:0;"><svg viewBox="0 0 24 24" fill="none" stroke="#00695c" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <div><div class="subj-name">Biology</div><div class="subj-stream">Science · Class 10</div></div>
-      </a>
-
-      <a class="subj-card" href="https://commercesehoga.github.io/boards/eng" aria-label="English Class 10">
-        <div class="subj-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="#1e88e5" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
-        <div><div class="subj-name">English</div><div class="subj-stream">Class 10</div></div>
-      </a>
-      <a class="subj-card" href="https://commercesehoga.github.io/boards/maths" aria-label="Maths Class 10">
-        <div class="subj-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
-        <div><div class="subj-name">Mathematics</div><div class="subj-stream">Class 10</div></div>
-      </a>
-    </div>
-
-    <!-- ===== CUET SECTION ===== -->
-    <div style="background:linear-gradient(90deg,#f3e8ff,#ede8ff);border-radius:14px;padding:14px 20px;margin-bottom:24px;display:flex;align-items:center;gap:12px;font-family:var(--font-display);font-weight:800;font-size:1.1rem;color:#5b21b6;">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-      CUET — Domain Subjects &amp; GAT
-    </div>
-
-    <!-- CUET Commerce -->
-    <div class="stream-band commerce">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2"/></svg>
-      CUET — Commerce Domain
-    </div>
-    <div class="grid-4" style="margin-bottom:32px">
-      <a class="subj-card" href="https://commercesehoga.github.io/commerce/acc" aria-label="CUET Accountancy">
-        <div class="subj-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="#1e88e5" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-        <div><div class="subj-name">Accountancy</div><div class="subj-stream">CUET Commerce</div></div>
-      </a>
-      <a class="subj-card" href="https://commercesehoga.github.io/commerce/bst" aria-label="CUET Business Studies">
-        <div class="subj-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="#1e88e5" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/></svg></div>
-        <div><div class="subj-name">Business Studies</div><div class="subj-stream">CUET Commerce</div></div>
-      </a>
-      <a class="subj-card" href="https://commercesehoga.github.io/commerce/eco" aria-label="CUET Economics">
-        <div class="subj-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="#1e88e5" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-        <div><div class="subj-name">Economics</div><div class="subj-stream">CUET Commerce</div></div>
-      </a>
-    </div>
-
-    <!-- CUET Science -->
-    <div class="stream-band science">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18"/></svg>
-      CUET — Science Domain
-    </div>
-    <div class="grid-4" style="margin-bottom:32px">
-      <a class="subj-card" href="https://commercesehoga.github.io/science/phy" aria-label="CUET Physics">
-        <div class="subj-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83"/></svg></div>
-        <div><div class="subj-name">Physics</div><div class="subj-stream">CUET Science</div></div>
-      </a>
-      <a class="subj-card" href="https://commercesehoga.github.io/science/che" aria-label="CUET Chemistry">
-        <div class="subj-icon teal"><svg viewBox="0 0 24 24" fill="none" stroke="#00695c" stroke-width="2"><path d="M9 3v11a6 6 0 0 0 6 0V3"/><line x1="6" y1="3" x2="18" y2="3"/></svg></div>
-        <div><div class="subj-name">Chemistry</div><div class="subj-stream">CUET Science</div></div>
-      </a>
-      <a class="subj-card" href="https://commercesehoga.github.io/science/bio" aria-label="CUET Biology">
-        <div class="subj-icon teal"><svg viewBox="0 0 24 24" fill="none" stroke="#00695c" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <div><div class="subj-name">Biology</div><div class="subj-stream">CUET Science</div></div>
-      </a>
-      <a class="subj-card" href="https://commercesehoga.github.io/science/mat" aria-label="CUET Mathematics">
-        <div class="subj-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
-        <div><div class="subj-name">Mathematics</div><div class="subj-stream">CUET Science</div></div>
-      </a>
-    </div>
-
-    <!-- CUET Humanities -->
-    <div class="stream-band humanities">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
-      CUET — Humanities Domain
-    </div>
-    <div class="grid-4" style="margin-bottom:32px">
-      <a class="subj-card" href="https://commercesehoga.github.io/humanities/his" aria-label="CUET History">
-        <div class="subj-icon amber"><svg viewBox="0 0 24 24" fill="none" stroke="#e65100" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
-        <div><div class="subj-name">History</div><div class="subj-stream">CUET Humanities</div></div>
-      </a>
-      <a class="subj-card" href="https://commercesehoga.github.io/humanities/geo" aria-label="CUET Geography">
-        <div class="subj-icon amber"><svg viewBox="0 0 24 24" fill="none" stroke="#e65100" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/></svg></div>
-        <div><div class="subj-name">Geography</div><div class="subj-stream">CUET Humanities</div></div>
-      </a>
-      <a class="subj-card" href="https://commercesehoga.github.io/humanities/pol" aria-label="CUET Political Science">
-        <div class="subj-icon rose"><svg viewBox="0 0 24 24" fill="none" stroke="#c62828" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg></div>
-        <div><div class="subj-name">Political Science</div><div class="subj-stream">CUET Humanities</div></div>
-      </a>
-      <a class="subj-card" href="https://commercesehoga.github.io/humanities/psy" aria-label="CUET Psychology">
-        <div class="subj-icon rose"><svg viewBox="0 0 24 24" fill="none" stroke="#c62828" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
-        <div><div class="subj-name">Psychology</div><div class="subj-stream">CUET Humanities</div></div>
-      </a>
-    </div>
-
-    <!-- CUET Common -->
-    <div class="stream-band" style="background:linear-gradient(90deg,#ede8ff,#dbeeff);color:#4a1d96;margin-bottom:16px;">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-      CUET — Common Subjects (All Streams)
-    </div>
-    <div class="grid-4">
-      <a class="subj-card" href="https://commercesehoga.github.io/gat" aria-label="GAT General Test">
-        <div class="subj-icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
-        <div><div class="subj-name">GAT — General Test</div><div class="subj-stream">CUET · All Exams</div></div>
-      </a>
-      <a class="subj-card" href="https://commercesehoga.github.io/physical" aria-label="CUET Physical Education">
-        <div class="subj-icon rose"><svg viewBox="0 0 24 24" fill="none" stroke="#c62828" stroke-width="2"><circle cx="12" cy="8" r="3"/><path d="M12 11v4M8 21h8M5 21c0-3.5 3-6 7-6s7 2.5 7 6"/></svg></div>
-        <div><div class="subj-name">Physical Education</div><div class="subj-stream">CUET · All Streams</div></div>
-      </a>
-      <a class="subj-card" href="https://commercesehoga.github.io/english" aria-label="CUET English">
-        <div class="subj-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="#1e88e5" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
-        <div><div class="subj-name">English Language</div><div class="subj-stream">CUET · All Streams</div></div>
-      </a>
-      <a class="subj-card" href="https://commercesehoga.github.io/computer/ip" aria-label="CUET Informatics Practices">
-        <div class="subj-icon teal"><svg viewBox="0 0 24 24" fill="none" stroke="#00695c" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-        <div><div class="subj-name">Informatics Practices (IP)</div><div class="subj-stream">CUET · All Streams</div></div>
-      </a>
-      <a class="subj-card" href="https://commercesehoga.github.io/computer/cs" aria-label="CUET Computer Science">
-        <div class="subj-icon teal"><svg viewBox="0 0 24 24" fill="none" stroke="#00695c" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
-        <div><div class="subj-name">Computer Science</div><div class="subj-stream">CUET · All Streams</div></div>
-      </a>
-    </div>
-
-  </div>
-</section>
-
-<div class="divider"></div>
-
 <!-- ===== NEW EXAM SECTIONS ===== -->
 <section id="more-exams" aria-labelledby="more-exams-heading">
   <div class="container">
@@ -2475,72 +2237,74 @@
       <p class="section-desc">Comprehensive preparation material for JEE, NEET, CAT, NDA, CLAT, CA, NCERT, Diploma, TET and more — all free.</p>
     </div>
 
-    <!-- Exam Theme Image Cards (visual navigation) -->
+    <!-- Exam Quick Links — Pill Style -->
     <div class="exam-theme-grid">
+      <!-- Top row: Class 12, CUET, Class 10 first -->
+      <a href="#cbse-resources" class="exam-theme-card etc-class12">
+        <div class="etc-emoji-wrap">📗</div>
+        <div><div class="etc-title">Class 12</div><div class="etc-sub">All Subjects · CBSE Board</div></div>
+      </a>
+      <a href="#cuet-full" class="exam-theme-card etc-cuet2">
+        <div class="etc-emoji-wrap">🎓</div>
+        <div><div class="etc-title">CUET 2026</div><div class="etc-sub">Mock Test · PYQs · All Subjects</div></div>
+      </a>
+      <a href="#ncert-section" class="exam-theme-card etc-class10">
+        <div class="etc-emoji-wrap">📘</div>
+        <div><div class="etc-title">Class 10</div><div class="etc-sub">NCERT · Notes · PYQs</div></div>
+      </a>
+      <!-- Divider label -->
+      <div class="etc-divider-label">All Exams</div>
       <a href="#cbse-resources" class="exam-theme-card etc-cbse">
-        <span class="etc-emoji">📚</span>
-        <div class="etc-title">CBSE</div>
-        <div class="etc-sub">Topper Notes · Formula · PYQs</div>
+        <div class="etc-emoji-wrap">📚</div>
+        <div><div class="etc-title">CBSE</div><div class="etc-sub">Topper Notes · Formula · PYQs</div></div>
       </a>
       <a href="#jee-section" class="exam-theme-card etc-jee">
-        <span class="etc-emoji">⚗️</span>
-        <div class="etc-title">JEE</div>
-        <div class="etc-sub">Mains · Advanced · Mock Test</div>
+        <div class="etc-emoji-wrap">⚗️</div>
+        <div><div class="etc-title">JEE</div><div class="etc-sub">Mains · Advanced · Mock Test</div></div>
       </a>
       <a href="#neet-section" class="exam-theme-card etc-neet">
-        <span class="etc-emoji">🧬</span>
-        <div class="etc-title">NEET</div>
-        <div class="etc-sub">Physics · Chemistry · Biology</div>
+        <div class="etc-emoji-wrap">🧬</div>
+        <div><div class="etc-title">NEET</div><div class="etc-sub">Physics · Chemistry · Biology</div></div>
       </a>
       <a href="#cuet-full" class="exam-theme-card etc-cuet">
-        <span class="etc-emoji">🎓</span>
-        <div class="etc-title">CUET</div>
-        <div class="etc-sub">Mock Test · PYQs · All Subjects</div>
-      </a>
-      <a href="#ssc-bank" class="exam-theme-card etc-ssc">
-        <span class="etc-emoji">📋</span>
-        <div class="etc-title">SSC</div>
-        <div class="etc-sub">CGL · CHSL · MTS</div>
+        <div class="etc-emoji-wrap">🎓</div>
+        <div><div class="etc-title">CUET</div><div class="etc-sub">Mock Test · PYQs · All Subjects</div></div>
       </a>
       <a href="#cat-section" class="exam-theme-card etc-cat">
-        <span class="etc-emoji">💼</span>
-        <div class="etc-title">CAT</div>
-        <div class="etc-sub">Mock Test · PYQs · VARC · QA</div>
+        <div class="etc-emoji-wrap">💼</div>
+        <div><div class="etc-title">CAT</div><div class="etc-sub">Mock Test · PYQs · VARC · QA</div></div>
       </a>
       <a href="#clat-section" class="exam-theme-card etc-clat">
-        <span class="etc-emoji">⚖️</span>
-        <div class="etc-title">CLAT</div>
-        <div class="etc-sub">Law Entrance · AILET · Mock</div>
+        <div class="etc-emoji-wrap">⚖️</div>
+        <div><div class="etc-title">CLAT</div><div class="etc-sub">Law Entrance · AILET · Mock</div></div>
       </a>
       <a href="#nda-section" class="exam-theme-card etc-nda">
-        <span class="etc-emoji">🎖️</span>
-        <div class="etc-title">NDA</div>
-        <div class="etc-sub">Maths · GAT · Defence</div>
+        <div class="etc-emoji-wrap">🎖️</div>
+        <div><div class="etc-title">NDA</div><div class="etc-sub">Maths · GAT · Defence</div></div>
       </a>
       <a href="#ncert-section" class="exam-theme-card etc-ncert">
-        <span class="etc-emoji">📖</span>
-        <div class="etc-title">NCERT</div>
-        <div class="etc-sub">Class 6–12 · Solutions · Exemplar</div>
+        <div class="etc-emoji-wrap">📖</div>
+        <div><div class="etc-title">NCERT</div><div class="etc-sub">Class 6–12 · Solutions · Exemplar</div></div>
       </a>
       <a href="#ca-section" class="exam-theme-card etc-ca">
-        <span class="etc-emoji">🧾</span>
-        <div class="etc-title">CA</div>
-        <div class="etc-sub">Foundation · Inter · Final</div>
+        <div class="etc-emoji-wrap">🧾</div>
+        <div><div class="etc-title">CA</div><div class="etc-sub">Foundation · Inter · Final</div></div>
       </a>
       <a href="#diploma-section" class="exam-theme-card etc-diploma">
-        <span class="etc-emoji">🎓</span>
-        <div class="etc-title">Diploma</div>
-        <div class="etc-sub">DCA · PGDCA · D.Ed · B.Ed</div>
+        <div class="etc-emoji-wrap">🏫</div>
+        <div><div class="etc-title">Diploma</div><div class="etc-sub">DCA · PGDCA · D.Ed · B.Ed</div></div>
       </a>
       <a href="#tet-section" class="exam-theme-card etc-tet">
-        <span class="etc-emoji">🏫</span>
-        <div class="etc-title">TET / CTET</div>
-        <div class="etc-sub">Teacher Eligibility · All States</div>
+        <div class="etc-emoji-wrap">🏫</div>
+        <div><div class="etc-title">TET / CTET</div><div class="etc-sub">Teacher Eligibility · All States</div></div>
       </a>
-      <a href="#upsc-section" class="exam-theme-card" style="background:linear-gradient(135deg,#fff7ed,#fef3c7);border-color:#fcd34d;">
-        <span class="etc-emoji">🏛️</span>
-        <div class="etc-title" style="color:#92400e;">UPSC</div>
-        <div class="etc-sub" style="color:#b45309;">IAS · IPS · Civil Services</div>
+      <a href="#upsc-section" class="exam-theme-card" style="border-color:#fcd34d;">
+        <div class="etc-emoji-wrap" style="background:#fef9e4;">🏛️</div>
+        <div><div class="etc-title" style="color:#92400e;">UPSC</div><div class="etc-sub">IAS · IPS · Civil Services</div></div>
+      </a>
+      <a href="#ssc-section" class="exam-theme-card etc-ssc">
+        <div class="etc-emoji-wrap">📋</div>
+        <div><div class="etc-title">SSC</div><div class="etc-sub">CGL · CHSL · MTS</div></div>
       </a>
     </div>
 
@@ -2829,6 +2593,375 @@
       <a href="https://thunderstudy.github.io/upsc/gs-paper-2" class="subtopic-pill amber" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg><span>GS Paper 2</span></a>
       <a href="https://thunderstudy.github.io/upsc/essay" class="subtopic-pill amber" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg><span>Essay</span></a>
       <a href="https://thunderstudy.github.io/upsc/ncert-foundation" class="subtopic-pill amber" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span>NCERT Foundation</span></a>
+    </div>
+
+    <!-- ===== SSC ===== -->
+    <!-- ===== SSC ===== -->
+    <a id="ssc-section" class="exam-band" style="background:linear-gradient(90deg,#dbeafe,#eff6ff);color:#1e40af;border-left:4px solid #3b82f6;" href="https://commercesehoga.github.io/ssc" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>
+      SSC — Staff Selection Commission
+      <svg class="exam-band-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <p style="font-size:0.85rem;color:var(--gray-600);margin-bottom:18px;">Free SSC study material — notes, PYQs and CBT-style mock tests for CGL, CHSL, MTS, GD, CPO, JE, Selection Post and more. No login, no cost.</p>
+
+    <!-- Notes row -->
+    <div class="stream-band" style="background:linear-gradient(90deg,#dbeafe,#eff6ff);color:#1e40af;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      Notes &amp; Study Material
+    </div>
+    <div class="subtopic-row" style="margin-bottom:22px;">
+      <a href="https://thunderstudy.github.io/ssc/notes" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>All SSC Notes</span></a>
+      <a href="https://thunderstudy.github.io/ssc/pyqs" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>PYQs</span></a>
+      <a href="https://thunderstudy.github.io/ssc/imp-question" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span>Imp. Questions</span></a>
+      <a href="https://thunderstudy.github.io/ssc/formula" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg><span>Formula</span></a>
+      <a href="https://thunderstudy.github.io/ssc/cut-off" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg><span>Cut-off &amp; Syllabus</span></a>
+    </div>
+
+    <!-- Exam-wise cards -->
+    <div class="stream-band" style="background:linear-gradient(90deg,#dbeafe,#eff6ff);color:#1e40af;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3v11a6 6 0 0 0 6 0V3"/><line x1="6" y1="3" x2="18" y2="3"/></svg>
+      Exam-wise Mock Tests &amp; Resources
+    </div>
+    <div class="grid-4" style="margin-bottom:22px;">
+      <a class="subj-card" href="https://thunderstudy.github.io/ssc/cgl" target="_blank" aria-label="SSC CGL">
+        <div class="subj-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="#1e88e5" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2"/></svg></div>
+        <div><div class="subj-name">SSC CGL</div><div class="subj-stream">Combined Graduate Level</div></div>
+      </a>
+      <a class="subj-card" href="https://thunderstudy.github.io/ssc/chsl" target="_blank" aria-label="SSC CHSL">
+        <div class="subj-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="#1e88e5" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <div><div class="subj-name">SSC CHSL</div><div class="subj-stream">Combined Higher Secondary</div></div>
+      </a>
+      <a class="subj-card" href="https://thunderstudy.github.io/ssc/mts" target="_blank" aria-label="SSC MTS">
+        <div class="subj-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="#1e88e5" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div><div class="subj-name">SSC MTS</div><div class="subj-stream">Multi-Tasking Staff</div></div>
+      </a>
+      <a class="subj-card" href="https://thunderstudy.github.io/ssc/gd" target="_blank" aria-label="SSC GD">
+        <div class="subj-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="#1e88e5" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div><div class="subj-name">SSC GD</div><div class="subj-stream">General Duty Constable</div></div>
+      </a>
+      <a class="subj-card" href="https://thunderstudy.github.io/ssc/cpo" target="_blank" aria-label="SSC CPO">
+        <div class="subj-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="#1e88e5" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+        <div><div class="subj-name">SSC CPO</div><div class="subj-stream">Central Police Organisations</div></div>
+      </a>
+      <a class="subj-card" href="https://thunderstudy.github.io/ssc/je" target="_blank" aria-label="SSC JE">
+        <div class="subj-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="#1e88e5" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
+        <div><div class="subj-name">SSC JE</div><div class="subj-stream">Junior Engineer</div></div>
+      </a>
+      <a class="subj-card" href="https://thunderstudy.github.io/ssc/selection-post" target="_blank" aria-label="SSC Selection Post">
+        <div class="subj-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="#1e88e5" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+        <div><div class="subj-name">Selection Post</div><div class="subj-stream">Phase-wise · All Posts</div></div>
+      </a>
+    </div>
+
+    <!-- Common Subjects -->
+    <div class="stream-band" style="background:linear-gradient(90deg,#dbeafe,#eff6ff);color:#1e40af;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg>
+      Common Subjects
+    </div>
+    <div class="subtopic-row" style="margin-bottom:22px;">
+      <a href="https://thunderstudy.github.io/ssc/quantitative-aptitude" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg><span>Quantitative Aptitude</span></a>
+      <a href="https://thunderstudy.github.io/ssc/reasoning" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span>Reasoning</span></a>
+      <a href="https://thunderstudy.github.io/ssc/english" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg><span>English</span></a>
+      <a href="https://thunderstudy.github.io/ssc/general-awareness" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span>General Awareness</span></a>
+      <a href="https://wondermayank.github.io/Current_Affairs/" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>Current Affairs</span></a>
+      <a href="https://thunderstudy.github.io/ssc/gk" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><span>General Knowledge</span></a>
+      <a href="https://thunderstudy.github.io/ssc/computer" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg><span>Computer</span></a>
+    </div>
+
+    <!-- Mock Test CTA -->
+    <a href="https://commercesehoga.github.io/ssc" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;gap:16px;background:linear-gradient(90deg,#1e40af,#2563eb);color:#fff;border-radius:14px;padding:16px 22px;text-decoration:none;margin-bottom:8px;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.92'" onmouseout="this.style.opacity='1'">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <div style="width:42px;height:42px;border-radius:10px;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M9 3v11a6 6 0 0 0 6 0V3"/><line x1="6" y1="3" x2="18" y2="3"/></svg>
+        </div>
+        <div>
+          <div style="font-weight:700;font-size:0.95rem;">SSC Mock Test — All Exams</div>
+          <div style="font-size:0.78rem;opacity:0.82;">CBT-style · Auto-scored · Real exam interface · Free</div>
+        </div>
+      </div>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" style="flex-shrink:0;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ALL SUBJECTS -->
+<section class="section-alt" id="subjects" aria-labelledby="subjects-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Subject-Wise Access</span>
+      <h2 class="section-title" id="subjects-heading">All Subjects — Direct Links</h2>
+      <p class="section-desc">Jump directly to any subject. Each page has notes, important questions, PYQs and exam prep. Divided into Board (Class 10 &amp; 12) and CUET sections.</p>
+    </div>
+
+    <!-- ===== BOARD SECTION ===== -->
+    <div style="background:linear-gradient(90deg,#e3f2fd,#ede8ff);border-radius:14px;padding:14px 20px;margin-bottom:24px;display:flex;align-items:center;gap:12px;font-family:var(--font-display);font-weight:800;font-size:1.1rem;color:#1565c0;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>
+      Board Exams — Class 10 &amp; 12
+    </div>
+
+    <!-- Class 12 Commerce Board -->
+    <div class="stream-band commerce">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2"/></svg>
+      Class 12 — Commerce Stream
+    </div>
+    <div style="margin-bottom:12px" class="subtopic-row">
+      <a href="https://commercesehoga.github.io/commerce/topper-notes" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="none" style="flex-shrink:0"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span>Topper Notes</span></a>
+      <a href="https://commercesehoga.github.io/commerce/formula" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg><span>Formula</span></a>
+      <a href="https://commercesehoga.github.io/commerce/kv-sample-paper" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>KV Sample Paper</span></a>
+      <a href="https://commercesehoga.github.io/commerce/topper-answersheet" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Topper Answersheet</span></a>
+      <a href="https://commercesehoga.github.io/commerce/sample-paper" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg><span>Sample Paper</span></a>
+      <a href="https://commercesehoga.github.io/commerce/pyqs" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>PYQs</span></a>
+      <a href="https://commercesehoga.github.io/commerce/imp-question" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span>Imp. Questions</span></a>
+      <a href="https://commercesehoga.github.io/commerce/question-bank" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg><span>Question Bank</span></a>
+      <a href="https://commercesehoga.github.io/commerce/concept-map" class="subtopic-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg><span>Concept Map</span></a>
+    </div>
+    <div class="grid-4" style="margin-bottom:32px">
+      <a class="subj-card" href="https://commercesehoga.github.io/commerce/acc" aria-label="Accountancy">
+        <div class="subj-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="#1e88e5" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+        <div><div class="subj-name">Accountancy</div><div class="subj-stream">Commerce · Class 12</div></div>
+      </a>
+      <a class="subj-card" href="https://commercesehoga.github.io/commerce/bst" aria-label="Business Studies">
+        <div class="subj-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="#1e88e5" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <div><div class="subj-name">Business Studies</div><div class="subj-stream">Commerce · Class 12</div></div>
+      </a>
+      <a class="subj-card" href="https://commercesehoga.github.io/commerce/eco" aria-label="Economics">
+        <div class="subj-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="#1e88e5" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div><div class="subj-name">Economics</div><div class="subj-stream">Commerce · Class 12</div></div>
+      </a>
+      <a class="subj-card" href="https://commercesehoga.github.io/commerce/amath" aria-label="Applied Mathematics">
+        <div class="subj-icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></div>
+        <div><div class="subj-name">Applied Maths</div><div class="subj-stream">Commerce · Class 12</div></div>
+      </a>
+    </div>
+
+    <!-- Class 12 Science Board -->
+    <div class="stream-band science">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18"/></svg>
+      Class 12 — Science Stream
+    </div>
+    <div class="grid-4" style="margin-bottom:32px">
+      <a class="subj-card" href="https://commercesehoga.github.io/science/phy" aria-label="Physics">
+        <div class="subj-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
+        <div><div class="subj-name">Physics</div><div class="subj-stream">Science · Class 12</div></div>
+      </a>
+      <a class="subj-card" href="https://commercesehoga.github.io/science/che" aria-label="Chemistry">
+        <div class="subj-icon teal"><svg viewBox="0 0 24 24" fill="none" stroke="#00695c" stroke-width="2"><path d="M9 3v11a6 6 0 0 0 6 0V3"/><line x1="6" y1="3" x2="18" y2="3"/></svg></div>
+        <div><div class="subj-name">Chemistry</div><div class="subj-stream">Science · Class 12</div></div>
+      </a>
+      <a class="subj-card" href="https://commercesehoga.github.io/science/bio" aria-label="Biology">
+        <div class="subj-icon teal"><svg viewBox="0 0 24 24" fill="none" stroke="#00695c" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div><div class="subj-name">Biology</div><div class="subj-stream">Science · Class 12</div></div>
+      </a>
+      <a class="subj-card" href="https://commercesehoga.github.io/science/mat" aria-label="Mathematics">
+        <div class="subj-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        <div><div class="subj-name">Mathematics</div><div class="subj-stream">Science · Class 12</div></div>
+      </a>
+    </div>
+
+    <!-- Class 12 Humanities Board -->
+    <div class="stream-band humanities">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+      Class 12 — Humanities Stream
+    </div>
+    <div class="grid-4" style="margin-bottom:32px">
+      <a class="subj-card" href="https://commercesehoga.github.io/humanities/his" aria-label="History">
+        <div class="subj-icon amber"><svg viewBox="0 0 24 24" fill="none" stroke="#e65100" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <div><div class="subj-name">History</div><div class="subj-stream">Humanities · Class 12</div></div>
+      </a>
+      <a class="subj-card" href="https://commercesehoga.github.io/humanities/geo" aria-label="Geography">
+        <div class="subj-icon amber"><svg viewBox="0 0 24 24" fill="none" stroke="#e65100" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"/></svg></div>
+        <div><div class="subj-name">Geography</div><div class="subj-stream">Humanities · Class 12</div></div>
+      </a>
+      <a class="subj-card" href="https://commercesehoga.github.io/humanities/pol" aria-label="Political Science">
+        <div class="subj-icon rose"><svg viewBox="0 0 24 24" fill="none" stroke="#c62828" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg></div>
+        <div><div class="subj-name">Political Science</div><div class="subj-stream">Humanities · Class 12</div></div>
+      </a>
+      <a class="subj-card" href="https://commercesehoga.github.io/humanities/psy" aria-label="Psychology">
+        <div class="subj-icon rose"><svg viewBox="0 0 24 24" fill="none" stroke="#c62828" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+        <div><div class="subj-name">Psychology</div><div class="subj-stream">Humanities · Class 12</div></div>
+      </a>
+    </div>
+
+    <!-- Class 12 Common -->
+    <div class="stream-band" style="background:linear-gradient(90deg,#ede8ff,#dbeeff);color:#4a1d96;margin-bottom:16px;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      Class 12 — Common Subjects (All Streams)
+    </div>
+    <div class="grid-4" style="margin-bottom:40px">
+      <a class="subj-card" href="https://commercesehoga.github.io/english/12" aria-label="English Class 12">
+        <div class="subj-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="#1e88e5" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+        <div><div class="subj-name">English</div><div class="subj-stream">All Streams · Class 12</div></div>
+      </a>
+      <a class="subj-card" href="https://commercesehoga.github.io/physcial/12" aria-label="Physical Education Class 12">
+        <div class="subj-icon rose"><svg viewBox="0 0 24 24" fill="none" stroke="#c62828" stroke-width="2"><circle cx="12" cy="8" r="3"/><path d="M12 11v4M8 21h8M5 21c0-3.5 3-6 7-6s7 2.5 7 6"/></svg></div>
+        <div><div class="subj-name">Physical Education</div><div class="subj-stream">All Streams · Class 12</div></div>
+      </a>
+
+      <!-- Computer (pull-down accordion) -->
+      <div class="subj-card" style="flex-direction:column;align-items:flex-start;gap:10px;cursor:default;">
+        <div style="display:flex;align-items:center;gap:14px;width:100%;">
+          <div class="subj-icon teal" style="flex-shrink:0;"><svg viewBox="0 0 24 24" fill="none" stroke="#00695c" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+          <div>
+            <div class="subj-name">Computer</div>
+            <div class="subj-stream">All Streams · Class 12</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;padding-left:52px;">
+          <a href="https://commercesehoga.github.io/computer/ip" style="font-size:0.68rem;padding:2px 7px;background:#e0f7fa;color:#00695c;border-radius:99px;font-weight:600;text-decoration:none;">IP</a>
+          <a href="https://commercesehoga.github.io/computer/cs" style="font-size:0.68rem;padding:2px 7px;background:#e0f7fa;color:#00695c;border-radius:99px;font-weight:600;text-decoration:none;">CS</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Class 10 Section -->
+    <div style="background:linear-gradient(90deg,#e8f5e9,#fff8e1);border-radius:14px;padding:14px 20px;margin-bottom:16px;display:flex;align-items:center;gap:12px;font-family:var(--font-display);font-weight:800;font-size:1.05rem;color:#2e7d32;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      Class 10 — Board Subjects
+    </div>
+    <div class="grid-4" style="margin-bottom:48px">
+
+      <a class="subj-card" href="https://commercesehoga.github.io/boards/sst/his" aria-label="History Class 10">
+        <div class="subj-icon amber" style="flex-shrink:0;"><svg viewBox="0 0 24 24" fill="none" stroke="#e65100" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+        <div><div class="subj-name">History</div><div class="subj-stream">SST · Class 10</div></div>
+      </a>
+      <a class="subj-card" href="https://commercesehoga.github.io/boards/sst/geo" aria-label="Geography Class 10">
+        <div class="subj-icon amber" style="flex-shrink:0;"><svg viewBox="0 0 24 24" fill="none" stroke="#e65100" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"/></svg></div>
+        <div><div class="subj-name">Geography</div><div class="subj-stream">SST · Class 10</div></div>
+      </a>
+      <a class="subj-card" href="https://commercesehoga.github.io/boards/sst/pol" aria-label="Political Science Class 10">
+        <div class="subj-icon rose" style="flex-shrink:0;"><svg viewBox="0 0 24 24" fill="none" stroke="#c62828" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg></div>
+        <div><div class="subj-name">Pol. Science</div><div class="subj-stream">SST · Class 10</div></div>
+      </a>
+      <a class="subj-card" href="https://commercesehoga.github.io/boards/sst/eco" aria-label="Economics Class 10">
+        <div class="subj-icon amber" style="flex-shrink:0;"><svg viewBox="0 0 24 24" fill="none" stroke="#e65100" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div><div class="subj-name">Economics</div><div class="subj-stream">SST · Class 10</div></div>
+      </a>
+      <a class="subj-card" href="https://commercesehoga.github.io/boards/science/phy" aria-label="Physics Class 10">
+        <div class="subj-icon green" style="flex-shrink:0;"><svg viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83"/></svg></div>
+        <div><div class="subj-name">Physics</div><div class="subj-stream">Science · Class 10</div></div>
+      </a>
+      <a class="subj-card" href="https://commercesehoga.github.io/boards/science/che" aria-label="Chemistry Class 10">
+        <div class="subj-icon teal" style="flex-shrink:0;"><svg viewBox="0 0 24 24" fill="none" stroke="#00695c" stroke-width="2"><path d="M9 3v11a6 6 0 0 0 6 0V3"/><line x1="6" y1="3" x2="18" y2="3"/></svg></div>
+        <div><div class="subj-name">Chemistry</div><div class="subj-stream">Science · Class 10</div></div>
+      </a>
+      <a class="subj-card" href="https://commercesehoga.github.io/boards/science/bio" aria-label="Biology Class 10">
+        <div class="subj-icon teal" style="flex-shrink:0;"><svg viewBox="0 0 24 24" fill="none" stroke="#00695c" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div><div class="subj-name">Biology</div><div class="subj-stream">Science · Class 10</div></div>
+      </a>
+
+      <a class="subj-card" href="https://commercesehoga.github.io/boards/eng" aria-label="English Class 10">
+        <div class="subj-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="#1e88e5" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+        <div><div class="subj-name">English</div><div class="subj-stream">Class 10</div></div>
+      </a>
+      <a class="subj-card" href="https://commercesehoga.github.io/boards/maths" aria-label="Maths Class 10">
+        <div class="subj-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        <div><div class="subj-name">Mathematics</div><div class="subj-stream">Class 10</div></div>
+      </a>
+    </div>
+
+    <!-- ===== CUET SECTION ===== -->
+    <div style="background:linear-gradient(90deg,#f3e8ff,#ede8ff);border-radius:14px;padding:14px 20px;margin-bottom:24px;display:flex;align-items:center;gap:12px;font-family:var(--font-display);font-weight:800;font-size:1.1rem;color:#5b21b6;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+      CUET — Domain Subjects &amp; GAT
+    </div>
+
+    <!-- CUET Commerce -->
+    <div class="stream-band commerce">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2"/></svg>
+      CUET — Commerce Domain
+    </div>
+    <div class="grid-4" style="margin-bottom:32px">
+      <a class="subj-card" href="https://commercesehoga.github.io/commerce/acc" aria-label="CUET Accountancy">
+        <div class="subj-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="#1e88e5" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <div><div class="subj-name">Accountancy</div><div class="subj-stream">CUET Commerce</div></div>
+      </a>
+      <a class="subj-card" href="https://commercesehoga.github.io/commerce/bst" aria-label="CUET Business Studies">
+        <div class="subj-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="#1e88e5" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/></svg></div>
+        <div><div class="subj-name">Business Studies</div><div class="subj-stream">CUET Commerce</div></div>
+      </a>
+      <a class="subj-card" href="https://commercesehoga.github.io/commerce/eco" aria-label="CUET Economics">
+        <div class="subj-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="#1e88e5" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div><div class="subj-name">Economics</div><div class="subj-stream">CUET Commerce</div></div>
+      </a>
+    </div>
+
+    <!-- CUET Science -->
+    <div class="stream-band science">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18"/></svg>
+      CUET — Science Domain
+    </div>
+    <div class="grid-4" style="margin-bottom:32px">
+      <a class="subj-card" href="https://commercesehoga.github.io/science/phy" aria-label="CUET Physics">
+        <div class="subj-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83"/></svg></div>
+        <div><div class="subj-name">Physics</div><div class="subj-stream">CUET Science</div></div>
+      </a>
+      <a class="subj-card" href="https://commercesehoga.github.io/science/che" aria-label="CUET Chemistry">
+        <div class="subj-icon teal"><svg viewBox="0 0 24 24" fill="none" stroke="#00695c" stroke-width="2"><path d="M9 3v11a6 6 0 0 0 6 0V3"/><line x1="6" y1="3" x2="18" y2="3"/></svg></div>
+        <div><div class="subj-name">Chemistry</div><div class="subj-stream">CUET Science</div></div>
+      </a>
+      <a class="subj-card" href="https://commercesehoga.github.io/science/bio" aria-label="CUET Biology">
+        <div class="subj-icon teal"><svg viewBox="0 0 24 24" fill="none" stroke="#00695c" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div><div class="subj-name">Biology</div><div class="subj-stream">CUET Science</div></div>
+      </a>
+      <a class="subj-card" href="https://commercesehoga.github.io/science/mat" aria-label="CUET Mathematics">
+        <div class="subj-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        <div><div class="subj-name">Mathematics</div><div class="subj-stream">CUET Science</div></div>
+      </a>
+    </div>
+
+    <!-- CUET Humanities -->
+    <div class="stream-band humanities">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+      CUET — Humanities Domain
+    </div>
+    <div class="grid-4" style="margin-bottom:32px">
+      <a class="subj-card" href="https://commercesehoga.github.io/humanities/his" aria-label="CUET History">
+        <div class="subj-icon amber"><svg viewBox="0 0 24 24" fill="none" stroke="#e65100" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+        <div><div class="subj-name">History</div><div class="subj-stream">CUET Humanities</div></div>
+      </a>
+      <a class="subj-card" href="https://commercesehoga.github.io/humanities/geo" aria-label="CUET Geography">
+        <div class="subj-icon amber"><svg viewBox="0 0 24 24" fill="none" stroke="#e65100" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/></svg></div>
+        <div><div class="subj-name">Geography</div><div class="subj-stream">CUET Humanities</div></div>
+      </a>
+      <a class="subj-card" href="https://commercesehoga.github.io/humanities/pol" aria-label="CUET Political Science">
+        <div class="subj-icon rose"><svg viewBox="0 0 24 24" fill="none" stroke="#c62828" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg></div>
+        <div><div class="subj-name">Political Science</div><div class="subj-stream">CUET Humanities</div></div>
+      </a>
+      <a class="subj-card" href="https://commercesehoga.github.io/humanities/psy" aria-label="CUET Psychology">
+        <div class="subj-icon rose"><svg viewBox="0 0 24 24" fill="none" stroke="#c62828" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+        <div><div class="subj-name">Psychology</div><div class="subj-stream">CUET Humanities</div></div>
+      </a>
+    </div>
+
+    <!-- CUET Common -->
+    <div class="stream-band" style="background:linear-gradient(90deg,#ede8ff,#dbeeff);color:#4a1d96;margin-bottom:16px;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      CUET — Common Subjects (All Streams)
+    </div>
+    <div class="grid-4">
+      <a class="subj-card" href="https://commercesehoga.github.io/gat" aria-label="GAT General Test">
+        <div class="subj-icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+        <div><div class="subj-name">GAT — General Test</div><div class="subj-stream">CUET · All Exams</div></div>
+      </a>
+      <a class="subj-card" href="https://commercesehoga.github.io/physical" aria-label="CUET Physical Education">
+        <div class="subj-icon rose"><svg viewBox="0 0 24 24" fill="none" stroke="#c62828" stroke-width="2"><circle cx="12" cy="8" r="3"/><path d="M12 11v4M8 21h8M5 21c0-3.5 3-6 7-6s7 2.5 7 6"/></svg></div>
+        <div><div class="subj-name">Physical Education</div><div class="subj-stream">CUET · All Streams</div></div>
+      </a>
+      <a class="subj-card" href="https://commercesehoga.github.io/english" aria-label="CUET English">
+        <div class="subj-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="#1e88e5" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+        <div><div class="subj-name">English Language</div><div class="subj-stream">CUET · All Streams</div></div>
+      </a>
+      <a class="subj-card" href="https://commercesehoga.github.io/computer/ip" aria-label="CUET Informatics Practices">
+        <div class="subj-icon teal"><svg viewBox="0 0 24 24" fill="none" stroke="#00695c" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <div><div class="subj-name">Informatics Practices (IP)</div><div class="subj-stream">CUET · All Streams</div></div>
+      </a>
+      <a class="subj-card" href="https://commercesehoga.github.io/computer/cs" aria-label="CUET Computer Science">
+        <div class="subj-icon teal"><svg viewBox="0 0 24 24" fill="none" stroke="#00695c" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+        <div><div class="subj-name">Computer Science</div><div class="subj-stream">CUET · All Streams</div></div>
+      </a>
     </div>
 
   </div>
@@ -3714,6 +3847,22 @@
 </div><!-- end #main -->
 
 <script>
+  // PWA global functions — defined first so onclick attributes can call them
+  function pwaTriggerInstall() {
+    if (window.pwaInstallPrompt) {
+      window.pwaInstallPrompt.prompt();
+      window.pwaInstallPrompt.userChoice.then(function() {
+        window.pwaInstallPrompt = null;
+        pwaDismiss();
+      });
+    }
+  }
+  function pwaDismiss() {
+    var banner = document.getElementById('pwa-banner');
+    if (banner) banner.classList.remove('show');
+    try { localStorage.setItem('pwa-dismissed', '1'); } catch(e) {}
+  }
+
   // Boot screen
   window.addEventListener('load', function() {
     var alreadyBooted = sessionStorage.getItem('thunderstudy_booted');
@@ -3894,49 +4043,14 @@
   }
 
   // ── Service Worker registration (PWA) ──────────────────────
-  var pwaInstallPrompt = null;
-
-  window.addEventListener('beforeinstallprompt', function(e) {
-    e.preventDefault();
-    pwaInstallPrompt = e;
-    // Show banner after 3 seconds if not dismissed before
-    var dismissed = sessionStorage.getItem('pwa-dismissed');
-    if (!dismissed) {
-      setTimeout(function() {
-        var banner = document.getElementById('pwa-banner');
-        if (banner) banner.classList.add('show');
-      }, 3000);
-    }
-  });
-
-  function pwaTriggerInstall() {
-    if (pwaInstallPrompt) {
-      pwaInstallPrompt.prompt();
-      pwaInstallPrompt.userChoice.then(function(c) {
-        pwaInstallPrompt = null;
-        pwaDismiss();
-      });
-    }
-  }
-
-  function pwaDismiss() {
-    var banner = document.getElementById('pwa-banner');
-    if (banner) banner.classList.remove('show');
-    sessionStorage.setItem('pwa-dismissed', '1');
-  }
-
-  window.addEventListener('appinstalled', function() {
-    pwaDismiss();
-    console.log('[ThunderStudy] PWA installed successfully.');
-  });
-
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
-      navigator.serviceWorker.register('/sw.js')
+      navigator.serviceWorker.register('./sw.js', { scope: './' })
         .then(function(reg) {
           console.log('[ThunderStudy] SW registered, scope:', reg.scope);
           reg.addEventListener('updatefound', function() {
             var newWorker = reg.installing;
+            if (!newWorker) return;
             newWorker.addEventListener('statechange', function() {
               if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
                 console.log('[ThunderStudy] New version available. Refresh to update.');
@@ -3949,6 +4063,28 @@
         });
     });
   }
+
+  // PWA install prompt — must be global for onclick attributes
+  window.pwaInstallPrompt = null;
+
+  window.addEventListener('beforeinstallprompt', function(e) {
+    e.preventDefault();
+    window.pwaInstallPrompt = e;
+    try {
+      var dismissed = localStorage.getItem('pwa-dismissed');
+      if (!dismissed) {
+        setTimeout(function() {
+          var banner = document.getElementById('pwa-banner');
+          if (banner) banner.classList.add('show');
+        }, 3000);
+      }
+    } catch(err) {}
+  });
+
+  window.addEventListener('appinstalled', function() {
+    pwaDismiss();
+    console.log('[ThunderStudy] PWA installed successfully.');
+  });
 
   document.querySelectorAll('a[target="_blank"]').forEach(function(a) {
     if (!a.title) {
