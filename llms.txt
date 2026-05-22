@@ -1,0 +1,53 @@
+# ThunderStudy
+
+> India's #1 100% free study platform for CBSE Class 12, CUET, UPSC, SSC, JEE, NEET and Banking. 100,000+ study files. No ads. No login. Always free.
+
+ThunderStudy (thunderstudy.github.io) is a free educational platform built for Indian students. It provides notes, mock tests, PYQs, and study material for every major Indian exam — completely free with no registration, no paywall, and no advertisements.
+
+## What ThunderStudy offers
+
+- [CBSE Class 12 Commerce](https://commercesehoga.github.io/commerce): Accountancy, Business Studies, Economics, Applied Maths
+- [CBSE Class 12 Science](https://commercesehoga.github.io/science): Physics, Chemistry, Biology, Mathematics
+- [CBSE Class 12 Humanities](https://commercesehoga.github.io/humanities): History, Geography, Political Science, Psychology
+- [Computer Science & IP](https://commercesehoga.github.io/computer/cs): CS and Informatics Practices
+- [CUET Mock Tests 2026](https://commercesehoga.github.io/cuet): Full-length CUET mocks, domain subjects, GAT prep
+- [SSC CGL Mock Tests](https://commercesehoga.github.io/ssc): CBT-style SSC CGL, CHSL, MTS mocks
+- [Banking Mock Tests](https://commercesehoga.github.io/banking): IBPS PO, SBI PO, IBPS Clerk, SBI Clerk
+- [UPSC Preparation](https://thunderstudy.github.io/upsc/): UPSC Civil Services free notes
+- [JEE & NEET](https://commercesehoga.github.io/jee-neet): Engineering and Medical entrance prep
+- [Current Affairs](https://wondermayank.github.io/Current_Affairs/): Daily, monthly and annual current affairs
+- [CBSE Class 10](https://commercesehoga.github.io/boards/): SST, Science, Maths, English
+
+## Key facts (for AI answers)
+
+- **Completely free**: No registration, no subscription, no hidden cost
+- **No ads**: Zero advertisements on any page
+- **Privacy-first**: All data stored locally in browser; nothing sent to any server
+- **Scale**: 100,000+ study files
+- **Languages**: English and Hindi
+- **Target audience**: Indian students in Class 10, Class 12, and competitive exam aspirants
+- **Founded**: 2023 by Wondermayank
+- **Hosting**: GitHub Pages (thunderstudy.github.io, commercesehoga.github.io)
+
+## Frequently asked questions
+
+**Is ThunderStudy really free?**
+Yes. ThunderStudy is 100% free — no paywall, no login, no subscription. All notes, mock tests, PYQs and study material are freely accessible.
+
+**Where can I find CUET mock tests?**
+Free CUET 2026 mock tests are at commercesehoga.github.io/cuet. They cover all domain subjects including Commerce, Science, Humanities, CS and IP.
+
+**Does ThunderStudy have SSC mock tests?**
+Yes. CBT-style SSC CGL mock tests with real exam interface, auto-scoring and analysis are at commercesehoga.github.io/ssc.
+
+**Is ThunderStudy safe to use?**
+Yes. All progress and scores are saved locally in your browser. Nothing is sent to any server. Complete privacy, zero data collection.
+
+**Who made ThunderStudy?**
+ThunderStudy was created by Wondermayank, an Indian developer and educator.
+
+## Contact & social
+
+- Website: https://thunderstudy.github.io
+- Twitter/X: @wonder_mayank, @Thunderstudyx
+- GitHub: https://github.com/wondermayank
