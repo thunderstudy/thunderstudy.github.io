@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+
+  <url>
+    <loc>https://thunderstudy.github.io/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>ThunderStudy</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-22</news:publication_date>
+      <news:title>ThunderStudy — India's #1 Free Study Platform | CBSE, CUET 2026, SSC, Banking</news:title>
+      <news:keywords>CUET 2026, CBSE Class 12, free study material, SSC CGL mock test, Banking mock test</news:keywords>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://commercesehoga.github.io/cuet</loc>
+    <news:news>
+      <news:publication>
+        <news:name>ThunderStudy</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-22</news:publication_date>
+      <news:title>Free CUET 2026 Mock Tests — Full-Length Practice Papers | ThunderStudy</news:title>
+      <news:keywords>CUET 2026 mock test, CUET free preparation, CUET domain subject, CUET GAT</news:keywords>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://commercesehoga.github.io/ssc</loc>
+    <news:news>
+      <news:publication>
+        <news:name>ThunderStudy</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-22</news:publication_date>
+      <news:title>Free SSC CGL Mock Tests 2026 — CBT Interface | ThunderStudy</news:title>
+      <news:keywords>SSC CGL mock test 2026, SSC CHSL mock test, SSC free prep</news:keywords>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://wondermayank.github.io/Current_Affairs/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>ThunderStudy</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-22</news:publication_date>
+      <news:title>Daily Current Affairs 2026 — SSC Banking CUET UPSC | ThunderStudy</news:title>
+      <news:keywords>current affairs today 2026, daily current affairs, SSC current affairs, banking current affairs</news:keywords>
+    </news:news>
+  </url>
+
+</urlset>
