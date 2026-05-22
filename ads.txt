@@ -1,0 +1,9 @@
+# ThunderStudy — ads.txt
+# https://thunderstudy.github.io/ads.txt
+#
+# ThunderStudy serves NO advertisements.
+# This file is intentionally empty to signal to ad verification
+# systems that no programmatic advertising is authorised on this domain.
+# We are a 100% ad-free free education platform.
+#
+# Last updated: 2026-05-22
