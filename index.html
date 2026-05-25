@@ -1,6 +1,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en-IN">
 <head>
@@ -1999,6 +2000,8 @@
   .htp-blue  { background: rgba(255,255,255,0.6); border: 1px solid #bdd7f5; color: #1d4ed8; }
   .htp-amber { background: #fffbeb; border: 1px solid #fde68a; color: #92400e; }
   .htp-purple{ background: #f5f3ff; border: 1px solid #ddd6fe; color: #5b21b6; }
+  .htp-install{ background: linear-gradient(135deg,#0077f5,#6d28d9); border: none; color: #fff; font-size: inherit; font-weight: 600; letter-spacing: inherit; transition: opacity 0.18s, transform 0.18s; }
+  .htp-install:hover { opacity: 0.88; transform: translateY(-1px); }
   .hero-stats-new {
     display: flex;
     gap: 28px;
@@ -2242,6 +2245,10 @@
         <svg width="12" height="12" viewBox="0 0 24 24" fill="#5b21b6"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
         @wondermayank
       </a>
+      <button id="htp-install-btn" onclick="htpInstallApp()" style="display:none;cursor:pointer;border:none;font-family:inherit;" class="htp-install">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v13M7 11l5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+        Install App
+      </button>
     </div>
 
     <!-- Stats -->
@@ -2673,6 +2680,10 @@
         <div class="etc-emoji-wrap">📋</div>
         <div><div class="etc-title">SSC</div><div class="etc-sub">CGL · CHSL · MTS</div></div>
       </a>
+      <a href="#banking-section" class="exam-theme-card" style="border-color:#00897b;">
+        <div class="etc-emoji-wrap" style="background:#e0f2f1;">🏦</div>
+        <div><div class="etc-title" style="color:#004d40;">Banking</div><div class="etc-sub">IBPS · SBI · RBI · LIC</div></div>
+      </a>
     </div>
 
     <!-- ===== CBSE RESOURCES ===== -->
@@ -3043,6 +3054,88 @@
         </div>
         <div>
           <div style="font-weight:700;font-size:0.95rem;">SSC Mock Test — All Exams</div>
+          <div style="font-size:0.78rem;opacity:0.82;">CBT-style · Auto-scored · Real exam interface · Free</div>
+        </div>
+      </div>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" style="flex-shrink:0;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===== BANKING SECTION ===== -->
+<section class="section-alt" id="banking" aria-labelledby="banking-heading">
+  <div class="container">
+
+    <a id="banking-section" class="exam-band" style="background:linear-gradient(90deg,#ccfbf1,#e0f2f1);color:#004d40;border-left:4px solid #00897b;" href="https://thunderstudy.github.io/banking/exam.html" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="10" width="18" height="11" rx="2"/><path d="M3 10l9-7 9 7"/><line x1="12" y1="10" x2="12" y2="21"/><line x1="7" y1="14" x2="7" y2="21"/><line x1="17" y1="14" x2="17" y2="21"/></svg>
+      Banking — IBPS · SBI · RBI · LIC · EPFO
+      <svg class="exam-band-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <p style="font-size:0.85rem;color:var(--gray-600);margin-bottom:18px;">Free Banking exam mock tests — IBPS RRB, IBPS PO/Clerk, SBI PO/Clerk, RBI Grade B/Assistant, LIC AAO/ADO, EPFO and more. CBT-style interface, auto-scoring, no login, no cost.</p>
+
+    <!-- Exam-wise cards -->
+    <div class="stream-band" style="background:linear-gradient(90deg,#ccfbf1,#e0f2f1);color:#004d40;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3v11a6 6 0 0 0 6 0V3"/><line x1="6" y1="3" x2="18" y2="3"/></svg>
+      Exam-wise Mock Tests &amp; Resources
+    </div>
+    <div class="grid-4" style="margin-bottom:22px;">
+      <a class="subj-card" href="https://thunderstudy.github.io/banking/exam.html" target="_blank" aria-label="IBPS RRB PO" style="border-top:3px solid #00897b;">
+        <div class="subj-icon" style="background:#e0f2f1;"><svg viewBox="0 0 24 24" fill="none" stroke="#00897b" stroke-width="2"><rect x="3" y="10" width="18" height="11" rx="2"/><path d="M3 10l9-7 9 7"/><line x1="12" y1="10" x2="12" y2="21"/></svg></div>
+        <div><div class="subj-name">IBPS RRB PO</div><div class="subj-stream">Regional Rural Bank · Officer</div></div>
+      </a>
+      <a class="subj-card" href="https://thunderstudy.github.io/banking/exam.html" target="_blank" aria-label="IBPS RRB Clerk" style="border-top:3px solid #00897b;">
+        <div class="subj-icon" style="background:#e0f2f1;"><svg viewBox="0 0 24 24" fill="none" stroke="#00897b" stroke-width="2"><rect x="3" y="10" width="18" height="11" rx="2"/><path d="M3 10l9-7 9 7"/><line x1="7" y1="14" x2="7" y2="21"/><line x1="17" y1="14" x2="17" y2="21"/></svg></div>
+        <div><div class="subj-name">IBPS RRB Clerk</div><div class="subj-stream">Regional Rural Bank · Clerk</div></div>
+      </a>
+      <a class="subj-card" href="https://thunderstudy.github.io/banking/exam.html" target="_blank" aria-label="IBPS PO" style="border-top:3px solid #00897b;">
+        <div class="subj-icon" style="background:#e0f2f1;"><svg viewBox="0 0 24 24" fill="none" stroke="#00897b" stroke-width="2"><path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 3H8a2 2 0 0 0-2 2v2h12V5a2 2 0 0 0-2-2z"/></svg></div>
+        <div><div class="subj-name">IBPS PO</div><div class="subj-stream">Probationary Officer</div></div>
+      </a>
+      <a class="subj-card" href="https://thunderstudy.github.io/banking/exam.html" target="_blank" aria-label="IBPS Clerk" style="border-top:3px solid #00897b;">
+        <div class="subj-icon" style="background:#e0f2f1;"><svg viewBox="0 0 24 24" fill="none" stroke="#00897b" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <div><div class="subj-name">IBPS Clerk</div><div class="subj-stream">Clerical Cadre</div></div>
+      </a>
+      <a class="subj-card" href="https://thunderstudy.github.io/banking/exam.html" target="_blank" aria-label="RBI Grade B" style="border-top:3px solid #00897b;">
+        <div class="subj-icon" style="background:#e0f2f1;"><svg viewBox="0 0 24 24" fill="none" stroke="#00897b" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div>
+        <div><div class="subj-name">RBI Grade B</div><div class="subj-stream">Reserve Bank of India · Officer</div></div>
+      </a>
+      <a class="subj-card" href="https://thunderstudy.github.io/banking/exam.html" target="_blank" aria-label="RBI Assistant" style="border-top:3px solid #00897b;">
+        <div class="subj-icon" style="background:#e0f2f1;"><svg viewBox="0 0 24 24" fill="none" stroke="#00897b" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
+        <div><div class="subj-name">RBI Assistant</div><div class="subj-stream">Reserve Bank of India</div></div>
+      </a>
+      <a class="subj-card" href="https://thunderstudy.github.io/banking/exam.html" target="_blank" aria-label="SBI PO" style="border-top:3px solid #00897b;">
+        <div class="subj-icon" style="background:#e0f2f1;"><svg viewBox="0 0 24 24" fill="none" stroke="#00897b" stroke-width="2"><rect x="3" y="10" width="18" height="11" rx="2"/><path d="M3 10l9-7 9 7"/><line x1="12" y1="10" x2="12" y2="21"/></svg></div>
+        <div><div class="subj-name">SBI PO</div><div class="subj-stream">State Bank of India · PO</div></div>
+      </a>
+      <a class="subj-card" href="https://thunderstudy.github.io/banking/exam.html" target="_blank" aria-label="SBI Clerk" style="border-top:3px solid #00897b;">
+        <div class="subj-icon" style="background:#e0f2f1;"><svg viewBox="0 0 24 24" fill="none" stroke="#00897b" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/></svg></div>
+        <div><div class="subj-name">SBI Clerk</div><div class="subj-stream">State Bank of India · Junior Assoc.</div></div>
+      </a>
+      <a class="subj-card" href="https://thunderstudy.github.io/banking/exam.html" target="_blank" aria-label="LIC AAO" style="border-top:3px solid #00897b;">
+        <div class="subj-icon" style="background:#e0f2f1;"><svg viewBox="0 0 24 24" fill="none" stroke="#00897b" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div><div class="subj-name">LIC AAO</div><div class="subj-stream">Assistant Administrative Officer</div></div>
+      </a>
+      <a class="subj-card" href="https://thunderstudy.github.io/banking/exam.html" target="_blank" aria-label="LIC ADO" style="border-top:3px solid #00897b;">
+        <div class="subj-icon" style="background:#e0f2f1;"><svg viewBox="0 0 24 24" fill="none" stroke="#00897b" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><circle cx="12" cy="11" r="2"/></svg></div>
+        <div><div class="subj-name">LIC ADO</div><div class="subj-stream">Apprentice Development Officer</div></div>
+      </a>
+      <a class="subj-card" href="https://thunderstudy.github.io/banking/exam.html" target="_blank" aria-label="EPFO" style="border-top:3px solid #00897b;">
+        <div class="subj-icon" style="background:#e0f2f1;"><svg viewBox="0 0 24 24" fill="none" stroke="#00897b" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></div>
+        <div><div class="subj-name">EPFO</div><div class="subj-stream">SSA · APFC · EO</div></div>
+      </a>
+    </div>
+
+    <!-- Mock Test CTA -->
+    <a href="https://thunderstudy.github.io/banking/exam.html" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;gap:16px;background:linear-gradient(90deg,#004d40,#00897b);color:#fff;border-radius:14px;padding:16px 22px;text-decoration:none;margin-bottom:8px;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.92'" onmouseout="this.style.opacity='1'">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <div style="width:42px;height:42px;border-radius:10px;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="3" y="10" width="18" height="11" rx="2"/><path d="M3 10l9-7 9 7"/><line x1="12" y1="10" x2="12" y2="21"/></svg>
+        </div>
+        <div>
+          <div style="font-weight:700;font-size:0.95rem;">Banking Mock Test — All Exams</div>
           <div style="font-size:0.78rem;opacity:0.82;">CBT-style · Auto-scored · Real exam interface · Free</div>
         </div>
       </div>
@@ -4371,6 +4464,17 @@
     {name:'CBSE Formula', stream:'CBSE Resources', url:'https://thunderstudy.github.io/cbse/formula', badge:'CBSE'},
     {name:'CBSE KV Sample Paper', stream:'CBSE Resources', url:'https://thunderstudy.github.io/cbse/kv-sample-paper', badge:'CBSE'},
     {name:'CBSE Topper Answersheet', stream:'CBSE Resources', url:'https://thunderstudy.github.io/cbse/topper-answersheet', badge:'CBSE'},
+    {name:'IBPS RRB PO Mock Test', stream:'Banking Exam', url:'https://thunderstudy.github.io/banking/exam.html', badge:'Banking'},
+    {name:'IBPS RRB Clerk Mock Test', stream:'Banking Exam', url:'https://thunderstudy.github.io/banking/exam.html', badge:'Banking'},
+    {name:'IBPS PO Mock Test', stream:'Banking Exam', url:'https://thunderstudy.github.io/banking/exam.html', badge:'Banking'},
+    {name:'IBPS Clerk Mock Test', stream:'Banking Exam', url:'https://thunderstudy.github.io/banking/exam.html', badge:'Banking'},
+    {name:'RBI Grade B Mock Test', stream:'Banking Exam', url:'https://thunderstudy.github.io/banking/exam.html', badge:'Banking'},
+    {name:'RBI Assistant Mock Test', stream:'Banking Exam', url:'https://thunderstudy.github.io/banking/exam.html', badge:'Banking'},
+    {name:'SBI PO Mock Test', stream:'Banking Exam', url:'https://thunderstudy.github.io/banking/exam.html', badge:'Banking'},
+    {name:'SBI Clerk Mock Test', stream:'Banking Exam', url:'https://thunderstudy.github.io/banking/exam.html', badge:'Banking'},
+    {name:'LIC AAO Mock Test', stream:'Banking Exam', url:'https://thunderstudy.github.io/banking/exam.html', badge:'Banking'},
+    {name:'LIC ADO Mock Test', stream:'Banking Exam', url:'https://thunderstudy.github.io/banking/exam.html', badge:'Banking'},
+    {name:'EPFO Mock Test', stream:'Banking Exam', url:'https://thunderstudy.github.io/banking/exam.html', badge:'Banking'},
     {name:'Current Affairs', stream:'All Exams', url:'https://wondermayank.github.io/Current_Affairs/', badge:'Extra'},
     {name:'NDA Notes', stream:'Defence Exam', url:'https://thunderstudy.github.io/nda/notes', badge:'NDA'},
     {name:'NDA Mock Test', stream:'Defence Exam', url:'https://commercesehoga.github.io/nda', badge:'NDA'},
@@ -4437,6 +4541,9 @@
   window.addEventListener('beforeinstallprompt', function(e) {
     e.preventDefault();
     window.pwaInstallPrompt = e;
+    // Show the hero trust pill install button
+    var htpBtn = document.getElementById('htp-install-btn');
+    if (htpBtn) htpBtn.style.display = '';
     try {
       var dismissed = localStorage.getItem('pwa-dismissed');
       if (!dismissed) {
@@ -4447,6 +4554,18 @@
       }
     } catch(err) {}
   });
+
+  function htpInstallApp() {
+    if (window.pwaInstallPrompt) {
+      window.pwaInstallPrompt.prompt();
+      window.pwaInstallPrompt.userChoice.then(function(result) {
+        if (result.outcome === 'accepted') {
+          var htpBtn = document.getElementById('htp-install-btn');
+          if (htpBtn) htpBtn.style.display = 'none';
+        }
+      });
+    }
+  }
 
   window.addEventListener('appinstalled', function() {
     pwaDismiss();
