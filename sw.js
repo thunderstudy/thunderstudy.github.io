@@ -16,8 +16,8 @@ const CORE_ASSETS = [
   '/manifest.json',
   '/favicon.ico',
   '/favicon.svg',
-  '/favicon-192x192.png',
-  '/apple-touch-icon.png',
+  '/favicon-192x192.svg',
+  '/apple-touch-icon.svg',
   // Google Fonts (cached via network-first)
   'https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap'
 ];
@@ -113,11 +113,22 @@ function staleWhileRevalidate(request) {
   return caches.open(DYNAMIC_CACHE).then(function(cache) {
     return cache.match(request).then(function(cached) {
       var networkFetch = fetch(request).then(function(response) {
-        cache.put(request, response.clone());
-        trimCache(DYNAMIC_CACHE, DYNAMIC_CACHE_LIMIT);
+        if (response && response.status === 200 && response.type !== 'opaque') {
+          cache.put(request, response.clone());
+          trimCache(DYNAMIC_CACHE, DYNAMIC_CACHE_LIMIT);
+        }
         return response;
       });
-      return cached || networkFetch;
+      if (cached) {
+        // Suppress unhandled promise rejection for background fetch
+        networkFetch.catch(function(err) {
+          console.warn('[ThunderStudy SW] Background fetch failed for:', request.url, err);
+        });
+        return cached;
+      }
+      return networkFetch.catch(function() {
+        return offlineFallback();
+      });
     });
   });
 }
@@ -147,7 +158,9 @@ function trimCache(cacheName, maxItems) {
 }
 
 function offlineFallback() {
-  return caches.match('/') || caches.match('/index.html');
+  return caches.match('/').then(function(response) {
+    return response || caches.match('/index.html');
+  });
 }
 
 // ── Background Sync (for future use) ─────────────────────────
