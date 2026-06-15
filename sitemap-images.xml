@@ -61,4 +61,14 @@
     </image:image>
   </url>
 
+
+  <url>
+    <loc>https://thunderstudy.github.io/</loc>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/commercesehoga/books/main/file_00000000c69871faac6321f850c6b1cd.jpg</image:loc>
+      <image:title>GK MindMaster — Best Free GK Book for All Competitive Exams</image:title>
+      <image:caption>GK MindMaster: Best free GK book for SSC, UPSC, Railways and Banking. Direct PDF download at ThunderStudy.</image:caption>
+    </image:image>
+  </url>
+
 </urlset>

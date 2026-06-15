@@ -19,6 +19,7 @@
       "description": "ThunderStudy is India's largest 100% free study platform providing notes, mock tests and PYQs for CBSE Class 12, CUET 2026, UPSC, SSC CGL, Banking, JEE and NEET — with no registration, no ads and no cost.",
       "slogan": "Free Education for Every Indian Student",
       "foundingDate": "2023",
+      "dateModified": "2026-06-15",
       "numberOfEmployees": 1,
       "isAccessibleForFree": true,
       "inLanguage": ["en-IN", "hi"],
@@ -69,7 +70,12 @@
         "Political Science Class 12",
         "Computer Science Class 12",
         "Informatics Practices Class 12",
-        "Current Affairs India 2026"
+        "Current Affairs India 2026",
+        "Boards Dominator Class 12",
+        "Boards Killer Class 12",
+        "GK MindMaster Best GK Book",
+        "Best Sample Papers Class 12",
+        "SSC Stenographer Preparation"
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -150,6 +156,55 @@
               "url": "https://commercesehoga.github.io/banking",
               "isAccessibleForFree": true,
               "inLanguage": "en-IN",
+              "provider": { "@id": "https://thunderstudy.github.io/#org" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Free GK MindMaster PDF — Best GK Book for All Exams",
+            "url": "https://thunderstudy.indevs.in/GK_Thunderstudy_compressed.pdf",
+            "price": "0",
+            "priceCurrency": "INR",
+            "itemOffered": {
+              "@type": "Book",
+              "name": "GK MindMaster — General Knowledge for All Competitive Exams",
+              "downloadUrl": "https://thunderstudy.indevs.in/GK_Thunderstudy_compressed.pdf",
+              "url": "https://commercesehoga.github.io/books",
+              "description": "Best free GK book for SSC, UPSC, Railways, Banking and all government exams. Top GK from India and the world.",
+              "inLanguage": "en-IN",
+              "isAccessibleForFree": true,
+              "genre": "General Knowledge",
+              "provider": { "@id": "https://thunderstudy.github.io/#org" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "SSC Stenographer Preparation",
+            "url": "https://thunderstudy.indevs.in/steno",
+            "price": "0",
+            "priceCurrency": "INR",
+            "itemOffered": {
+              "@type": "Course",
+              "name": "SSC Stenographer Grade C & D Preparation",
+              "url": "https://thunderstudy.indevs.in/steno",
+              "description": "Free SSC Stenographer prep — notes, mock tests and PYQs for Steno Grade C and D.",
+              "isAccessibleForFree": true,
+              "inLanguage": "en-IN",
+              "provider": { "@id": "https://thunderstudy.github.io/#org" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Free Class 12 Books — Boards Dominator & Boards Killer",
+            "url": "https://commercesehoga.github.io/books",
+            "price": "0",
+            "priceCurrency": "INR",
+            "itemOffered": {
+              "@type": "ItemList",
+              "name": "Free Class 12 Boards Books — Boards Dominator, Boards Killer, 20+ Sample Papers",
+              "url": "https://commercesehoga.github.io/books",
+              "description": "Best free books for CBSE Class 12 boards: Boards Dominator (Science), Boards Killer (Humanities), 20+ Sample Papers (Commerce) — all free at ThunderStudy.",
+              "isAccessibleForFree": true,
               "provider": { "@id": "https://thunderstudy.github.io/#org" }
             }
           }

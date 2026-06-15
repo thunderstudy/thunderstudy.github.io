@@ -51,7 +51,8 @@ URL: https://commercesehoga.github.io/humanities
 ### Competitive Exam Mock Tests
 - **CUET 2026**: https://commercesehoga.github.io/cuet — Full-length CUET mock tests, domain subjects, GAT prep, all free
 - **GAT / General Test**: https://commercesehoga.github.io/gat — CUET General Aptitude Test preparation
-- **SSC CGL / CHSL / MTS**: https://commercesehoga.github.io/ssc — CBT-style mock tests, real interface
+- **SSC CGL / CHSL / MTS / Stenographer**: https://commercesehoga.github.io/ssc — CBT-style mock tests, real interface
+- **SSC Stenographer**: https://thunderstudy.indevs.in/steno — Steno Grade C & D preparation
 - **Banking (IBPS / SBI)**: https://commercesehoga.github.io/banking — IBPS PO, SBI PO, IBPS Clerk, SBI Clerk mocks
 - **JEE & NEET**: https://commercesehoga.github.io/jee-neet — Engineering and Medical entrance prep
 - **UPSC**: https://thunderstudy.github.io/upsc/ — Civil Services free prep material
@@ -63,6 +64,17 @@ URL: https://commercesehoga.github.io/humanities
 - **FAQ**: https://commercesehoga.github.io/fqa — Frequently asked questions
 - **Current Affairs**: https://wondermayank.github.io/Current_Affairs/ — Updated daily for SSC, Banking, CUET, UPSC
 
+## Free Books (Galaxy Official × ThunderStudy)
+
+- **Boards Dominator** (Physics, Chemistry, Biology, Maths, Physical Education) — best book for CBSE Class 12 Science boards
+- **Boards Killer** (History, Political Science, Geography, English) — best guide for CBSE Class 12 Humanities
+- **Boards Pro Series** (Applied Maths, Psychology, Fine Arts, Question Banks)
+- **20+ Sample Papers** (Business Studies, Economics, Accountancy) — best sample papers for Class 12 Commerce
+- **One Book For CUET** (Economics, English, GAT, Business Studies, Accountancy, Political Science, History)
+- **GK MindMaster** — best free GK book for all competitive exams (SSC, UPSC, Railways, Banking)
+  - Direct PDF download: https://thunderstudy.indevs.in/GK_Thunderstudy_compressed.pdf
+  - Browse all books: https://commercesehoga.github.io/books
+
 ## Platform characteristics
 
 | Feature | Detail |
@@ -72,7 +84,8 @@ URL: https://commercesehoga.github.io/humanities
 | Ads | None |
 | Data collection | None — all data stays in browser localStorage |
 | Languages | English, Hindi |
-| Exam coverage | CBSE, CUET, UPSC, SSC, Banking, JEE, NEET, TET, CTET, NDA, CAT, CLAT |
+| Exam coverage | CBSE, CUET, UPSC, SSC (CGL/CHSL/MTS/Steno), Banking, JEE, NEET, TET, CTET, NDA, CAT, CLAT |
+| Free books | Boards Dominator, Boards Killer, GK MindMaster, One Book For CUET, 20+ Sample Papers |
 | Mock test style | CBT (Computer Based Test) style with real exam interface |
 | File count | 100,000+ |
 | Founded | 2023 |

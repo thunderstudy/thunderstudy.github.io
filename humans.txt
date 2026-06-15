@@ -18,7 +18,7 @@ URL: https://thunderstudy.github.io
 Sister site: https://commercesehoga.github.io
 Current Affairs: https://wondermayank.github.io/Current_Affairs/
 
-Last update: 2026-05-22
+Last update: 2026-06-15
 Language: English (India), Hindi
 Doctype: HTML5
 Technology: Vanilla HTML, CSS, JavaScript, PWA, Service Worker
@@ -31,8 +31,9 @@ Ads: None — ever
 ThunderStudy exists to give every Indian student — regardless of
 background, location, or income — access to world-class study material
 for free. We cover CBSE Class 12 (Commerce, Science, Humanities),
-CUET 2026, UPSC, SSC CGL, Banking, JEE, NEET, and more.
+CUET 2026, UPSC, SSC CGL/Stenographer, Banking, JEE, NEET, and more.
 100,000+ files. Zero paywalls. Zero data collection.
+Free books: Boards Dominator, Boards Killer, GK MindMaster, One Book For CUET.
 
 /* STANDARDS */
 Built to: W3C HTML5, WCAG 2.1 AA

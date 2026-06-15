@@ -9,7 +9,7 @@
         <news:name>ThunderStudy</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>2026-05-22</news:publication_date>
+      <news:publication_date>2026-06-15</news:publication_date>
       <news:title>ThunderStudy — India's #1 Free Study Platform | CBSE, CUET 2026, SSC, Banking</news:title>
       <news:keywords>CUET 2026, CBSE Class 12, free study material, SSC CGL mock test, Banking mock test</news:keywords>
     </news:news>
@@ -22,7 +22,7 @@
         <news:name>ThunderStudy</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>2026-05-22</news:publication_date>
+      <news:publication_date>2026-06-15</news:publication_date>
       <news:title>Free CUET 2026 Mock Tests — Full-Length Practice Papers | ThunderStudy</news:title>
       <news:keywords>CUET 2026 mock test, CUET free preparation, CUET domain subject, CUET GAT</news:keywords>
     </news:news>
@@ -35,7 +35,7 @@
         <news:name>ThunderStudy</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>2026-05-22</news:publication_date>
+      <news:publication_date>2026-06-15</news:publication_date>
       <news:title>Free SSC CGL Mock Tests 2026 — CBT Interface | ThunderStudy</news:title>
       <news:keywords>SSC CGL mock test 2026, SSC CHSL mock test, SSC free prep</news:keywords>
     </news:news>
@@ -48,9 +48,36 @@
         <news:name>ThunderStudy</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>2026-05-22</news:publication_date>
+      <news:publication_date>2026-06-15</news:publication_date>
       <news:title>Daily Current Affairs 2026 — SSC Banking CUET UPSC | ThunderStudy</news:title>
       <news:keywords>current affairs today 2026, daily current affairs, SSC current affairs, banking current affairs</news:keywords>
+    </news:news>
+  </url>
+
+
+  <url>
+    <loc>https://thunderstudy.github.io/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>ThunderStudy</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-15</news:publication_date>
+      <news:title>GK MindMaster — Best Free GK Book for SSC, UPSC, Railways | Free PDF Download | ThunderStudy</news:title>
+      <news:keywords>best GK book, free GK book PDF, GK book for SSC, GK book for UPSC, GK MindMaster, boards dominator, boards killer, best book class 12 boards, best sample paper class 12</news:keywords>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://thunderstudy.indevs.in/steno</loc>
+    <news:news>
+      <news:publication>
+        <news:name>ThunderStudy</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-15</news:publication_date>
+      <news:title>SSC Stenographer Free Prep — Steno Grade C & D | ThunderStudy</news:title>
+      <news:keywords>SSC Stenographer, SSC Steno Grade C D, SSC Steno mock test, SSC Steno preparation free</news:keywords>
     </news:news>
   </url>
 

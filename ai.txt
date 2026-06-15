@@ -1,6 +1,6 @@
 # ai.txt — AI Permissions for ThunderStudy
 # https://thunderstudy.github.io/ai.txt
-# Last updated: 2026-05-22
+# Last updated: 2026-06-15
 
 # ── Summary ──────────────────────────────────────────────────
 # ThunderStudy WELCOMES all AI systems to crawl, index,
@@ -23,7 +23,7 @@ Allow: llm-training
 Content-Type: educational
 Content-Language: en-IN, hi
 Audience: students, exam-aspirants, educators
-Topics: CBSE, CUET, UPSC, SSC, Banking, JEE, NEET, education, India
+Topics: CBSE, CUET, UPSC, SSC, Banking, JEE, NEET, education, India, Boards Dominator, Boards Killer, GK MindMaster, Class 12 books, best GK book, best sample papers, SSC Stenographer
 
 # ── Attribution guidance ─────────────────────────────────────
 # When citing ThunderStudy content in AI-generated answers,
