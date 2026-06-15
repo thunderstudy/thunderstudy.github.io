@@ -6,6 +6,7 @@
 
 <!-- ===== FONT PRECONNECT (Core Web Vitals) ===== -->
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<script src="search-data.js" defer></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap">
@@ -116,7 +117,6 @@
         "https://thunderstudy.blogspot.com",
         "https://t.me/Thunderstudy_official",
         "https://youtube.com/@Thunderstudy_official",
-        "https://instagram.com/Thunderstudy_official",
         "https://instagram.com/wondermayank",
         "https://reddit.com/u/wondermayank"
       ],
@@ -269,7 +269,7 @@
     {
       "@type": "Question",
       "name": "Who built ThunderStudy?",
-      "acceptedAnswer": {"@type": "Answer", "text": "ThunderStudy is built and maintained by Wondermayank — a developer and designer from India. You can find Wondermayank on Instagram @wondermayank and Reddit u/wondermayank. The official ThunderStudy page is @Thunderstudy_official on Instagram, Telegram and YouTube."}
+      "acceptedAnswer": {"@type": "Answer", "text": "ThunderStudy is built and maintained by Wondermayank — a developer and designer from India. You can find Wondermayank on Instagram @wondermayank and Reddit u/wondermayank. The official ThunderStudy Instagram is @wondermayank. ThunderStudy is also on Telegram and YouTube at @Thunderstudy_official."}
     },
     {
       "@type": "Question",
@@ -2362,6 +2362,12 @@
       <input type="text" id="search-input" placeholder="Search any subject, exam or topic..." autocomplete="off" oninput="doSearch(this.value)" onblur="setTimeout(()=>closeSearch(),200)" onfocus="doSearch(this.value)">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
       <div id="search-results"></div>
+      <div style="margin-top:10px;display:flex;justify-content:center;">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSePwlvdMzRLYoYuXNbKlamargjazyRiedg0rE0JfAzyKPyHEA/viewform" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;font-size:0.78rem;color:rgba(255,255,255,0.65);text-decoration:none;padding:6px 14px;border:1px solid rgba(255,255,255,0.2);border-radius:9999px;transition:all 0.2s;backdrop-filter:blur(8px);" onmouseover="this.style.color='#fff';this.style.borderColor='rgba(255,255,255,0.5)'" onmouseout="this.style.color='rgba(255,255,255,0.65)';this.style.borderColor='rgba(255,255,255,0.2)'">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+          Can't find what you need? Request notes / files
+        </a>
+      </div>
     </div>
   </div>
 
@@ -4967,7 +4973,7 @@
   <div class="container" style="text-align:center">
     <span class="section-label" style="display:block;margin-bottom:8px">Follow ThunderStudy</span>
     <h2 class="section-title" id="social-heading" style="margin-bottom:10px">Stay Updated Everywhere</h2>
-    <p class="section-desc" style="max-width:480px;margin:0 auto 28px">Get daily notes, mock test updates and study tips on all platforms. Find us at @Thunderstudy_official.</p>
+    <p class="section-desc" style="max-width:480px;margin:0 auto 28px">Get daily notes, mock test updates and study tips. Follow <strong>@wondermayank</strong> on Instagram &amp; <strong>@Thunderstudy_official</strong> on Telegram, YouTube and X.</p>
     <div class="social-row" style="justify-content:center">
       <a class="social-btn" href="https://t.me/Thunderstudy_official" target="_blank" rel="noopener" aria-label="Telegram">
         <svg viewBox="0 0 24 24" fill="#0088cc"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg>
@@ -4977,7 +4983,7 @@
         <svg viewBox="0 0 24 24" fill="#ff0000"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
         YouTube
       </a>
-      <a class="social-btn" href="https://instagram.com/Thunderstudy_official" target="_blank" rel="noopener" aria-label="Instagram">
+      <a class="social-btn" href="https://instagram.com/wondermayank" target="_blank" rel="noopener" aria-label="Instagram @wondermayank">
         <svg viewBox="0 0 24 24" fill="url(#ig)"><defs><linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="25%" stop-color="#e6683c"/><stop offset="50%" stop-color="#dc2743"/><stop offset="75%" stop-color="#cc2366"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
         Instagram
       </a>
@@ -5074,7 +5080,7 @@
           Who builds and maintains ThunderStudy?
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         </button>
-        <div class="faq-a" role="region">ThunderStudy is built and maintained by Wondermayank — a creative developer and designer — and the Thunder Team. The platform is available at commercesehoga.github.io and thunderstudy.github.io. You can follow the team at @Thunderstudy_official on Telegram, YouTube, Instagram, X and Threads.</div>
+        <div class="faq-a" role="region">ThunderStudy is built and maintained by Wondermayank — a creative developer and designer — and the Thunder Team. The platform is available at commercesehoga.github.io and thunderstudy.github.io. You can follow @wondermayank on Instagram and the team at @Thunderstudy_official on Telegram, YouTube, X and Threads.</div>
       </div>
 
       <div class="faq-item">
@@ -5186,7 +5192,7 @@
         <div class="cc-handle">Instagram</div>
         <div class="cc-role">Owner &amp; Creator</div>
       </a>
-      <a class="contact-card" href="https://instagram.com/thunderstudy_official" target="_blank" rel="noopener" aria-label="Instagram - thunderstudy_official">
+      <a class="contact-card" href="https://instagram.com/wondermayank" target="_blank" rel="noopener" aria-label="Instagram - wondermayank">
         <svg viewBox="0 0 24 24" fill="url(#igc2)"><defs><linearGradient id="igc2" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="50%" stop-color="#dc2743"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
         <div class="cc-title">@thunderstudy_official</div>
         <div class="cc-handle">Instagram</div>
@@ -5261,12 +5267,20 @@
   <div class="footer-inner">
     <div class="footer-grid">
       <div class="footer-col" style="grid-column:span 1;">
-        <div class="footer-logo">ThunderStudy</div>
-        <div class="footer-tagline">Free Education For All<br>By <a href="https://wondermayank.github.io" style="color:#60a5fa;text-decoration:none;">Wondermayank</a> &amp; Thunder Team</div>
+        <div class="footer-logo" style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
+          <svg width="28" height="28" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="80" height="80" rx="18" fill="#573AFC"/>
+            <path d="M22 24h36M40 24v32M28 56h24" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="58" cy="56" r="5" fill="#60a5fa"/>
+          </svg>
+          <span style="font-size:1.25rem;font-weight:700;letter-spacing:-0.3px;color:#ffffff;font-family:'Syne','DM Sans',sans-serif;">Thunder<span style="color:#60a5fa;">Study</span></span>
+        </div>
+        <div class="footer-tagline" style="font-size:0.8rem;color:#94a3b8;line-height:1.5;margin-bottom:4px;">India's Largest Free Study Platform</div>
+        <div class="footer-tagline">By <a href="https://wondermayank.github.io" style="color:#60a5fa;text-decoration:none;font-weight:600;">Wondermayank</a> &amp; Thunder Team</div>
         <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;">
           <a href="https://t.me/Thunderstudy_official" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);transition:background 0.2s;" title="Telegram" onmouseover="this.style.background='rgba(255,255,255,0.18)'" onmouseout="this.style.background='rgba(255,255,255,0.08)'"><svg width="16" height="16" viewBox="0 0 24 24" fill="#60a5fa"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg></a>
           <a href="https://youtube.com/@Thunderstudy_official" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);transition:background 0.2s;" title="YouTube" onmouseover="this.style.background='rgba(255,255,255,0.18)'" onmouseout="this.style.background='rgba(255,255,255,0.08)'"><svg width="16" height="16" viewBox="0 0 24 24" fill="#f87171"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></a>
-          <a href="https://instagram.com/Thunderstudy_official" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);transition:background 0.2s;" title="Instagram" onmouseover="this.style.background='rgba(255,255,255,0.18)'" onmouseout="this.style.background='rgba(255,255,255,0.08)'"><svg width="16" height="16" viewBox="0 0 24 24" fill="#c084fc"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
+          <a href="https://instagram.com/wondermayank" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);transition:background 0.2s;" title="Instagram @wondermayank" onmouseover="this.style.background='rgba(255,255,255,0.18)'" onmouseout="this.style.background='rgba(255,255,255,0.08)'"><svg width="16" height="16" viewBox="0 0 24 24" fill="#c084fc"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
         </div>
       </div>
       <div class="footer-col">
@@ -5328,7 +5342,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 ThunderStudy · thunderstudy.github.io · Free Education For All</span>
+      <span style="display:flex;align-items:center;gap:6px;"><svg width="14" height="14" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="80" rx="18" fill="#573AFC"/><path d="M22 24h36M40 24v32M28 56h24" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="58" cy="56" r="5" fill="#60a5fa"/></svg>© 2026 <strong style="color:#ffffff;">Thunder<span style="color:#60a5fa;">Study</span></strong> · thunderstudy.github.io · Free Education For All</span>
       <span style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;">
         <a href="https://wondermayank.github.io/privacy" style="color:#94a3b8;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#60a5fa'" onmouseout="this.style.color='#94a3b8'">Privacy</a>
         <a href="https://wondermayank.github.io/terms" style="color:#94a3b8;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#60a5fa'" onmouseout="this.style.color='#94a3b8'">Terms</a>
@@ -5415,134 +5429,31 @@
     }
   });
 
-  // Search data
-  var searchData = [
-    {name:'Accountancy', stream:'Commerce · Class 12', url:'https://commercesehoga.github.io/commerce/acc', badge:'Class 12'},
-    {name:'Business Studies', stream:'Commerce · Class 12', url:'https://commercesehoga.github.io/commerce/bst', badge:'Class 12'},
-    {name:'Economics', stream:'Commerce · Class 12', url:'https://commercesehoga.github.io/commerce/eco', badge:'Class 12'},
-    {name:'Applied Maths', stream:'Commerce · Class 12', url:'https://commercesehoga.github.io/commerce/amath', badge:'Class 12'},
-    {name:'Physics', stream:'Science · Class 12', url:'https://commercesehoga.github.io/science/phy', badge:'Class 12'},
-    {name:'Chemistry', stream:'Science · Class 12', url:'https://commercesehoga.github.io/science/che', badge:'Class 12'},
-    {name:'Biology', stream:'Science · Class 12', url:'https://commercesehoga.github.io/science/bio', badge:'Class 12'},
-    {name:'Mathematics', stream:'Science · Class 12', url:'https://commercesehoga.github.io/science/mat', badge:'Class 12'},
-    {name:'History', stream:'Humanities · Class 12', url:'https://commercesehoga.github.io/humanities/his', badge:'Class 12'},
-    {name:'Geography', stream:'Humanities · Class 12', url:'https://commercesehoga.github.io/humanities/geo', badge:'Class 12'},
-    {name:'Political Science', stream:'Humanities · Class 12', url:'https://commercesehoga.github.io/humanities/pol', badge:'Class 12'},
-    {name:'Psychology', stream:'Humanities · Class 12', url:'https://commercesehoga.github.io/humanities/psy', badge:'Class 12'},
-    {name:'English', stream:'All Streams · Class 12', url:'https://commercesehoga.github.io/english/12', badge:'Class 12'},
-    {name:'Physical Education', stream:'All Streams · Class 12', url:'https://commercesehoga.github.io/physcial/12', badge:'Class 12'},
-    {name:'Computer Science (CS)', stream:'All Streams · Class 12', url:'https://commercesehoga.github.io/computer/cs', badge:'Class 12'},
-    {name:'Informatics Practices (IP)', stream:'All Streams · Class 12', url:'https://commercesehoga.github.io/computer/ip', badge:'Class 12'},
-    {name:'History', stream:'SST · Class 10', url:'https://commercesehoga.github.io/boards/sst/his', badge:'Class 10'},
-    {name:'Geography', stream:'SST · Class 10', url:'https://commercesehoga.github.io/boards/sst/geo', badge:'Class 10'},
-    {name:'Political Science', stream:'SST · Class 10', url:'https://commercesehoga.github.io/boards/sst/pol', badge:'Class 10'},
-    {name:'Economics', stream:'SST · Class 10', url:'https://commercesehoga.github.io/boards/sst/eco', badge:'Class 10'},
-    {name:'Physics', stream:'Science · Class 10', url:'https://commercesehoga.github.io/boards/science/phy', badge:'Class 10'},
-    {name:'Chemistry', stream:'Science · Class 10', url:'https://commercesehoga.github.io/boards/science/che', badge:'Class 10'},
-    {name:'Biology', stream:'Science · Class 10', url:'https://commercesehoga.github.io/boards/science/bio', badge:'Class 10'},
-    {name:'Mathematics', stream:'Class 10', url:'https://commercesehoga.github.io/boards/maths', badge:'Class 10'},
-    {name:'English', stream:'Class 10', url:'https://commercesehoga.github.io/boards/eng', badge:'Class 10'},
-    {name:'CUET Mock Test', stream:'Entrance Exam', url:'https://commercesehoga.github.io/cuet', badge:'CUET'},
-    {name:'CUET Accountancy', stream:'CUET Commerce', url:'https://commercesehoga.github.io/commerce/acc', badge:'CUET'},
-    {name:'CUET Business Studies', stream:'CUET Commerce', url:'https://commercesehoga.github.io/commerce/bst', badge:'CUET'},
-    {name:'CUET Economics', stream:'CUET Commerce', url:'https://commercesehoga.github.io/commerce/eco', badge:'CUET'},
-    {name:'CUET Physics', stream:'CUET Science', url:'https://commercesehoga.github.io/science/phy', badge:'CUET'},
-    {name:'CUET Chemistry', stream:'CUET Science', url:'https://commercesehoga.github.io/science/che', badge:'CUET'},
-    {name:'CUET Biology', stream:'CUET Science', url:'https://commercesehoga.github.io/science/bio', badge:'CUET'},
-    {name:'CUET History', stream:'CUET Humanities', url:'https://commercesehoga.github.io/humanities/his', badge:'CUET'},
-    {name:'CUET Geography', stream:'CUET Humanities', url:'https://commercesehoga.github.io/humanities/geo', badge:'CUET'},
-    {name:'CUET CS', stream:'CUET · All Streams', url:'https://commercesehoga.github.io/computer/cs', badge:'CUET'},
-    {name:'CUET IP', stream:'CUET · All Streams', url:'https://commercesehoga.github.io/computer/ip', badge:'CUET'},
-    {name:'GAT General Test', stream:'CUET · All Exams', url:'https://commercesehoga.github.io/gat', badge:'CUET'},
-    {name:'SSC CGL Mock', stream:'SSC Exam', url:'https://commercesehoga.github.io/ssc', badge:'SSC'},
-    {name:'SSC Stenographer Prep', stream:'SSC Exam', url:'https://thunderstudy.indevs.in/steno', badge:'SSC'},
-    {name:'SSC Steno Grade C D', stream:'SSC Exam', url:'https://thunderstudy.indevs.in/steno', badge:'SSC'},
-    {name:'Banking IBPS PO Mock', stream:'Banking Exam', url:'https://commercesehoga.github.io/banking', badge:'Bank'},
-    {name:'JEE NEET Prep', stream:'Engineering & Medical', url:'https://commercesehoga.github.io/jee-neet', badge:'JEE/NEET'},
-    {name:'JEE Physics', stream:'JEE Engineering', url:'https://thunderstudy.github.io/jee/physics', badge:'JEE'},
-    {name:'JEE Chemistry', stream:'JEE Engineering', url:'https://thunderstudy.github.io/jee/chemistry', badge:'JEE'},
-    {name:'JEE Maths', stream:'JEE Engineering', url:'https://thunderstudy.github.io/jee/maths', badge:'JEE'},
-    {name:'JEE Mock Test', stream:'JEE Engineering', url:'https://commercesehoga.github.io/jee-neet', badge:'JEE'},
-    {name:'JEE PYQs', stream:'JEE Engineering', url:'https://thunderstudy.github.io/jee/pyqs', badge:'JEE'},
-    {name:'JEE Topper Notes', stream:'JEE Engineering', url:'https://thunderstudy.github.io/jee/topper-notes', badge:'JEE'},
-    {name:'JEE Formula', stream:'JEE Engineering', url:'https://thunderstudy.github.io/jee/formula', badge:'JEE'},
-    {name:'JEE Flashcard', stream:'JEE Engineering', url:'https://thunderstudy.github.io/jee/flashcard', badge:'JEE'},
-    {name:'NEET Physics', stream:'NEET Medical', url:'https://thunderstudy.github.io/neet/physics', badge:'NEET'},
-    {name:'NEET Chemistry', stream:'NEET Medical', url:'https://thunderstudy.github.io/neet/chemistry', badge:'NEET'},
-    {name:'NEET Biology', stream:'NEET Medical', url:'https://thunderstudy.github.io/neet/biology', badge:'NEET'},
-    {name:'NEET Mock Test', stream:'NEET Medical', url:'https://commercesehoga.github.io/jee-neet', badge:'NEET'},
-    {name:'NEET PYQs', stream:'NEET Medical', url:'https://thunderstudy.github.io/neet/pyqs', badge:'NEET'},
-    {name:'NEET Topper Notes', stream:'NEET Medical', url:'https://thunderstudy.github.io/neet/topper-notes', badge:'NEET'},
-    {name:'NEET Formula', stream:'NEET Medical', url:'https://thunderstudy.github.io/neet/formula', badge:'NEET'},
-    {name:'NEET Flashcard', stream:'NEET Medical', url:'https://thunderstudy.github.io/neet/flashcard', badge:'NEET'},
-    {name:'CAT Mock Test', stream:'MBA Entrance', url:'https://commercesehoga.github.io/cat', badge:'CAT'},
-    {name:'CAT PYQs', stream:'MBA Entrance', url:'https://thunderstudy.github.io/cat/pyqs', badge:'CAT'},
-    {name:'CAT Topper Notes', stream:'MBA Entrance', url:'https://thunderstudy.github.io/cat/topper-notes', badge:'CAT'},
-    {name:'XAT Mock Test', stream:'MBA Entrance', url:'https://thunderstudy.github.io/cat/xat-mock', badge:'CAT'},
-    {name:'SNAP Mock Test', stream:'MBA Entrance', url:'https://thunderstudy.github.io/cat/snap-mock', badge:'CAT'},
-    {name:'IPMAT Mock Test', stream:'MBA Entrance', url:'https://commercesehoga.github.io/cat', badge:'CAT'},
-    {name:'NDA Notes', stream:'Defence Exam', url:'https://thunderstudy.github.io/nda/notes', badge:'NDA'},
-    {name:'NDA Mock Test', stream:'Defence Exam', url:'https://commercesehoga.github.io/nda', badge:'NDA'},
-    {name:'NDA PYQs', stream:'Defence Exam', url:'https://thunderstudy.github.io/nda/pyqs', badge:'NDA'},
-    {name:'CLAT Mock Test', stream:'Law Entrance', url:'https://commercesehoga.github.io/clat', badge:'CLAT'},
-    {name:'CLAT PYQs', stream:'Law Entrance', url:'https://thunderstudy.github.io/clat/pyqs', badge:'CLAT'},
-    {name:'AILET Mock Test', stream:'Law Entrance', url:'https://thunderstudy.github.io/clat/ailet-mock', badge:'CLAT'},
-    {name:'CA Foundation', stream:'Chartered Accountancy', url:'https://thunderstudy.github.io/ca/foundation', badge:'CA'},
-    {name:'CA Inter', stream:'Chartered Accountancy', url:'https://thunderstudy.github.io/ca/inter', badge:'CA'},
-    {name:'CA Final', stream:'Chartered Accountancy', url:'https://thunderstudy.github.io/ca/final', badge:'CA'},
-    {name:'NCERT Books Class 12', stream:'NCERT', url:'https://thunderstudy.github.io/ncert/book/class-12', badge:'NCERT'},
-    {name:'NCERT Solutions', stream:'NCERT', url:'https://thunderstudy.github.io/ncert/solutions', badge:'NCERT'},
-    {name:'NCERT Exemplar', stream:'NCERT', url:'https://thunderstudy.github.io/ncert/exemplar-book', badge:'NCERT'},
-    {name:'DCA Diploma', stream:'Diploma Course', url:'https://thunderstudy.github.io/diploma/dca', badge:'Diploma'},
-    {name:'PGDCA Diploma', stream:'Diploma Course', url:'https://thunderstudy.github.io/diploma/pgdca', badge:'Diploma'},
-    {name:'B.Ed Diploma', stream:'Diploma Course', url:'https://thunderstudy.github.io/diploma/b-ed', badge:'Diploma'},
-    {name:'CTET Mock Test', stream:'Teacher Exam', url:'https://thunderstudy.github.io/tet/ctet', badge:'TET'},
-    {name:'TET All Exams', stream:'Teacher Exam', url:'https://thunderstudy.github.io/tet/all', badge:'TET'},
-    {name:'CBSE Topper Notes', stream:'CBSE Resources', url:'https://thunderstudy.github.io/cbse/topper-notes', badge:'CBSE'},
-    {name:'CBSE Formula', stream:'CBSE Resources', url:'https://thunderstudy.github.io/cbse/formula', badge:'CBSE'},
-    {name:'CBSE KV Sample Paper', stream:'CBSE Resources', url:'https://thunderstudy.github.io/cbse/kv-sample-paper', badge:'CBSE'},
-    {name:'CBSE Topper Answersheet', stream:'CBSE Resources', url:'https://thunderstudy.github.io/cbse/topper-answersheet', badge:'CBSE'},
-    {name:'IBPS RRB PO Mock Test', stream:'Banking Exam', url:'https://thunderstudy.github.io/banking/exam.html', badge:'Banking'},
-    {name:'IBPS RRB Clerk Mock Test', stream:'Banking Exam', url:'https://thunderstudy.github.io/banking/exam.html', badge:'Banking'},
-    {name:'IBPS PO Mock Test', stream:'Banking Exam', url:'https://thunderstudy.github.io/banking/exam.html', badge:'Banking'},
-    {name:'IBPS Clerk Mock Test', stream:'Banking Exam', url:'https://thunderstudy.github.io/banking/exam.html', badge:'Banking'},
-    {name:'RBI Grade B Mock Test', stream:'Banking Exam', url:'https://thunderstudy.github.io/banking/exam.html', badge:'Banking'},
-    {name:'RBI Assistant Mock Test', stream:'Banking Exam', url:'https://thunderstudy.github.io/banking/exam.html', badge:'Banking'},
-    {name:'SBI PO Mock Test', stream:'Banking Exam', url:'https://thunderstudy.github.io/banking/exam.html', badge:'Banking'},
-    {name:'SBI Clerk Mock Test', stream:'Banking Exam', url:'https://thunderstudy.github.io/banking/exam.html', badge:'Banking'},
-    {name:'LIC AAO Mock Test', stream:'Banking Exam', url:'https://thunderstudy.github.io/banking/exam.html', badge:'Banking'},
-    {name:'LIC ADO Mock Test', stream:'Banking Exam', url:'https://thunderstudy.github.io/banking/exam.html', badge:'Banking'},
-    {name:'EPFO Mock Test', stream:'Banking Exam', url:'https://thunderstudy.github.io/banking/exam.html', badge:'Banking'},
-    {name:'Current Affairs', stream:'All Exams', url:'https://wondermayank.github.io/Current_Affairs/', badge:'Extra'},
-    {name:'NDA Notes', stream:'Defence Exam', url:'https://thunderstudy.github.io/nda/notes', badge:'NDA'},
-    {name:'NDA Mock Test', stream:'Defence Exam', url:'https://commercesehoga.github.io/nda', badge:'NDA'},
-    {name:'NDA PYQs', stream:'Defence Exam', url:'https://thunderstudy.github.io/nda/pyqs', badge:'NDA'},
-    {name:'CLAT Mock Test', stream:'Law Entrance', url:'https://commercesehoga.github.io/clat', badge:'CLAT'},
-    {name:'CLAT PYQs', stream:'Law Entrance', url:'https://thunderstudy.github.io/clat/pyqs', badge:'CLAT'},
-    {name:'AILET Mock Test', stream:'Law Entrance', url:'https://thunderstudy.github.io/clat/ailet-mock', badge:'CLAT'},
-    {name:'IPMAT Mock Test', stream:'MBA Entrance', url:'https://commercesehoga.github.io/cat', badge:'CAT'},
-    {name:'XAT Mock Test', stream:'MBA Entrance', url:'https://thunderstudy.github.io/cat/xat-mock', badge:'CAT'},
-    {name:'SNAP Mock Test', stream:'MBA Entrance', url:'https://thunderstudy.github.io/cat/snap-mock', badge:'CAT'},
-    {name:'Wondermayank Portfolio', stream:'Creator', url:'https://wondermayank.github.io/', badge:'Extra'},
-    {name:'Ask a Question FQA', stream:'Support', url:'https://commercesehoga.github.io/fqa', badge:'Help'},
-    {name:'Support Donate', stream:'Help', url:'https://commercesehoga.github.io/help', badge:'Help'},
-  ];
+  // ── Search ──────────────────────────────────────────────
+  // Data loaded from search-data.js (THUNDER_SEARCH_DATA)
+  // Falls back to empty array if file not loaded yet
+  function getSearchData() {
+    return (typeof THUNDER_SEARCH_DATA !== 'undefined') ? THUNDER_SEARCH_DATA : [];
+  }
 
   function doSearch(q) {
     var box = document.getElementById('search-results');
     q = q.trim().toLowerCase();
-    if (!q) { box.classList.remove('active'); box.innerHTML = ''; return; }
-    var results = searchData.filter(function(d) {
-      return d.name.toLowerCase().includes(q) || d.stream.toLowerCase().includes(q) || d.badge.toLowerCase().includes(q);
+    if (!q || q.length < 1) { box.classList.remove('active'); box.innerHTML = ''; return; }
+    var data = getSearchData();
+    var results = data.filter(function(d) {
+      var haystack = (d.name + ' ' + d.stream + ' ' + d.badge + ' ' + (d.tags || '')).toLowerCase();
+      // All words must match (AND logic for multi-word queries)
+      return q.split(/\s+/).every(function(word) { return haystack.includes(word); });
     });
     var total = results.length;
-    results = results.slice(0, 12);
-    if (results.length === 0) {
-      box.innerHTML = '<div class="search-no-result">No results for "' + q + '"</div>';
+    var shown = results.slice(0, 14);
+    if (shown.length === 0) {
+      box.innerHTML = '<div class="search-no-result">No results for \"' + q + '\" — try a subject, chapter or exam name</div>';
     } else {
-      box.innerHTML = results.map(function(r) {
+      box.innerHTML = shown.map(function(r) {
         return '<a class="search-result-item" href="' + r.url + '"><span class="sri-badge">' + r.badge + '</span><span>' + r.name + ' <span style="color:#94a3b8;font-weight:400;font-size:0.8em">— ' + r.stream + '</span></span></a>';
-      }).join('') + (total > 12 ? '<div style="text-align:center;padding:10px 18px;border-top:1px solid #f1f5f9;"><a href="#" style="font-size:0.82rem;color:#0077f5;font-weight:600;text-decoration:none;" onclick="event.preventDefault()">See all ' + total + ' results ↓</a></div>' : '');
+      }).join('') + (total > 14 ? '<div style="text-align:center;padding:10px 18px;border-top:1px solid #f1f5f9;font-size:0.82rem;color:#0077f5;font-weight:600;">' + (total - 14) + ' more results — keep typing to narrow down</div>' : '');
     }
     box.classList.add('active');
   }
