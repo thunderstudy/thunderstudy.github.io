@@ -62,7 +62,7 @@
 
 <!-- ===== TWITTER / X ===== -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@Thunderstudy_official">
+<meta name="twitter:site" content="@ThunderstudyX">
 <meta name="twitter:creator" content="@wondermayank">
 <meta name="twitter:title" content="ThunderStudy — Free: Boards Dominator, Boards Killer, GK Book & Best Class 12 Sample Papers | 100000+ Files | No Ads">
 <meta name="twitter:description" content="Free download: Boards Dominator, Boards Killer, GK MindMaster (best GK book for SSC, UPSC & all exams), One Book For CUET + best sample papers for Class 12. 100,000+ free files. No ads, no login. @wondermayank">
@@ -791,28 +791,40 @@
   #pwa-banner {
     display: none;
     position: fixed;
-    bottom: 80px;
+    bottom: 88px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 9000;
-    background: #0f172a;
-    color: #fff;
-    padding: 14px 20px;
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.32);
-    align-items: center;
-    gap: 14px;
-    max-width: 360px;
+    background: #fff;
+    color: #0f172a;
+    padding: 14px 16px 14px 16px;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.13), 0 1px 4px rgba(0,0,0,0.07);
+    flex-direction: column;
+    gap: 0;
+    max-width: 340px;
     width: calc(100% - 40px);
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 0.5px solid #e2e8f0;
   }
   #pwa-banner.show { display: flex; }
-  #pwa-banner .pwa-icon { font-size: 1.8rem; }
-  #pwa-banner .pwa-text { flex: 1; font-size: 0.85rem; line-height: 1.4; }
-  #pwa-banner .pwa-title { font-weight: 700; font-size: 0.9rem; margin-bottom: 2px; }
-  #pwa-banner .pwa-sub { color: #94a3b8; font-size: 0.78rem; }
-  #pwa-install-btn { background: linear-gradient(90deg,#1e88e5,#7c3aed); color: #fff; border: none; padding: 8px 16px; border-radius: 10px; font-weight: 700; font-size: 0.82rem; cursor: pointer; white-space: nowrap; }
-  #pwa-dismiss-btn { background: none; border: none; color: #94a3b8; cursor: pointer; font-size: 1.1rem; padding: 4px; line-height: 1; }
+  #pwa-banner .pwa-top { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+  #pwa-banner .pwa-icon-wrap {
+    width: 44px; height: 44px; border-radius: 12px;
+    background: #eff6ff; border: 1px solid #bdd7f5;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; flex-shrink: 0;
+  }
+  #pwa-banner .pwa-text { flex: 1; }
+  #pwa-banner .pwa-title { font-weight: 700; font-size: 0.88rem; color: #0f172a; line-height: 1.25; margin-bottom: 2px; }
+  #pwa-banner .pwa-sub { color: #64748b; font-size: 0.76rem; }
+  #pwa-banner .pwa-perks { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+  #pwa-banner .pwa-perk { font-size: 0.7rem; font-weight: 700; color: #059669; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 5px; padding: 2px 8px; }
+  #pwa-banner .pwa-actions { display: flex; gap: 8px; }
+  #pwa-install-btn { flex: 1; background: #1d4ed8; color: #fff; border: none; padding: 10px; border-radius: 10px; font-weight: 700; font-size: 0.82rem; cursor: pointer; letter-spacing: 0.01em; }
+  #pwa-install-btn:hover { background: #1e40af; }
+  #pwa-dismiss-btn { background: #f1f5f9; border: 0.5px solid #e2e8f0; color: #64748b; border-radius: 10px; cursor: pointer; font-size: 0.82rem; font-weight: 600; padding: 10px 14px; line-height: 1; }
+  #pwa-dismiss-btn:hover { background: #e2e8f0; }
+  #pwa-banner .pwa-dismiss-x { position: absolute; top: 10px; right: 12px; background: none; border: none; color: #94a3b8; cursor: pointer; font-size: 1rem; padding: 2px; line-height: 1; }
 </style>
 
 <script type="application/ld+json">
@@ -1774,14 +1786,16 @@
     color: var(--blue-400);
     pointer-events: none;
   }
+  .search-field-row { position: relative; }
+
   #search-results {
     position: absolute;
-    top: calc(100% + 8px);
+    top: calc(100% + 6px);
     left: 0; right: 0;
     background: white;
     border: 1px solid var(--gray-200);
-    border-radius: 14px;
-    box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+    border-radius: 16px;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.14), 0 2px 8px rgba(0,0,0,0.06);
     z-index: 200;
     overflow: hidden;
     display: none;
@@ -2133,8 +2147,8 @@
   .htp-blue  { background: rgba(255,255,255,0.6); border: 1px solid #bdd7f5; color: #1d4ed8; }
   .htp-amber { background: #fffbeb; border: 1px solid #fde68a; color: #92400e; }
   .htp-purple{ background: #f5f3ff; border: 1px solid #ddd6fe; color: #5b21b6; }
-  .htp-install{ background: linear-gradient(135deg,#0077f5,#6d28d9); border: none; color: #fff; font-size: inherit; font-weight: 600; letter-spacing: inherit; transition: opacity 0.18s, transform 0.18s; }
-  .htp-install:hover { opacity: 0.88; transform: translateY(-1px); }
+  .htp-install{ background: rgba(255,255,255,0.6); border: 1px solid #bdd7f5; color: #1d4ed8; font-size: inherit; font-weight: 700; letter-spacing: inherit; transition: background 0.16s, border-color 0.16s, transform 0.16s; }
+  .htp-install:hover { background: #eff6ff; border-color: #93c5fd; transform: translateY(-1px); }
   .hero-stats-new {
     display: flex;
     gap: 28px;
@@ -2196,80 +2210,129 @@
   }
 .hero-search-wrap {
   position: relative;
-  max-width: 520px;
-  margin: 0 auto 32px;
+  max-width: 560px;
+  margin: 0 auto 28px;
 }
 
-/* Specular top-left highlight overlay */
-.hero-search-wrap::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 18px;
-  background: linear-gradient(
-    135deg,
-    rgba(255,255,255,0.55) 0%,
-    rgba(255,255,255,0.15) 35%,
-    transparent 60%
-  );
-  pointer-events: none;
-  z-index: 1;
+/* Search field row */
+.hero-search-wrap .search-field-row {
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .hero-search-wrap input {
   width: 100%;
-  padding: 16px 56px 16px 24px;
-  border-radius: 18px;
+  padding: 15px 54px 15px 22px;
+  border-radius: 9999px;
   font-family: var(--font-body);
-  font-size: 0.96rem;
-  color: #3a4a5c;
+  font-size: 0.95rem;
+  color: #1d1d1f;
   outline: none;
-  transition: all 0.3s ease;
+  transition: box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+  box-sizing: border-box;
 
-  /* Glass core */
-  background: rgba(255, 255, 255, 0.35);
-  backdrop-filter: blur(18px) saturate(1.4);
-  -webkit-backdrop-filter: blur(18px) saturate(1.4);
+  /* Clean white glass */
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(20px) saturate(1.6);
+  -webkit-backdrop-filter: blur(20px) saturate(1.6);
 
-  /* Specular top border highlight */
-  border: 1px solid rgba(255, 255, 255, 0.65);
-  border-top: 1.5px solid rgba(255, 255, 255, 0.85);
+  border: 1.5px solid rgba(255, 255, 255, 0.90);
 
-  /* Outer soft shadow + inner glow */
   box-shadow:
-    0 8px 32px rgba(80, 120, 180, 0.18),
-    0 2px 8px rgba(80, 120, 180, 0.10),
-    inset 0 1.5px 3px rgba(255, 255, 255, 0.70),
-    inset 0 -1px 2px rgba(100, 140, 200, 0.12);
+    0 4px 24px rgba(60, 80, 160, 0.14),
+    0 1px 4px rgba(60, 80, 160, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
 }
 
 .hero-search-wrap input:focus {
-  background: rgba(255, 255, 255, 0.48);
-  border-color: rgba(255, 255, 255, 0.80);
-  border-top-color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.98);
+  border-color: #573AFC;
   box-shadow:
-    0 10px 40px rgba(60, 100, 180, 0.22),
-    0 3px 10px rgba(80, 120, 200, 0.14),
-    inset 0 1.5px 3px rgba(255, 255, 255, 0.80),
-    inset 0 -1px 2px rgba(100, 140, 200, 0.15),
-    0 0 0 3px rgba(180, 210, 255, 0.25);
+    0 6px 32px rgba(60, 80, 160, 0.18),
+    0 0 0 3px rgba(87, 58, 252, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
 }
 
 .hero-search-wrap input::placeholder {
-  color: rgba(90, 120, 160, 0.65);
+  color: rgba(100, 116, 139, 0.70);
   font-style: italic;
+  font-weight: 400;
 }
 
-.hero-search-wrap svg {
+/* Search icon button */
+.hero-search-wrap .search-icon-btn {
   position: absolute;
-  right: 18px;
+  right: 6px;
   top: 50%;
   transform: translateY(-50%);
-  width: 20px; height: 20px;
-  color: rgba(60, 110, 200, 0.75);
+  width: 38px;
+  height: 38px;
+  border-radius: 9999px;
+  background: #573AFC;
+  border: none;
+  cursor: default;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   pointer-events: none;
-  z-index: 2;
-  filter: drop-shadow(0 1px 2px rgba(255,255,255,0.6));
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(87, 58, 252, 0.35);
+  transition: background 0.2s;
+}
+
+.hero-search-wrap .search-icon-btn svg {
+  width: 16px;
+  height: 16px;
+  color: #fff;
+  stroke: #fff;
+  position: static;
+  transform: none;
+  top: auto;
+  right: auto;
+  filter: none;
+  z-index: auto;
+}
+
+/* Request row */
+.search-request-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.search-request-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 0.80rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  color: #573AFC;
+  text-decoration: none;
+  padding: 9px 20px;
+  border-radius: 9999px;
+  border: 1.5px solid rgba(87, 58, 252, 0.30);
+  background: rgba(87, 58, 252, 0.06);
+  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+
+.search-request-btn svg {
+  flex-shrink: 0;
+  stroke: currentColor;
+}
+
+.search-request-btn:hover {
+  background: rgba(87, 58, 252, 0.12);
+  border-color: rgba(87, 58, 252, 0.55);
+  color: #4527E0;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(87, 58, 252, 0.18);
+}
+
+.search-request-btn:active {
+  transform: scale(0.96);
 }
   /* Trust cards in body below hero */
   .hero-body-trust {
@@ -2359,13 +2422,17 @@
 
         <!-- Search -->
     <div class="hero-search-wrap" style="position:relative;z-index:10;">
-      <input type="text" id="search-input" placeholder="Search any subject, exam or topic..." autocomplete="off" oninput="doSearch(this.value)" onblur="setTimeout(()=>closeSearch(),200)" onfocus="doSearch(this.value)">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <div class="search-field-row">
+        <input type="text" id="search-input" placeholder="Search any subject, exam or topic..." autocomplete="off" oninput="doSearch(this.value)" onblur="setTimeout(()=>closeSearch(),200)" onfocus="doSearch(this.value)">
+        <span class="search-icon-btn" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </span>
+      </div>
       <div id="search-results"></div>
-      <div style="margin-top:10px;display:flex;justify-content:center;">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSePwlvdMzRLYoYuXNbKlamargjazyRiedg0rE0JfAzyKPyHEA/viewform" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;font-size:0.78rem;color:rgba(255,255,255,0.65);text-decoration:none;padding:6px 14px;border:1px solid rgba(255,255,255,0.2);border-radius:9999px;transition:all 0.2s;backdrop-filter:blur(8px);" onmouseover="this.style.color='#fff';this.style.borderColor='rgba(255,255,255,0.5)'" onmouseout="this.style.color='rgba(255,255,255,0.65)';this.style.borderColor='rgba(255,255,255,0.2)'">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-          Can't find what you need? Request notes / files
+      <div class="search-request-row">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSePwlvdMzRLYoYuXNbKlamargjazyRiedg0rE0JfAzyKPyHEA/viewform" target="_blank" rel="noopener" class="search-request-btn">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+          Request notes or files
         </a>
       </div>
     </div>
@@ -2394,7 +2461,7 @@
         @wondermayank
       </a>
       <button id="htp-install-btn" onclick="htpInstallApp()" style="display:none;cursor:pointer;border:none;font-family:inherit;" class="htp-install">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v13M7 11l5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 2v13M7 11l5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
         Install App
       </button>
     </div>
@@ -4987,11 +5054,11 @@
         <svg viewBox="0 0 24 24" fill="url(#ig)"><defs><linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="25%" stop-color="#e6683c"/><stop offset="50%" stop-color="#dc2743"/><stop offset="75%" stop-color="#cc2366"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
         Instagram
       </a>
-      <a class="social-btn" href="https://x.com/Thunderstudy_official" target="_blank" rel="noopener" aria-label="X / Twitter">
+      <a class="social-btn" href="https://x.com/ThunderstudyX" target="_blank" rel="noopener" aria-label="X / Twitter">
         <svg viewBox="0 0 24 24" fill="#000"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.26 5.632zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
         X / Twitter
       </a>
-      <a class="social-btn" href="https://threads.net/@Thunderstudy_official" target="_blank" rel="noopener" aria-label="Threads">
+      <a class="social-btn" href="https://threads.net/@WONDERMAYANK" target="_blank" rel="noopener" aria-label="Threads">
         <svg viewBox="0 0 192 192" fill="#000"><path d="M141.537 88.988a66.667 66.667 0 0 0-2.518-1.143c-1.482-27.307-16.403-43.246-41.457-43.398h-.34c-14.986 0-27.449 6.396-35.12 18.036l13.779 9.452c5.73-8.695 14.724-10.548 21.348-10.548h.229c8.249.053 14.474 2.452 18.503 7.129 2.932 3.405 4.893 8.111 5.864 14.05-7.314-1.243-15.224-1.626-23.68-1.14-23.82 1.371-39.134 15.264-38.105 34.568.522 9.792 5.4 18.216 13.735 23.719 7.047 4.652 16.124 6.927 25.557 6.412 12.458-.683 22.231-5.436 29.049-14.127 5.178-6.6 8.453-15.153 9.899-25.93 5.937 3.583 10.337 8.298 12.767 13.966 4.132 9.635 4.373 25.468-8.546 38.376-11.319 11.308-24.925 16.2-45.488 16.351-22.739-.168-39.934-7.465-51.09-21.692C35.177 130.73 29.794 114.517 29.605 96c.189-18.517 5.572-34.73 16.018-48.158 11.156-14.227 28.351-21.524 51.09-21.692 22.9.17 40.509 7.508 52.34 21.818 5.837 7.019 10.24 15.665 13.095 25.678l16.146-4.294c-3.426-12.608-8.853-23.567-16.232-32.669C147.35 18.214 125.703 8.432 96.771 8.24h-.38C67.521 8.432 45.964 18.3 32.346 37.554 20.183 54.62 13.982 76.16 13.8 96.007l.002.24c.182 19.847 6.383 41.387 18.546 58.453 13.618 19.254 35.175 29.122 64.023 29.314h.38c26.06-.172 44.512-7.05 59.64-22.189 20.51-20.484 19.963-45.048 13.189-60.477-4.858-11.305-14.174-20.232-27.043-25.36zM96.471 131.9c-10.444.588-21.286-4.098-21.82-14.19-.397-7.442 5.296-15.746 22.461-16.735 1.966-.113 3.895-.169 5.79-.169 6.235 0 12.068.606 17.37 1.765-1.977 24.702-13.58 28.764-23.801 29.329z"/></svg>
         Threads
       </a>
@@ -5080,7 +5147,7 @@
           Who builds and maintains ThunderStudy?
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         </button>
-        <div class="faq-a" role="region">ThunderStudy is built and maintained by Wondermayank — a creative developer and designer — and the Thunder Team. The platform is available at commercesehoga.github.io and thunderstudy.github.io. You can follow @wondermayank on Instagram and the team at @Thunderstudy_official on Telegram, YouTube, X and Threads.</div>
+        <div class="faq-a" role="region">ThunderStudy is built and maintained by Wondermayank — a creative developer and designer — and the Thunder Team. The platform is available at commercesehoga.github.io and thunderstudy.github.io. You can follow @wondermayank on Instagram and the team at @ThunderstudyX on Telegram, YouTube, X and Threads.</div>
       </div>
 
       <div class="faq-item">
@@ -5194,7 +5261,7 @@
       </a>
       <a class="contact-card" href="https://instagram.com/wondermayank" target="_blank" rel="noopener" aria-label="Instagram - wondermayank">
         <svg viewBox="0 0 24 24" fill="url(#igc2)"><defs><linearGradient id="igc2" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="50%" stop-color="#dc2743"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-        <div class="cc-title">@thunderstudy_official</div>
+        <div class="cc-title">@WONDERMAYANK</div>
         <div class="cc-handle">Instagram</div>
         <div class="cc-role">Official Page</div>
       </a>
@@ -5226,14 +5293,23 @@
 </button>
 
 <!-- PWA INSTALL BANNER -->
-<div id="pwa-banner" role="dialog" aria-label="Install ThunderStudy App">
-  <span class="pwa-icon">⚡</span>
-  <div class="pwa-text">
-    <div class="pwa-title">Install ThunderStudy App</div>
-    <div class="pwa-sub">Study offline · Free · No login</div>
+<div id="pwa-banner" role="dialog" aria-label="Install ThunderStudy App" style="position:relative;">
+  <div class="pwa-top">
+    <div class="pwa-icon-wrap">⚡</div>
+    <div class="pwa-text">
+      <div class="pwa-title">Install ThunderStudy App</div>
+      <div class="pwa-sub">Study offline · Always free</div>
+    </div>
   </div>
-  <button id="pwa-install-btn" onclick="pwaTriggerInstall()">Install</button>
-  <button id="pwa-dismiss-btn" onclick="pwaDismiss()" aria-label="Dismiss">✕</button>
+  <div class="pwa-perks">
+    <span class="pwa-perk">✓ Works offline</span>
+    <span class="pwa-perk">✓ No login</span>
+    <span class="pwa-perk">✓ Zero ads</span>
+  </div>
+  <div class="pwa-actions">
+    <button id="pwa-install-btn" onclick="pwaTriggerInstall()">Install Free App</button>
+    <button id="pwa-dismiss-btn" onclick="pwaDismiss()">Later</button>
+  </div>
 </div>
 
 <!-- MOBILE BOTTOM NAV -->
