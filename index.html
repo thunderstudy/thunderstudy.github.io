@@ -2509,6 +2509,228 @@
 
 <div class="divider"></div>
 
+<!-- ===== THUNDER AI TOOLS SECTION ===== -->
+<section id="thunder-tools" aria-labelledby="thunder-tools-heading">
+<style>
+/* ── THUNDER TOOLS SECTION ── */
+.thunder-tools-section {
+  background: #ffffff;
+  padding: 64px 24px 72px;
+  position: relative;
+  overflow: hidden;
+}
+.thunder-tools-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(86,58,252,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.thunder-tools-header {
+  text-align: center;
+  margin-bottom: 44px;
+}
+.thunder-tools-label {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: #573AFC;
+  background: #f0edff;
+  padding: 5px 14px;
+  border-radius: 9999px;
+  margin-bottom: 14px;
+}
+.thunder-tools-title {
+  font-family: 'Syne', 'DM Sans', system-ui, sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 12px;
+}
+.thunder-tools-desc {
+  font-size: 1rem;
+  color: #5a6480;
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+.thunder-tools-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+@media (max-width: 720px) {
+  .thunder-tools-grid { grid-template-columns: 1fr; gap: 16px; }
+  .thunder-tools-title { font-size: 1.55rem; }
+}
+@media (min-width: 721px) and (max-width: 900px) {
+  .thunder-tools-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.tool-card {
+  background: #ffffff;
+  border: 1.5px solid #eae8ff;
+  border-radius: 18px;
+  padding: 32px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.22s, transform 0.22s, box-shadow 0.22s;
+  text-decoration: none;
+  color: inherit;
+}
+.tool-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(86,58,252,0.04) 0%, transparent 60%);
+  border-radius: inherit;
+  pointer-events: none;
+}
+.tool-card:hover {
+  border-color: #573AFC;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(86,58,252,0.13);
+}
+.tool-card:active { transform: scale(0.98); }
+.tool-card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+}
+.tool-card-icon.flashcard-icon { background: linear-gradient(135deg, #e8e2ff 0%, #d4caff 100%); }
+.tool-card-icon.ai-icon        { background: linear-gradient(135deg, #dbeeff 0%, #c8e0ff 100%); }
+.tool-card-icon.mindmap-icon   { background: linear-gradient(135deg, #d6f5e8 0%, #b8edcf 100%); }
+.tool-card-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+}
+.tool-card-desc {
+  font-size: 0.88rem;
+  color: #6b7394;
+  line-height: 1.55;
+  margin: 0 0 22px;
+  flex: 1;
+}
+.tool-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  color: #573AFC;
+  text-decoration: none;
+}
+.tool-card-cta svg { transition: transform 0.18s; }
+.tool-card:hover .tool-card-cta svg { transform: translateX(3px); }
+.tool-card-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  background: #f0edff;
+  color: #573AFC;
+  padding: 2px 7px;
+  border-radius: 9999px;
+}
+</style>
+
+<div class="thunder-tools-section">
+  <div class="thunder-tools-header">
+    <span class="thunder-tools-label">Thunder AI Tools</span>
+    <h2 class="thunder-tools-title" id="thunder-tools-heading">Free AI-Powered Study Tools</h2>
+    <p class="thunder-tools-desc">Flashcards, AI chat, and mind maps — built for Indian exam prep. No login. No cost.</p>
+  </div>
+
+  <div class="thunder-tools-grid">
+
+    <!-- Flashcard -->
+    <a class="tool-card" href="https://flashcard.thunderstudy.indevs.in/" target="_blank" rel="noopener" aria-label="Create free flashcards on ThunderStudy">
+      <span class="tool-card-badge">Free</span>
+      <div class="tool-card-icon flashcard-icon" aria-hidden="true">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="5" width="20" height="14" rx="3" stroke="#573AFC" stroke-width="2"/>
+          <path d="M8 9h8M8 12h5" stroke="#573AFC" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <p class="tool-card-name">Flashcard Maker</p>
+      <p class="tool-card-desc">Create smart flashcards for any subject — CUET, SSC, Banking, CBSE and more. Study faster with active recall.</p>
+      <span class="tool-card-cta">
+        Create Flashcards
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M5 12h14M13 6l6 6-6 6" stroke="#573AFC" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </a>
+
+    <!-- AI Chat -->
+    <a class="tool-card" href="https://ai.thunderstudy.indevs.in/" target="_blank" rel="noopener" aria-label="ThunderAI — AI chat for study">
+      <span class="tool-card-badge">Free</span>
+      <div class="tool-card-icon ai-icon" aria-hidden="true">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 3C7.03 3 3 6.58 3 11c0 2.07.88 3.95 2.32 5.35L4 20l4.12-1.38C9.33 19.2 10.63 19.5 12 19.5c4.97 0 9-3.58 9-8S16.97 3 12 3Z" stroke="#0077f5" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M8 11h.01M12 11h.01M16 11h.01" stroke="#0077f5" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <p class="tool-card-name">ThunderAI Chat</p>
+      <p class="tool-card-desc">Ask anything about your syllabus. Get instant explanations, solved examples and concept clarity — powered by AI.</p>
+      <span class="tool-card-cta">
+        Chat with AI
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M5 12h14M13 6l6 6-6 6" stroke="#573AFC" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </a>
+
+    <!-- Mind Map -->
+    <a class="tool-card" href="https://mindmap.thunderstudy.indevs.in/" target="_blank" rel="noopener" aria-label="Create free mind maps on ThunderStudy">
+      <span class="tool-card-badge">Free</span>
+      <div class="tool-card-icon mindmap-icon" aria-hidden="true">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="3" stroke="#16a34a" stroke-width="2"/>
+          <circle cx="4" cy="6" r="2" stroke="#16a34a" stroke-width="1.8"/>
+          <circle cx="20" cy="6" r="2" stroke="#16a34a" stroke-width="1.8"/>
+          <circle cx="4" cy="18" r="2" stroke="#16a34a" stroke-width="1.8"/>
+          <circle cx="20" cy="18" r="2" stroke="#16a34a" stroke-width="1.8"/>
+          <path d="M9.5 10.5 6 8M14.5 10.5 18 8M9.5 13.5 6 16M14.5 13.5 18 16" stroke="#16a34a" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <p class="tool-card-name">Mind Map Builder</p>
+      <p class="tool-card-desc">Visualise topics and chapters as connected mind maps. Perfect for revision — link concepts, remember more.</p>
+      <span class="tool-card-cta">
+        Build Mind Map
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M5 12h14M13 6l6 6-6 6" stroke="#573AFC" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </a>
+
+  </div>
+</div>
+</section>
+
+<div class="divider"></div>
+
 <!-- STREAM HUBS — redesigned -->
 <style>
   /* ========== STREAM SECTION ========== */
